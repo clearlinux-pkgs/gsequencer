@@ -1,0 +1,7 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+ladspa_sdk-dev
+lv2-dev
+glib-dev
+libinstpatch-dev
+dssi-dev
