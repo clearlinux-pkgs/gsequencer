@@ -4,7 +4,7 @@
 #
 Name     : gsequencer
 Version  : 2.1.74
-Release  : 2
+Release  : 3
 URL      : https://download.savannah.gnu.org/releases/gsequencer/2.1.x/gsequencer-2.1.74.tar.gz
 Source0  : https://download.savannah.gnu.org/releases/gsequencer/2.1.x/gsequencer-2.1.74.tar.gz
 Summary  : Advanced Gtk+ Sequencer
