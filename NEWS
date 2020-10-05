@@ -1,7 +1,7 @@
 Advanced Gtk+ Sequencer
 ====
 
-Copyright (C) 2005-2019 Joël Krähemann
+Copyright (C) 2005-2020 Joël Krähemann
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
@@ -9,6 +9,81 @@ or any later version published by the Free Software Foundation;
 with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 A copy of the license is included in the section entitled "GNU
 Free Documentation License".
+
+Overview of Changes in AGS 3.4.0
+================================
+
+* Implemented AgsSF2SynthGenerator and AgsSFZSynthGenerator allowing you
+  to pitch missing samples.
+* Extended functionality of AgsFFPlayer and AgsPitchSampler to use SF2 and SFZ
+  synth generators.
+* Refactored ags_filter_util.c.
+
+Overview of Changes in AGS 3.3.0
+================================
+
+* Implemented new ags-fx engine, replaced all existing recalls with fx counterpart.
+* Implemented staging program of AgsAudioLoop, AgsAudioThread and AgsChannelThread.
+
+Overview of Changes in AGS 3.0.0
+================================
+
+* Implemented AgsAudiorec's fast export.
+* Implemented support for GObject-Introspection. Many gtk-doc annotations
+  fixed and extended symbol descriptions.
+* Refactored AgsComplex and AgsUUID in order to work with introspection. The
+  typedef doesn't use array types, anymore. But derived from a struct, now.
+* Implemented the AgsServer API dropped xmlrpc-c in favor of Libsoup2.4. Session
+  support using HTTP cookies.
+* Yay, AGS-OSC-OVER-XMLRPC has arrived. You can send your OSC packets now over
+  HTTP based on AgsServer supporting authentication and responses arrive on a
+  Websocket.
+* Migrated to Gtk+-3.0, dropped builtin theme. Minimal CSS file enabling stepper
+  for editors.
+* Migrated to GThread API, this was a quiet big refactoring. AgsThread core functions
+  have been rewritten, mainly AgsThread::clock() and AgsThread::run().
+  Removed exotic functions like lock, unlock, wait and signal the tree.
+* Major API changes, dropped many old functions like writing the "Wall of XML" file.
+* Supporting LLVM's clang compiler for now. Replaced all nested functions.
+* Fixed some potential SIGSEGVs.
+* Added online help browser along the WebKitGtk dependency.
+* Added basic key accelerators like: Ctrl-o, Ctrl-s, Ctrl-q and Ctrl-h. To open or
+  save files, quit the application or open online help browser.
+* Added better resolution to AgsSpectrometer.
+* Improved MIDI import/export.
+
+Overview of Changes in AGS 2.3.0
+================================
+
+* Improved AgsSynthGenerator to support impulse and FM LFO oscillator.
+* Implemented new impulse oscillator in ags_synth_util.c 
+* Implemented ags_fm_synth_util.c to do frequency modulation oscillators.
+  Used by AgsSynthGenerator.
+* Implemented ags_lfo_synth_util.c to do amplification using LFO oscillator.
+* Added new machines AgsFMSynth, AgsFMSyncsynth and AgsPitchSampler.
+* Added support for complex data type.
+
+Overview of Changes in AGS 2.2.39
+================================
+
+* Added AgsComplex data type support in ags_audio_buffer_util.h and completed
+  Float32 support.
+
+Overview of Changes in AGS 2.2.38
+================================
+
+* Completed reworking unrolled loops to use vectorized builtin functions in
+  ags_audio_buffer_util.c. Improved the vector and audio buffer access using
+  incrementing indices.
+
+Overview of Changes in AGS 2.2.0
+================================
+
+* Implemented OSC export controller. Allowing you to trigger AgsExportOutput
+  task by the OSC server.
+* Reworked parsing LV2 RDF Turtles. Providing a better conforming
+  interpretation of prefixes and faster XPath expressions.
+* Improved copyright and licenses notices for many files.
 
 Overview of Changes in AGS 2.1.0
 ================================

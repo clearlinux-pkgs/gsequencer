@@ -1,5 +1,6 @@
 # This file contains pkgconfig build requirements that get picked up
 # but are undesirable. One entry per line, no whitespace.
 gtk-mac-integration-gtk2
+gtk-mac-integration-gtk3
 libinstpatch-1.0
 jack
