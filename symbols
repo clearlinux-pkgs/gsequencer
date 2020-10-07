@@ -1435,6 +1435,7 @@ libags_audio.so.3:ags_diatonic_scale_note_to_midi_key
 libags_audio.so.3:ags_dssi_manager_find_dssi_plugin
 libags_audio.so.3:ags_dssi_manager_find_dssi_plugin_with_fallback
 libags_audio.so.3:ags_dssi_manager_get_default_path
+libags_audio.so.3:ags_dssi_manager_get_dssi_plugin
 libags_audio.so.3:ags_dssi_manager_get_filenames
 libags_audio.so.3:ags_dssi_manager_get_instance
 libags_audio.so.3:ags_dssi_manager_get_type
@@ -1936,6 +1937,7 @@ libags_audio.so.3:ags_ladspa_manager_find_ladspa_plugin_with_fallback
 libags_audio.so.3:ags_ladspa_manager_get_default_path
 libags_audio.so.3:ags_ladspa_manager_get_filenames
 libags_audio.so.3:ags_ladspa_manager_get_instance
+libags_audio.so.3:ags_ladspa_manager_get_ladspa_plugin
 libags_audio.so.3:ags_ladspa_manager_get_type
 libags_audio.so.3:ags_ladspa_manager_load_blacklist
 libags_audio.so.3:ags_ladspa_manager_load_default_directory
@@ -2026,6 +2028,7 @@ libags_audio.so.3:ags_lv2_manager_find_lv2_plugin_with_fallback
 libags_audio.so.3:ags_lv2_manager_get_default_path
 libags_audio.so.3:ags_lv2_manager_get_filenames
 libags_audio.so.3:ags_lv2_manager_get_instance
+libags_audio.so.3:ags_lv2_manager_get_lv2_plugin
 libags_audio.so.3:ags_lv2_manager_get_type
 libags_audio.so.3:ags_lv2_manager_global_get_parse_names
 libags_audio.so.3:ags_lv2_manager_global_get_preserve_turtle
