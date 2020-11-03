@@ -525,6 +525,7 @@ libags.so.3:ags_uuid_generate
 libags.so.3:ags_uuid_get_type
 libags.so.3:ags_uuid_to_string
 libags_audio.so.3:ags_acceleration_duplicate
+libags_audio.so.3:ags_acceleration_flags_get_type
 libags_audio.so.3:ags_acceleration_get_obj_mutex
 libags_audio.so.3:ags_acceleration_get_type
 libags_audio.so.3:ags_acceleration_get_x
@@ -777,6 +778,7 @@ libags_audio.so.3:ags_audio_file_test_flags
 libags_audio.so.3:ags_audio_file_unset_flags
 libags_audio.so.3:ags_audio_file_write
 libags_audio.so.3:ags_audio_find_name
+libags_audio.so.3:ags_audio_flags_get_type
 libags_audio.so.3:ags_audio_get_absolute_key
 libags_audio.so.3:ags_audio_get_audio_channels
 libags_audio.so.3:ags_audio_get_audio_name
@@ -937,6 +939,7 @@ libags_audio.so.3:ags_audio_signal_feed
 libags_audio.so.3:ags_audio_signal_feed_extended
 libags_audio.so.3:ags_audio_signal_find_by_recall_id
 libags_audio.so.3:ags_audio_signal_find_stream_current
+libags_audio.so.3:ags_audio_signal_flags_get_type
 libags_audio.so.3:ags_audio_signal_get_buffer_size
 libags_audio.so.3:ags_audio_signal_get_format
 libags_audio.so.3:ags_audio_signal_get_input_soundcard
@@ -1062,6 +1065,7 @@ libags_audio.so.3:ags_automation_find_port
 libags_audio.so.3:ags_automation_find_region
 libags_audio.so.3:ags_automation_find_specifier
 libags_audio.so.3:ags_automation_find_specifier_with_type_and_line
+libags_audio.so.3:ags_automation_flags_get_type
 libags_audio.so.3:ags_automation_free_selection
 libags_audio.so.3:ags_automation_get_acceleration
 libags_audio.so.3:ags_automation_get_audio
@@ -1110,6 +1114,7 @@ libags_audio.so.3:ags_base_plugin_deactivate
 libags_audio.so.3:ags_base_plugin_find_effect
 libags_audio.so.3:ags_base_plugin_find_filename
 libags_audio.so.3:ags_base_plugin_find_ui_effect_index
+libags_audio.so.3:ags_base_plugin_flags_get_type
 libags_audio.so.3:ags_base_plugin_get_effect
 libags_audio.so.3:ags_base_plugin_get_effect_index
 libags_audio.so.3:ags_base_plugin_get_filename
@@ -1147,6 +1152,7 @@ libags_audio.so.3:ags_buffer_channel_new
 libags_audio.so.3:ags_buffer_channel_run_get_type
 libags_audio.so.3:ags_buffer_channel_run_new
 libags_audio.so.3:ags_buffer_duplicate
+libags_audio.so.3:ags_buffer_flags_get_type
 libags_audio.so.3:ags_buffer_get_buffer_size
 libags_audio.so.3:ags_buffer_get_data
 libags_audio.so.3:ags_buffer_get_format
@@ -1194,6 +1200,7 @@ libags_audio.so.3:ags_channel_duplicate_recall
 libags_audio.so.3:ags_channel_error_quark
 libags_audio.so.3:ags_channel_first
 libags_audio.so.3:ags_channel_first_with_recycling
+libags_audio.so.3:ags_channel_flags_get_type
 libags_audio.so.3:ags_channel_get_absolute_key
 libags_audio.so.3:ags_channel_get_audio
 libags_audio.so.3:ags_channel_get_audio_channel
@@ -1430,6 +1437,7 @@ libags_audio.so.3:ags_delay_audio_sequencer_duration_changed
 libags_audio.so.3:ags_delay_audio_wave_duration_changed
 libags_audio.so.3:ags_devin_adjust_delay_and_attack
 libags_audio.so.3:ags_devin_error_quark
+libags_audio.so.3:ags_devin_flags_get_type
 libags_audio.so.3:ags_devin_get_type
 libags_audio.so.3:ags_devin_new
 libags_audio.so.3:ags_devin_realloc_buffer
@@ -1439,6 +1447,7 @@ libags_audio.so.3:ags_devin_test_flags
 libags_audio.so.3:ags_devin_unset_flags
 libags_audio.so.3:ags_devout_adjust_delay_and_attack
 libags_audio.so.3:ags_devout_error_quark
+libags_audio.so.3:ags_devout_flags_get_type
 libags_audio.so.3:ags_devout_get_type
 libags_audio.so.3:ags_devout_new
 libags_audio.so.3:ags_devout_realloc_buffer
@@ -1484,6 +1493,14 @@ libags_audio.so.3:ags_export_output_new
 libags_audio.so.3:ags_export_thread_find_soundcard
 libags_audio.so.3:ags_export_thread_get_type
 libags_audio.so.3:ags_export_thread_new
+libags_audio.so.3:ags_fast_pitch_util_compute_complex
+libags_audio.so.3:ags_fast_pitch_util_compute_double
+libags_audio.so.3:ags_fast_pitch_util_compute_float
+libags_audio.so.3:ags_fast_pitch_util_compute_s16
+libags_audio.so.3:ags_fast_pitch_util_compute_s24
+libags_audio.so.3:ags_fast_pitch_util_compute_s32
+libags_audio.so.3:ags_fast_pitch_util_compute_s64
+libags_audio.so.3:ags_fast_pitch_util_compute_s8
 libags_audio.so.3:ags_feed_audio_signal_get_type
 libags_audio.so.3:ags_feed_audio_signal_new
 libags_audio.so.3:ags_feed_channel_get_type
@@ -1494,6 +1511,7 @@ libags_audio.so.3:ags_feed_recycling_get_type
 libags_audio.so.3:ags_feed_recycling_new
 libags_audio.so.3:ags_fifoout_adjust_delay_and_attack
 libags_audio.so.3:ags_fifoout_error_quark
+libags_audio.so.3:ags_fifoout_flags_get_type
 libags_audio.so.3:ags_fifoout_get_type
 libags_audio.so.3:ags_fifoout_new
 libags_audio.so.3:ags_fifoout_realloc_buffer
@@ -2019,6 +2037,7 @@ libags_audio.so.3:ags_jack_server_remove_client
 libags_audio.so.3:ags_jack_server_set_flags
 libags_audio.so.3:ags_jack_server_test_flags
 libags_audio.so.3:ags_jack_server_unset_flags
+libags_audio.so.3:ags_ladspa_conversion_flags_get_type
 libags_audio.so.3:ags_ladspa_conversion_get_type
 libags_audio.so.3:ags_ladspa_conversion_new
 libags_audio.so.3:ags_ladspa_conversion_set_flags
@@ -2100,6 +2119,7 @@ libags_audio.so.3:ags_loop_channel_run_new
 libags_audio.so.3:ags_lv2_cache_turtle_alloc
 libags_audio.so.3:ags_lv2_cache_turtle_find
 libags_audio.so.3:ags_lv2_cache_turtle_free
+libags_audio.so.3:ags_lv2_conversion_flags_get_type
 libags_audio.so.3:ags_lv2_conversion_get_type
 libags_audio.so.3:ags_lv2_conversion_new
 libags_audio.so.3:ags_lv2_conversion_set_flags
@@ -2158,6 +2178,7 @@ libags_audio.so.3:ags_lv2_plugin_event_buffer_realloc_data
 libags_audio.so.3:ags_lv2_plugin_event_buffer_remove_midi
 libags_audio.so.3:ags_lv2_plugin_find_pname
 libags_audio.so.3:ags_lv2_plugin_find_uri
+libags_audio.so.3:ags_lv2_plugin_flags_get_type
 libags_audio.so.3:ags_lv2_plugin_get_type
 libags_audio.so.3:ags_lv2_plugin_new
 libags_audio.so.3:ags_lv2_plugin_set_flags
@@ -2167,6 +2188,7 @@ libags_audio.so.3:ags_lv2_port_preset_alloc
 libags_audio.so.3:ags_lv2_port_preset_free
 libags_audio.so.3:ags_lv2_preset_find_preset_label
 libags_audio.so.3:ags_lv2_preset_find_preset_uri
+libags_audio.so.3:ags_lv2_preset_flags_get_type
 libags_audio.so.3:ags_lv2_preset_get_type
 libags_audio.so.3:ags_lv2_preset_manager_get_instance
 libags_audio.so.3:ags_lv2_preset_manager_get_type
@@ -2181,6 +2203,7 @@ libags_audio.so.3:ags_lv2_turtle_scanner_get_type
 libags_audio.so.3:ags_lv2_turtle_scanner_new
 libags_audio.so.3:ags_lv2_turtle_scanner_quick_scan
 libags_audio.so.3:ags_lv2_turtle_scanner_quick_scan_see_also
+libags_audio.so.3:ags_lv2_turtle_scanner_status_flags_get_type
 libags_audio.so.3:ags_lv2_uri_map_manager_get_instance
 libags_audio.so.3:ags_lv2_uri_map_manager_get_type
 libags_audio.so.3:ags_lv2_uri_map_manager_insert
@@ -2200,6 +2223,7 @@ libags_audio.so.3:ags_lv2_urid_manager_remove
 libags_audio.so.3:ags_lv2_urid_manager_unmap
 libags_audio.so.3:ags_lv2_worker_alloc_response_data
 libags_audio.so.3:ags_lv2_worker_do_poll
+libags_audio.so.3:ags_lv2_worker_flags_get_type
 libags_audio.so.3:ags_lv2_worker_free_response_data
 libags_audio.so.3:ags_lv2_worker_get_type
 libags_audio.so.3:ags_lv2_worker_manager_get_instance
@@ -2224,6 +2248,7 @@ libags_audio.so.3:ags_lv2ui_manager_load_file
 libags_audio.so.3:ags_lv2ui_manager_new
 libags_audio.so.3:ags_lv2ui_manager_set_default_path
 libags_audio.so.3:ags_lv2ui_plugin_find_gui_uri
+libags_audio.so.3:ags_lv2ui_plugin_flags_get_type
 libags_audio.so.3:ags_lv2ui_plugin_get_type
 libags_audio.so.3:ags_lv2ui_plugin_new
 libags_audio.so.3:ags_lv2ui_plugin_set_flags
@@ -2817,6 +2842,7 @@ libags_audio.so.3:ags_playback_test_flags
 libags_audio.so.3:ags_playback_unset_flags
 libags_audio.so.3:ags_plugin_port_find_port_index
 libags_audio.so.3:ags_plugin_port_find_symbol
+libags_audio.so.3:ags_plugin_port_flags_get_type
 libags_audio.so.3:ags_plugin_port_get_default_value
 libags_audio.so.3:ags_plugin_port_get_lower_value
 libags_audio.so.3:ags_plugin_port_get_obj_mutex
@@ -3885,9 +3911,11 @@ libags_gui.so.3:ags_notebook_tab_set_data
 libags_gui.so.3:ags_piano_get_active_key
 libags_gui.so.3:ags_piano_get_base_key_code
 libags_gui.so.3:ags_piano_get_base_note
+libags_gui.so.3:ags_piano_get_button_state
 libags_gui.so.3:ags_piano_get_key_count
 libags_gui.so.3:ags_piano_get_key_height
 libags_gui.so.3:ags_piano_get_key_width
+libags_gui.so.3:ags_piano_get_layout
 libags_gui.so.3:ags_piano_get_type
 libags_gui.so.3:ags_piano_key_clicked
 libags_gui.so.3:ags_piano_key_code_to_note
@@ -3896,9 +3924,11 @@ libags_gui.so.3:ags_piano_key_released
 libags_gui.so.3:ags_piano_new
 libags_gui.so.3:ags_piano_set_base_key_code
 libags_gui.so.3:ags_piano_set_base_note
+libags_gui.so.3:ags_piano_set_button_state
 libags_gui.so.3:ags_piano_set_key_count
 libags_gui.so.3:ags_piano_set_key_height
 libags_gui.so.3:ags_piano_set_key_width
+libags_gui.so.3:ags_piano_set_layout
 libags_gui.so.3:ags_plot_alloc
 libags_gui.so.3:ags_plot_free
 libags_gui.so.3:ags_plot_get_bitmap
