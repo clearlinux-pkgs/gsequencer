@@ -3952,12 +3952,14 @@ libags_gui.so.3:ags_plot_set_point
 libags_gui.so.3:ags_plot_set_point_color
 libags_gui.so.3:ags_plot_set_point_label
 libags_gui.so.3:ags_ruler_get_adjustment
+libags_gui.so.3:ags_ruler_get_font_size
 libags_gui.so.3:ags_ruler_get_large_step
 libags_gui.so.3:ags_ruler_get_small_step
 libags_gui.so.3:ags_ruler_get_step
 libags_gui.so.3:ags_ruler_get_type
 libags_gui.so.3:ags_ruler_new
 libags_gui.so.3:ags_ruler_set_adjustment
+libags_gui.so.3:ags_ruler_set_font_size
 libags_gui.so.3:ags_ruler_set_large_step
 libags_gui.so.3:ags_ruler_set_small_step
 libags_gui.so.3:ags_ruler_set_step
@@ -3980,7 +3982,9 @@ libags_gui.so.3:ags_scale_set_upper
 libags_gui.so.3:ags_scale_value_changed
 libags_gui.so.3:ags_scrolled_level_box_get_type
 libags_gui.so.3:ags_scrolled_level_box_new
+libags_gui.so.3:ags_scrolled_piano_get_piano
 libags_gui.so.3:ags_scrolled_piano_get_type
+libags_gui.so.3:ags_scrolled_piano_get_viewport
 libags_gui.so.3:ags_scrolled_piano_new
 libags_gui.so.3:ags_scrolled_scale_box_get_type
 libags_gui.so.3:ags_scrolled_scale_box_new
