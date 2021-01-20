@@ -1,1 +1,2 @@
-Configure miss: g_object_setv in -lglib-2.0
+Configure miss: 32-bit host C ABI
+Configure miss: CFLocaleCopyPreferredLanguages
