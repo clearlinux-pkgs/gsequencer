@@ -1715,6 +1715,7 @@ libags_audio.so.3:ags_fx_eq10_channel_processor_new
 libags_audio.so.3:ags_fx_eq10_recycling_get_type
 libags_audio.so.3:ags_fx_eq10_recycling_new
 libags_audio.so.3:ags_fx_factory_create
+libags_audio.so.3:ags_fx_factory_create_flags_get_type
 libags_audio.so.3:ags_fx_ladspa_audio_get_type
 libags_audio.so.3:ags_fx_ladspa_audio_new
 libags_audio.so.3:ags_fx_ladspa_audio_processor_get_type
@@ -3086,6 +3087,7 @@ libags_audio.so.3:ags_recall_find_recycling_context
 libags_audio.so.3:ags_recall_find_template
 libags_audio.so.3:ags_recall_find_type
 libags_audio.so.3:ags_recall_find_type_with_recycling_context
+libags_audio.so.3:ags_recall_flags_get_type
 libags_audio.so.3:ags_recall_get_buffer_size
 libags_audio.so.3:ags_recall_get_by_effect
 libags_audio.so.3:ags_recall_get_children
@@ -3150,6 +3152,7 @@ libags_audio.so.3:ags_recall_lv2_unset_flags
 libags_audio.so.3:ags_recall_match_ability_flags_to_scope
 libags_audio.so.3:ags_recall_new
 libags_audio.so.3:ags_recall_notify_dependency
+libags_audio.so.3:ags_recall_notify_dependency_mode_get_type
 libags_audio.so.3:ags_recall_recycling_get_type
 libags_audio.so.3:ags_recall_recycling_new
 libags_audio.so.3:ags_recall_remove_child

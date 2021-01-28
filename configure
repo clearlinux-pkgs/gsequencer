@@ -1,1 +1,2 @@
---enable-pulse --disable-jack
+--enable-pulse
+--disable-jack
