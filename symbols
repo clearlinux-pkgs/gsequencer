@@ -2435,6 +2435,7 @@ libags_audio.so.3:ags_midi_parser_read_varlength
 libags_audio.so.3:ags_midi_parser_sequence_number
 libags_audio.so.3:ags_midi_parser_sequencer_meta_event
 libags_audio.so.3:ags_midi_parser_set_buffer
+libags_audio.so.3:ags_midi_parser_set_file_length
 libags_audio.so.3:ags_midi_parser_smtpe
 libags_audio.so.3:ags_midi_parser_sysex
 libags_audio.so.3:ags_midi_parser_system_common
