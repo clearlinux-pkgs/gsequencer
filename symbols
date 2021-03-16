@@ -5640,6 +5640,7 @@ libgsequencer.so.0:ags_machine_get_property
 libgsequencer.so.0:ags_machine_get_type
 libgsequencer.so.0:ags_machine_init
 libgsequencer.so.0:ags_machine_map_recall
+libgsequencer.so.0:ags_machine_map_recall_callback
 libgsequencer.so.0:ags_machine_new
 libgsequencer.so.0:ags_machine_open_files
 libgsequencer.so.0:ags_machine_open_response_callback
@@ -5689,6 +5690,7 @@ libgsequencer.so.0:ags_machine_real_find_port
 libgsequencer.so.0:ags_machine_real_map_recall
 libgsequencer.so.0:ags_machine_real_resize_audio_channels
 libgsequencer.so.0:ags_machine_real_resize_pads
+libgsequencer.so.0:ags_machine_recall_set_loop
 libgsequencer.so.0:ags_machine_reset_pattern_envelope
 libgsequencer.so.0:ags_machine_resize_audio_channels
 libgsequencer.so.0:ags_machine_resize_audio_channels_callback
