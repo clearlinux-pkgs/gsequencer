@@ -966,6 +966,7 @@ libags_audio.so.3:ags_audio_signal_get_output_soundcard
 libags_audio.so.3:ags_audio_signal_get_recycling
 libags_audio.so.3:ags_audio_signal_get_rt_template
 libags_audio.so.3:ags_audio_signal_get_samplerate
+libags_audio.so.3:ags_audio_signal_get_stream
 libags_audio.so.3:ags_audio_signal_get_template
 libags_audio.so.3:ags_audio_signal_get_type
 libags_audio.so.3:ags_audio_signal_is_active
@@ -981,6 +982,7 @@ libags_audio.so.3:ags_audio_signal_set_note
 libags_audio.so.3:ags_audio_signal_set_output_soundcard
 libags_audio.so.3:ags_audio_signal_set_recycling
 libags_audio.so.3:ags_audio_signal_set_samplerate
+libags_audio.so.3:ags_audio_signal_set_stream
 libags_audio.so.3:ags_audio_signal_stream_lock
 libags_audio.so.3:ags_audio_signal_stream_resize
 libags_audio.so.3:ags_audio_signal_stream_safe_resize
