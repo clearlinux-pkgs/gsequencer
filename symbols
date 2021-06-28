@@ -42,6 +42,7 @@ libags.so.3:ags_buffer_util_char_buffer_write_s8
 libags.so.3:ags_buffer_util_complex_to_char_buffer
 libags.so.3:ags_buffer_util_double_to_char_buffer
 libags.so.3:ags_buffer_util_float_to_char_buffer
+libags.so.3:ags_buffer_util_get_type
 libags.so.3:ags_buffer_util_s16_to_char_buffer
 libags.so.3:ags_buffer_util_s24_to_char_buffer
 libags.so.3:ags_buffer_util_s32_to_char_buffer
@@ -192,6 +193,7 @@ libags.so.3:ags_cursor_get_rate
 libags.so.3:ags_cursor_get_tact
 libags.so.3:ags_cursor_get_type
 libags.so.3:ags_destroy_util_dispose_and_unref
+libags.so.3:ags_destroy_util_get_type
 libags.so.3:ags_endian_host_is_be
 libags.so.3:ags_endian_host_is_le
 libags.so.3:ags_endian_swap_float
@@ -267,6 +269,7 @@ libags.so.3:ags_globals_get_hash_table
 libags.so.3:ags_globals_set
 libags.so.3:ags_id_generator_create_uuid
 libags.so.3:ags_list_util_find_type
+libags.so.3:ags_list_util_get_type
 libags.so.3:ags_log_add_message
 libags.so.3:ags_log_get_instance
 libags.so.3:ags_log_get_messages
@@ -290,6 +293,7 @@ libags.so.3:ags_math_util_find_parenthesis_all
 libags.so.3:ags_math_util_find_symbol
 libags.so.3:ags_math_util_find_symbol_all
 libags.so.3:ags_math_util_find_term_parenthesis
+libags.so.3:ags_math_util_get_type
 libags.so.3:ags_math_util_is_term
 libags.so.3:ags_math_util_match_coefficient
 libags.so.3:ags_math_util_match_exponent
@@ -445,6 +449,7 @@ libags.so.3:ags_soundcard_trylock_sub_block
 libags.so.3:ags_soundcard_unlock_buffer
 libags.so.3:ags_soundcard_unlock_sub_block
 libags.so.3:ags_string_util_escape_single_quote
+libags.so.3:ags_string_util_get_type
 libags.so.3:ags_strv_contains
 libags.so.3:ags_strv_equal
 libags.so.3:ags_strv_index
@@ -686,6 +691,7 @@ libags_audio.so.3:ags_audio_buffer_util_envelope_s64
 libags_audio.so.3:ags_audio_buffer_util_envelope_s8
 libags_audio.so.3:ags_audio_buffer_util_format_from_soundcard
 libags_audio.so.3:ags_audio_buffer_util_get_copy_mode
+libags_audio.so.3:ags_audio_buffer_util_get_type
 libags_audio.so.3:ags_audio_buffer_util_peak
 libags_audio.so.3:ags_audio_buffer_util_peak_complex
 libags_audio.so.3:ags_audio_buffer_util_peak_double
@@ -1330,6 +1336,7 @@ libags_audio.so.3:ags_char_buffer_util_copy_s24_to_cbuffer
 libags_audio.so.3:ags_char_buffer_util_copy_s32_to_cbuffer
 libags_audio.so.3:ags_char_buffer_util_copy_s64_to_cbuffer
 libags_audio.so.3:ags_char_buffer_util_copy_s8_to_cbuffer
+libags_audio.so.3:ags_char_buffer_util_get_type
 libags_audio.so.3:ags_clear_audio_signal_get_type
 libags_audio.so.3:ags_clear_audio_signal_new
 libags_audio.so.3:ags_clear_buffer_get_type
@@ -1519,6 +1526,7 @@ libags_audio.so.3:ags_fast_pitch_util_compute_s24
 libags_audio.so.3:ags_fast_pitch_util_compute_s32
 libags_audio.so.3:ags_fast_pitch_util_compute_s64
 libags_audio.so.3:ags_fast_pitch_util_compute_s8
+libags_audio.so.3:ags_fast_pitch_util_get_type
 libags_audio.so.3:ags_feed_audio_signal_get_type
 libags_audio.so.3:ags_feed_audio_signal_new
 libags_audio.so.3:ags_feed_channel_get_type
@@ -1537,6 +1545,7 @@ libags_audio.so.3:ags_fifoout_set_flags
 libags_audio.so.3:ags_fifoout_switch_buffer_flag
 libags_audio.so.3:ags_fifoout_test_flags
 libags_audio.so.3:ags_fifoout_unset_flags
+libags_audio.so.3:ags_filter_util_get_type
 libags_audio.so.3:ags_filter_util_pitch_complex
 libags_audio.so.3:ags_filter_util_pitch_double
 libags_audio.so.3:ags_filter_util_pitch_float
@@ -1556,6 +1565,7 @@ libags_audio.so.3:ags_fluid_iir_filter_util_apply_s32
 libags_audio.so.3:ags_fluid_iir_filter_util_apply_s64
 libags_audio.so.3:ags_fluid_iir_filter_util_apply_s8
 libags_audio.so.3:ags_fluid_iir_filter_util_calc
+libags_audio.so.3:ags_fluid_iir_filter_util_get_type
 libags_audio.so.3:ags_fluid_interpolate_4th_order_util_fill_complex
 libags_audio.so.3:ags_fluid_interpolate_4th_order_util_fill_double
 libags_audio.so.3:ags_fluid_interpolate_4th_order_util_fill_float
@@ -1564,6 +1574,7 @@ libags_audio.so.3:ags_fluid_interpolate_4th_order_util_fill_s24
 libags_audio.so.3:ags_fluid_interpolate_4th_order_util_fill_s32
 libags_audio.so.3:ags_fluid_interpolate_4th_order_util_fill_s64
 libags_audio.so.3:ags_fluid_interpolate_4th_order_util_fill_s8
+libags_audio.so.3:ags_fluid_interpolate_4th_order_util_get_type
 libags_audio.so.3:ags_fluid_interpolate_7th_order_util_fill_complex
 libags_audio.so.3:ags_fluid_interpolate_7th_order_util_fill_double
 libags_audio.so.3:ags_fluid_interpolate_7th_order_util_fill_float
@@ -1572,6 +1583,7 @@ libags_audio.so.3:ags_fluid_interpolate_7th_order_util_fill_s24
 libags_audio.so.3:ags_fluid_interpolate_7th_order_util_fill_s32
 libags_audio.so.3:ags_fluid_interpolate_7th_order_util_fill_s64
 libags_audio.so.3:ags_fluid_interpolate_7th_order_util_fill_s8
+libags_audio.so.3:ags_fluid_interpolate_7th_order_util_get_type
 libags_audio.so.3:ags_fluid_interpolate_linear_util_fill_complex
 libags_audio.so.3:ags_fluid_interpolate_linear_util_fill_double
 libags_audio.so.3:ags_fluid_interpolate_linear_util_fill_float
@@ -1588,6 +1600,7 @@ libags_audio.so.3:ags_fluid_interpolate_none_util_fill_s24
 libags_audio.so.3:ags_fluid_interpolate_none_util_fill_s32
 libags_audio.so.3:ags_fluid_interpolate_none_util_fill_s64
 libags_audio.so.3:ags_fluid_interpolate_none_util_fill_s8
+libags_audio.so.3:ags_fluid_interpolate_none_util_get_type
 libags_audio.so.3:ags_fluid_pitch_util_compute_complex
 libags_audio.so.3:ags_fluid_pitch_util_compute_double
 libags_audio.so.3:ags_fluid_pitch_util_compute_float
@@ -1596,6 +1609,9 @@ libags_audio.so.3:ags_fluid_pitch_util_compute_s24
 libags_audio.so.3:ags_fluid_pitch_util_compute_s32
 libags_audio.so.3:ags_fluid_pitch_util_compute_s64
 libags_audio.so.3:ags_fluid_pitch_util_compute_s8
+libags_audio.so.3:ags_fluid_pitch_util_get_type
+libags_audio.so.3:ags_fluid_util_get_type
+libags_audio.so.3:ags_fm_synth_util_get_type
 libags_audio.so.3:ags_fm_synth_util_impulse
 libags_audio.so.3:ags_fm_synth_util_impulse_complex
 libags_audio.so.3:ags_fm_synth_util_impulse_double
@@ -1649,6 +1665,7 @@ libags_audio.so.3:ags_fourier_transform_util_compute_stft_s24
 libags_audio.so.3:ags_fourier_transform_util_compute_stft_s32
 libags_audio.so.3:ags_fourier_transform_util_compute_stft_s64
 libags_audio.so.3:ags_fourier_transform_util_compute_stft_s8
+libags_audio.so.3:ags_fourier_transform_util_get_type
 libags_audio.so.3:ags_fourier_transform_util_inverse_stft_complex
 libags_audio.so.3:ags_fourier_transform_util_inverse_stft_double
 libags_audio.so.3:ags_fourier_transform_util_inverse_stft_float
@@ -1667,6 +1684,7 @@ libags_audio.so.3:ags_frequency_aliase_util_compute_s24
 libags_audio.so.3:ags_frequency_aliase_util_compute_s32
 libags_audio.so.3:ags_frequency_aliase_util_compute_s64
 libags_audio.so.3:ags_frequency_aliase_util_compute_s8
+libags_audio.so.3:ags_frequency_aliase_util_get_type
 libags_audio.so.3:ags_frequency_map_compute_max_likelihood
 libags_audio.so.3:ags_frequency_map_factorize
 libags_audio.so.3:ags_frequency_map_get_type
@@ -1964,6 +1982,7 @@ libags_audio.so.3:ags_generic_pitch_util_compute_s24
 libags_audio.so.3:ags_generic_pitch_util_compute_s32
 libags_audio.so.3:ags_generic_pitch_util_compute_s64
 libags_audio.so.3:ags_generic_pitch_util_compute_s8
+libags_audio.so.3:ags_generic_pitch_util_get_type
 libags_audio.so.3:ags_generic_recall_channel_run_get_type
 libags_audio.so.3:ags_generic_recall_channel_run_new
 libags_audio.so.3:ags_generic_recall_recycling_get_type
@@ -2050,6 +2069,7 @@ libags_audio.so.3:ags_hq_pitch_util_compute_s24
 libags_audio.so.3:ags_hq_pitch_util_compute_s32
 libags_audio.so.3:ags_hq_pitch_util_compute_s64
 libags_audio.so.3:ags_hq_pitch_util_compute_s8
+libags_audio.so.3:ags_hq_pitch_util_get_type
 libags_audio.so.3:ags_input_add_synth_generator
 libags_audio.so.3:ags_input_get_type
 libags_audio.so.3:ags_input_is_active
@@ -2193,6 +2213,7 @@ libags_audio.so.3:ags_lfo_channel_run_get_type
 libags_audio.so.3:ags_lfo_channel_run_new
 libags_audio.so.3:ags_lfo_recycling_get_type
 libags_audio.so.3:ags_lfo_recycling_new
+libags_audio.so.3:ags_lfo_synth_util_get_type
 libags_audio.so.3:ags_lfo_synth_util_impulse
 libags_audio.so.3:ags_lfo_synth_util_impulse_complex
 libags_audio.so.3:ags_lfo_synth_util_impulse_double
@@ -2246,6 +2267,7 @@ libags_audio.so.3:ags_linear_interpolate_util_fill_s24
 libags_audio.so.3:ags_linear_interpolate_util_fill_s32
 libags_audio.so.3:ags_linear_interpolate_util_fill_s64
 libags_audio.so.3:ags_linear_interpolate_util_fill_s8
+libags_audio.so.3:ags_linear_interpolate_util_get_type
 libags_audio.so.3:ags_link_channel_get_type
 libags_audio.so.3:ags_link_channel_new
 libags_audio.so.3:ags_loop_channel_get_type
@@ -2419,6 +2441,7 @@ libags_audio.so.3:ags_midi_buffer_util_get_text_event
 libags_audio.so.3:ags_midi_buffer_util_get_time_signature
 libags_audio.so.3:ags_midi_buffer_util_get_track
 libags_audio.so.3:ags_midi_buffer_util_get_tune_request
+libags_audio.so.3:ags_midi_buffer_util_get_type
 libags_audio.so.3:ags_midi_buffer_util_get_varlength
 libags_audio.so.3:ags_midi_buffer_util_get_varlength_size
 libags_audio.so.3:ags_midi_buffer_util_put_change_parameter
@@ -2572,6 +2595,7 @@ libags_audio.so.3:ags_midi_sort_func
 libags_audio.so.3:ags_midi_test_flags
 libags_audio.so.3:ags_midi_unset_flags
 libags_audio.so.3:ags_midi_util_delta_time_to_offset
+libags_audio.so.3:ags_midi_util_get_type
 libags_audio.so.3:ags_midi_util_is_change_parameter
 libags_audio.so.3:ags_midi_util_is_change_pressure
 libags_audio.so.3:ags_midi_util_is_change_program
@@ -2723,6 +2747,7 @@ libags_audio.so.3:ags_osc_buffer_util_get_packet
 libags_audio.so.3:ags_osc_buffer_util_get_rgba
 libags_audio.so.3:ags_osc_buffer_util_get_string
 libags_audio.so.3:ags_osc_buffer_util_get_timetag
+libags_audio.so.3:ags_osc_buffer_util_get_type
 libags_audio.so.3:ags_osc_buffer_util_put_blob
 libags_audio.so.3:ags_osc_buffer_util_put_bundle
 libags_audio.so.3:ags_osc_buffer_util_put_char
@@ -2858,6 +2883,7 @@ libags_audio.so.3:ags_osc_server_unset_flags
 libags_audio.so.3:ags_osc_status_controller_get_status
 libags_audio.so.3:ags_osc_status_controller_get_type
 libags_audio.so.3:ags_osc_status_controller_new
+libags_audio.so.3:ags_osc_util_get_type
 libags_audio.so.3:ags_osc_util_meta_data
 libags_audio.so.3:ags_osc_util_mime_header
 libags_audio.so.3:ags_osc_util_slip_decode
@@ -2921,6 +2947,7 @@ libags_audio.so.3:ags_phase_shift_util_compute_s24
 libags_audio.so.3:ags_phase_shift_util_compute_s32
 libags_audio.so.3:ags_phase_shift_util_compute_s64
 libags_audio.so.3:ags_phase_shift_util_compute_s8
+libags_audio.so.3:ags_phase_shift_util_get_type
 libags_audio.so.3:ags_play_audio_get_type
 libags_audio.so.3:ags_play_audio_new
 libags_audio.so.3:ags_play_audio_signal_get_type
@@ -3030,6 +3057,7 @@ libags_audio.so.3:ags_port_safe_write_raw
 libags_audio.so.3:ags_port_set_flags
 libags_audio.so.3:ags_port_test_flags
 libags_audio.so.3:ags_port_unset_flags
+libags_audio.so.3:ags_port_util_get_type
 libags_audio.so.3:ags_port_util_load_ladspa_conversion
 libags_audio.so.3:ags_port_util_load_lv2_conversion
 libags_audio.so.3:ags_prepare_audio_signal_get_type
@@ -3435,6 +3463,7 @@ libags_audio.so.3:ags_sequencer_thread_get_type
 libags_audio.so.3:ags_sequencer_thread_interval_timeout
 libags_audio.so.3:ags_sequencer_thread_new
 libags_audio.so.3:ags_sequencer_util_get_obj_mutex
+libags_audio.so.3:ags_sequencer_util_get_type
 libags_audio.so.3:ags_set_audio_channels_get_type
 libags_audio.so.3:ags_set_audio_channels_new
 libags_audio.so.3:ags_set_buffer_size_get_type
@@ -3447,6 +3476,16 @@ libags_audio.so.3:ags_set_muted_get_type
 libags_audio.so.3:ags_set_muted_new
 libags_audio.so.3:ags_set_samplerate_get_type
 libags_audio.so.3:ags_set_samplerate_new
+libags_audio.so.3:ags_sf2_get_generic_pitch
+libags_audio.so.3:ags_sf2_get_loop_end
+libags_audio.so.3:ags_sf2_get_loop_mode
+libags_audio.so.3:ags_sf2_get_loop_start
+libags_audio.so.3:ags_sf2_get_n_frames
+libags_audio.so.3:ags_sf2_get_note
+libags_audio.so.3:ags_sf2_get_offset
+libags_audio.so.3:ags_sf2_get_samplerate
+libags_audio.so.3:ags_sf2_get_user_data
+libags_audio.so.3:ags_sf2_get_volume
 libags_audio.so.3:ags_sf2_loader_get_audio
 libags_audio.so.3:ags_sf2_loader_get_audio_container
 libags_audio.so.3:ags_sf2_loader_get_filename
@@ -3463,6 +3502,16 @@ libags_audio.so.3:ags_sf2_loader_set_preset
 libags_audio.so.3:ags_sf2_loader_start
 libags_audio.so.3:ags_sf2_loader_test_flags
 libags_audio.so.3:ags_sf2_loader_unset_flags
+libags_audio.so.3:ags_sf2_set_generic_pitch
+libags_audio.so.3:ags_sf2_set_loop_end
+libags_audio.so.3:ags_sf2_set_loop_mode
+libags_audio.so.3:ags_sf2_set_loop_start
+libags_audio.so.3:ags_sf2_set_n_frames
+libags_audio.so.3:ags_sf2_set_note
+libags_audio.so.3:ags_sf2_set_offset
+libags_audio.so.3:ags_sf2_set_samplerate
+libags_audio.so.3:ags_sf2_set_user_data
+libags_audio.so.3:ags_sf2_set_volume
 libags_audio.so.3:ags_sf2_synth_generator_compute
 libags_audio.so.3:ags_sf2_synth_generator_compute_instrument
 libags_audio.so.3:ags_sf2_synth_generator_compute_midi_locale
@@ -3513,6 +3562,7 @@ libags_audio.so.3:ags_sf2_synth_util_copy_s24
 libags_audio.so.3:ags_sf2_synth_util_copy_s32
 libags_audio.so.3:ags_sf2_synth_util_copy_s64
 libags_audio.so.3:ags_sf2_synth_util_copy_s8
+libags_audio.so.3:ags_sf2_synth_util_get_type
 libags_audio.so.3:ags_sf2_synth_util_midi_locale_find_sample_near_midi_key
 libags_audio.so.3:ags_sf2_util_copy
 libags_audio.so.3:ags_sf2_util_copy_complex
@@ -3523,6 +3573,7 @@ libags_audio.so.3:ags_sf2_util_copy_s24
 libags_audio.so.3:ags_sf2_util_copy_s32
 libags_audio.so.3:ags_sf2_util_copy_s64
 libags_audio.so.3:ags_sf2_util_copy_s8
+libags_audio.so.3:ags_sf2_util_get_type
 libags_audio.so.3:ags_sfz_file_check_suffix
 libags_audio.so.3:ags_sfz_file_get_range
 libags_audio.so.3:ags_sfz_file_get_type
@@ -3532,6 +3583,16 @@ libags_audio.so.3:ags_sfz_file_select_sample
 libags_audio.so.3:ags_sfz_file_set_flags
 libags_audio.so.3:ags_sfz_file_test_flags
 libags_audio.so.3:ags_sfz_file_unset_flags
+libags_audio.so.3:ags_sfz_get_generic_pitch
+libags_audio.so.3:ags_sfz_get_loop_end
+libags_audio.so.3:ags_sfz_get_loop_mode
+libags_audio.so.3:ags_sfz_get_loop_start
+libags_audio.so.3:ags_sfz_get_n_frames
+libags_audio.so.3:ags_sfz_get_note
+libags_audio.so.3:ags_sfz_get_offset
+libags_audio.so.3:ags_sfz_get_samplerate
+libags_audio.so.3:ags_sfz_get_user_data
+libags_audio.so.3:ags_sfz_get_volume
 libags_audio.so.3:ags_sfz_group_get_type
 libags_audio.so.3:ags_sfz_group_insert_control
 libags_audio.so.3:ags_sfz_group_lookup_control
@@ -3570,6 +3631,16 @@ libags_audio.so.3:ags_sfz_sample_new
 libags_audio.so.3:ags_sfz_sample_set_flags
 libags_audio.so.3:ags_sfz_sample_test_flags
 libags_audio.so.3:ags_sfz_sample_unset_flags
+libags_audio.so.3:ags_sfz_set_generic_pitch
+libags_audio.so.3:ags_sfz_set_loop_end
+libags_audio.so.3:ags_sfz_set_loop_mode
+libags_audio.so.3:ags_sfz_set_loop_start
+libags_audio.so.3:ags_sfz_set_n_frames
+libags_audio.so.3:ags_sfz_set_note
+libags_audio.so.3:ags_sfz_set_offset
+libags_audio.so.3:ags_sfz_set_samplerate
+libags_audio.so.3:ags_sfz_set_user_data
+libags_audio.so.3:ags_sfz_set_volume
 libags_audio.so.3:ags_sfz_synth_generator_compute
 libags_audio.so.3:ags_sfz_synth_generator_get_base_key
 libags_audio.so.3:ags_sfz_synth_generator_get_buffer_size
@@ -3607,6 +3678,7 @@ libags_audio.so.3:ags_sfz_synth_util_copy_s24
 libags_audio.so.3:ags_sfz_synth_util_copy_s32
 libags_audio.so.3:ags_sfz_synth_util_copy_s64
 libags_audio.so.3:ags_sfz_synth_util_copy_s8
+libags_audio.so.3:ags_sfz_synth_util_get_type
 libags_audio.so.3:ags_sfz_util_copy
 libags_audio.so.3:ags_sfz_util_copy_complex
 libags_audio.so.3:ags_sfz_util_copy_double
@@ -3616,6 +3688,7 @@ libags_audio.so.3:ags_sfz_util_copy_s24
 libags_audio.so.3:ags_sfz_util_copy_s32
 libags_audio.so.3:ags_sfz_util_copy_s64
 libags_audio.so.3:ags_sfz_util_copy_s8
+libags_audio.so.3:ags_sfz_util_get_type
 libags_audio.so.3:ags_sndfile_check_suffix
 libags_audio.so.3:ags_sndfile_get_type
 libags_audio.so.3:ags_sndfile_new
@@ -3677,6 +3750,7 @@ libags_audio.so.3:ags_soundcard_thread_get_type
 libags_audio.so.3:ags_soundcard_thread_new
 libags_audio.so.3:ags_soundcard_util_adjust_delay_and_attack
 libags_audio.so.3:ags_soundcard_util_get_obj_mutex
+libags_audio.so.3:ags_soundcard_util_get_type
 libags_audio.so.3:ags_start_audio_get_type
 libags_audio.so.3:ags_start_audio_new
 libags_audio.so.3:ags_start_channel_get_type
@@ -3748,6 +3822,7 @@ libags_audio.so.3:ags_synth_generator_set_timestamp
 libags_audio.so.3:ags_synth_generator_set_tuning
 libags_audio.so.3:ags_synth_generator_set_volume
 libags_audio.so.3:ags_synth_oscillator_mode_get_type
+libags_audio.so.3:ags_synth_util_get_type
 libags_audio.so.3:ags_synth_util_get_xcross_count
 libags_audio.so.3:ags_synth_util_get_xcross_count_complex
 libags_audio.so.3:ags_synth_util_get_xcross_count_double
