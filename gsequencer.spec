@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1D9C340615229383 (joel@xn--krhemann-1za.com)
 #
 Name     : gsequencer
-Version  : 3.9.1
-Release  : 34
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/3.9.x/gsequencer-3.9.1.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/3.9.x/gsequencer-3.9.1.tar.gz
-Source1  : https://download.savannah.nongnu.org/releases/gsequencer/3.9.x/gsequencer-3.9.1.tar.gz.sig
+Version  : 3.9.3
+Release  : 35
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/3.9.x/gsequencer-3.9.3.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/3.9.x/gsequencer-3.9.3.tar.gz
+Source1  : https://download.savannah.nongnu.org/releases/gsequencer/3.9.x/gsequencer-3.9.3.tar.gz.sig
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
@@ -138,23 +138,23 @@ man components for the gsequencer package.
 
 
 %prep
-%setup -q -n gsequencer-3.9.1
-cd %{_builddir}/gsequencer-3.9.1
+%setup -q -n gsequencer-3.9.3
+cd %{_builddir}/gsequencer-3.9.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1624903575
+export SOURCE_DATE_EPOCH=1627510240
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %configure --disable-static --enable-pulse \
 --disable-jack
 make  %{?_smp_mflags}
@@ -167,17 +167,17 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1624903575
+export SOURCE_DATE_EPOCH=1627510240
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
-cp %{_builddir}/gsequencer-3.9.1/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/gsequencer-3.9.1/COPYING.docs %{buildroot}/usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
-cp %{_builddir}/gsequencer-3.9.1/COPYING.server %{buildroot}/usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
-cp %{_builddir}/gsequencer-3.9.1/COPYING.stk-4.3 %{buildroot}/usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
-cp %{_builddir}/gsequencer-3.9.1/license-notice-gnu-agpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7
-cp %{_builddir}/gsequencer-3.9.1/license-notice-gnu-agpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/7ebc86f953750b510db38c5cd2a3bf4c814412a1
-cp %{_builddir}/gsequencer-3.9.1/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
-cp %{_builddir}/gsequencer-3.9.1/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/0064571b622bf5a778941c9610c02ad9a4e91d90
+cp %{_builddir}/gsequencer-3.9.3/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/gsequencer-3.9.3/COPYING.docs %{buildroot}/usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
+cp %{_builddir}/gsequencer-3.9.3/COPYING.server %{buildroot}/usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
+cp %{_builddir}/gsequencer-3.9.3/COPYING.stk-4.3 %{buildroot}/usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
+cp %{_builddir}/gsequencer-3.9.3/license-notice-gnu-agpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7
+cp %{_builddir}/gsequencer-3.9.3/license-notice-gnu-agpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/7ebc86f953750b510db38c5cd2a3bf4c814412a1
+cp %{_builddir}/gsequencer-3.9.3/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
+cp %{_builddir}/gsequencer-3.9.3/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/0064571b622bf5a778941c9610c02ad9a4e91d90
 %make_install
 %find_lang gsequencer
 
@@ -208,10 +208,10 @@ cp %{_builddir}/gsequencer-3.9.1/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot
 /usr/share/icons/hicolor/64x64/apps/gsequencer.png
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/3.9.1/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.9.1/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.9.1/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.9.1/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.9.3/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.9.3/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.9.3/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.9.3/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
@@ -230,6 +230,7 @@ cp %{_builddir}/gsequencer-3.9.1/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot
 /usr/include/ags/audio/ags_devin.h
 /usr/include/ags/audio/ags_devout.h
 /usr/include/ags/audio/ags_diatonic_scale.h
+/usr/include/ags/audio/ags_envelope_util.h
 /usr/include/ags/audio/ags_fast_pitch_util.h
 /usr/include/ags/audio/ags_fifoout.h
 /usr/include/ags/audio/ags_filter_util.h
@@ -259,6 +260,7 @@ cp %{_builddir}/gsequencer-3.9.1/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot
 /usr/include/ags/audio/ags_note.h
 /usr/include/ags/audio/ags_output.h
 /usr/include/ags/audio/ags_pattern.h
+/usr/include/ags/audio/ags_peak_util.h
 /usr/include/ags/audio/ags_phase_shift_util.h
 /usr/include/ags/audio/ags_playback.h
 /usr/include/ags/audio/ags_playback_domain.h
@@ -284,6 +286,7 @@ cp %{_builddir}/gsequencer-3.9.1/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot
 /usr/include/ags/audio/ags_recall_recycling.h
 /usr/include/ags/audio/ags_recycling.h
 /usr/include/ags/audio/ags_recycling_context.h
+/usr/include/ags/audio/ags_resample_util.h
 /usr/include/ags/audio/ags_sequencer_util.h
 /usr/include/ags/audio/ags_sf2_synth_generator.h
 /usr/include/ags/audio/ags_sf2_synth_util.h
@@ -298,6 +301,7 @@ cp %{_builddir}/gsequencer-3.9.1/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot
 /usr/include/ags/audio/ags_synth_generator.h
 /usr/include/ags/audio/ags_synth_util.h
 /usr/include/ags/audio/ags_track.h
+/usr/include/ags/audio/ags_volume_util.h
 /usr/include/ags/audio/ags_wave.h
 /usr/include/ags/audio/audio-unit/ags_audio_unit_client.h
 /usr/include/ags/audio/audio-unit/ags_audio_unit_devin.h
