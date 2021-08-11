@@ -4,3 +4,4 @@ gtk-mac-integration-gtk2
 gtk-mac-integration-gtk3
 libinstpatch-1.0
 jack
+libdssialsacompat
