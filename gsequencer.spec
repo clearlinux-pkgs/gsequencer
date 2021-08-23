@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1D9C340615229383 (joel@xn--krhemann-1za.com)
 #
 Name     : gsequencer
-Version  : 3.10.0
-Release  : 37
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/3.10.x/gsequencer-3.10.0.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/3.10.x/gsequencer-3.10.0.tar.gz
-Source1  : https://download.savannah.nongnu.org/releases/gsequencer/3.10.x/gsequencer-3.10.0.tar.gz.sig
+Version  : 3.10.1
+Release  : 38
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/3.10.x/gsequencer-3.10.1.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/3.10.x/gsequencer-3.10.1.tar.gz
+Source1  : https://download.savannah.nongnu.org/releases/gsequencer/3.10.x/gsequencer-3.10.1.tar.gz.sig
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
@@ -138,10 +138,10 @@ man components for the gsequencer package.
 
 
 %prep
-%setup -q -n gsequencer-3.10.0
-cd %{_builddir}/gsequencer-3.10.0
+%setup -q -n gsequencer-3.10.1
+cd %{_builddir}/gsequencer-3.10.1
 pushd ..
-cp -a gsequencer-3.10.0 buildavx512
+cp -a gsequencer-3.10.1 buildavx512
 popd
 
 %build
@@ -149,7 +149,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1628699150
+export SOURCE_DATE_EPOCH=1629735618
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -183,17 +183,17 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1628699150
+export SOURCE_DATE_EPOCH=1629735618
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
-cp %{_builddir}/gsequencer-3.10.0/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/gsequencer-3.10.0/COPYING.docs %{buildroot}/usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
-cp %{_builddir}/gsequencer-3.10.0/COPYING.server %{buildroot}/usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
-cp %{_builddir}/gsequencer-3.10.0/COPYING.stk-4.3 %{buildroot}/usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
-cp %{_builddir}/gsequencer-3.10.0/license-notice-gnu-agpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7
-cp %{_builddir}/gsequencer-3.10.0/license-notice-gnu-agpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/7ebc86f953750b510db38c5cd2a3bf4c814412a1
-cp %{_builddir}/gsequencer-3.10.0/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
-cp %{_builddir}/gsequencer-3.10.0/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/0064571b622bf5a778941c9610c02ad9a4e91d90
+cp %{_builddir}/gsequencer-3.10.1/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/gsequencer-3.10.1/COPYING.docs %{buildroot}/usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
+cp %{_builddir}/gsequencer-3.10.1/COPYING.server %{buildroot}/usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
+cp %{_builddir}/gsequencer-3.10.1/COPYING.stk-4.3 %{buildroot}/usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
+cp %{_builddir}/gsequencer-3.10.1/license-notice-gnu-agpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7
+cp %{_builddir}/gsequencer-3.10.1/license-notice-gnu-agpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/7ebc86f953750b510db38c5cd2a3bf4c814412a1
+cp %{_builddir}/gsequencer-3.10.1/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
+cp %{_builddir}/gsequencer-3.10.1/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/0064571b622bf5a778941c9610c02ad9a4e91d90
 pushd ../buildavx512/
 %make_install_avx512
 popd
@@ -229,10 +229,10 @@ popd
 /usr/share/icons/hicolor/64x64/apps/gsequencer.png
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/3.10.0/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.10.0/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.10.0/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.10.0/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.10.1/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.10.1/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.10.1/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.10.1/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
