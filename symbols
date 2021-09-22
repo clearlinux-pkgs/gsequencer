@@ -1021,12 +1021,15 @@ libags_audio.so.3:ags_audio_test_flags
 libags_audio.so.3:ags_audio_test_staging_completed
 libags_audio.so.3:ags_audio_test_staging_flags
 libags_audio.so.3:ags_audio_thread_get_do_fx_staging
+libags_audio.so.3:ags_audio_thread_get_processing
 libags_audio.so.3:ags_audio_thread_get_staging_program
+libags_audio.so.3:ags_audio_thread_get_task_launcher
 libags_audio.so.3:ags_audio_thread_get_type
 libags_audio.so.3:ags_audio_thread_new
 libags_audio.so.3:ags_audio_thread_scope_data_alloc
 libags_audio.so.3:ags_audio_thread_scope_data_free
 libags_audio.so.3:ags_audio_thread_set_do_fx_staging
+libags_audio.so.3:ags_audio_thread_set_processing
 libags_audio.so.3:ags_audio_thread_set_sound_scope
 libags_audio.so.3:ags_audio_thread_set_staging_program
 libags_audio.so.3:ags_audio_thread_set_status_flags
@@ -1325,10 +1328,13 @@ libags_audio.so.3:ags_channel_test_flags
 libags_audio.so.3:ags_channel_test_staging_completed
 libags_audio.so.3:ags_channel_test_staging_flags
 libags_audio.so.3:ags_channel_thread_get_do_fx_staging
+libags_audio.so.3:ags_channel_thread_get_processing
 libags_audio.so.3:ags_channel_thread_get_staging_program
+libags_audio.so.3:ags_channel_thread_get_task_launcher
 libags_audio.so.3:ags_channel_thread_get_type
 libags_audio.so.3:ags_channel_thread_new
 libags_audio.so.3:ags_channel_thread_set_do_fx_staging
+libags_audio.so.3:ags_channel_thread_set_processing
 libags_audio.so.3:ags_channel_thread_set_sound_scope
 libags_audio.so.3:ags_channel_thread_set_staging_program
 libags_audio.so.3:ags_channel_thread_set_status_flags
@@ -3447,6 +3453,7 @@ libags_audio.so.3:ags_plugin_port_set_upper_value
 libags_audio.so.3:ags_plugin_port_test_flags
 libags_audio.so.3:ags_plugin_port_unset_flags
 libags_audio.so.3:ags_port_add_automation
+libags_audio.so.3:ags_port_find_plugin_port
 libags_audio.so.3:ags_port_find_specifier
 libags_audio.so.3:ags_port_get_type
 libags_audio.so.3:ags_port_new
@@ -4030,6 +4037,7 @@ libags_audio.so.3:ags_sf2_synth_util_get_source
 libags_audio.so.3:ags_sf2_synth_util_get_source_stride
 libags_audio.so.3:ags_sf2_synth_util_get_type
 libags_audio.so.3:ags_sf2_synth_util_get_volume
+libags_audio.so.3:ags_sf2_synth_util_loop_mode_get_type
 libags_audio.so.3:ags_sf2_synth_util_midi_locale_find_sample_near_midi_key
 libags_audio.so.3:ags_sf2_synth_util_read_ipatch_sample
 libags_audio.so.3:ags_sf2_synth_util_set_bank
@@ -4193,6 +4201,7 @@ libags_audio.so.3:ags_sfz_synth_util_get_source
 libags_audio.so.3:ags_sfz_synth_util_get_source_stride
 libags_audio.so.3:ags_sfz_synth_util_get_type
 libags_audio.so.3:ags_sfz_synth_util_get_volume
+libags_audio.so.3:ags_sfz_synth_util_loop_mode_get_type
 libags_audio.so.3:ags_sfz_synth_util_set_buffer_length
 libags_audio.so.3:ags_sfz_synth_util_set_format
 libags_audio.so.3:ags_sfz_synth_util_set_frame_count
@@ -6470,6 +6479,7 @@ libgsequencer.so.0:ags_live_lv2_bridge_set_property
 libgsequencer.so.0:ags_live_lv2_bridge_show_gui_callback
 libgsequencer.so.0:ags_live_lv2_bridge_spin_button_changed_callback
 libgsequencer.so.0:ags_live_lv2_bridge_toggle_button_clicked_callback
+libgsequencer.so.0:ags_live_vst3_bridge_menu_new
 libgsequencer.so.0:ags_lv2_bridge_button_clicked_callback
 libgsequencer.so.0:ags_lv2_bridge_check_button_clicked_callback
 libgsequencer.so.0:ags_lv2_bridge_class_init
@@ -6701,6 +6711,7 @@ libgsequencer.so.0:ags_machine_util_new_fm_synth
 libgsequencer.so.0:ags_machine_util_new_ladspa_bridge
 libgsequencer.so.0:ags_machine_util_new_live_dssi_bridge
 libgsequencer.so.0:ags_machine_util_new_live_lv2_bridge
+libgsequencer.so.0:ags_machine_util_new_live_vst3_bridge
 libgsequencer.so.0:ags_machine_util_new_lv2_bridge
 libgsequencer.so.0:ags_machine_util_new_matrix
 libgsequencer.so.0:ags_machine_util_new_mixer
@@ -6711,6 +6722,7 @@ libgsequencer.so.0:ags_machine_util_new_sfz_synth
 libgsequencer.so.0:ags_machine_util_new_spectrometer
 libgsequencer.so.0:ags_machine_util_new_syncsynth
 libgsequencer.so.0:ags_machine_util_new_synth
+libgsequencer.so.0:ags_machine_util_new_vst3_bridge
 libgsequencer.so.0:ags_matrix_bridge_class_init
 libgsequencer.so.0:ags_matrix_bridge_connect
 libgsequencer.so.0:ags_matrix_bridge_connectable_interface_init
@@ -6759,6 +6771,7 @@ libgsequencer.so.0:ags_menu_action_add_fm_synth_callback
 libgsequencer.so.0:ags_menu_action_add_ladspa_bridge_callback
 libgsequencer.so.0:ags_menu_action_add_live_dssi_bridge_callback
 libgsequencer.so.0:ags_menu_action_add_live_lv2_bridge_callback
+libgsequencer.so.0:ags_menu_action_add_live_vst3_bridge_callback
 libgsequencer.so.0:ags_menu_action_add_lv2_bridge_callback
 libgsequencer.so.0:ags_menu_action_add_matrix_callback
 libgsequencer.so.0:ags_menu_action_add_mixer_callback
@@ -6769,6 +6782,7 @@ libgsequencer.so.0:ags_menu_action_add_sfz_synth_callback
 libgsequencer.so.0:ags_menu_action_add_spectrometer_callback
 libgsequencer.so.0:ags_menu_action_add_syncsynth_callback
 libgsequencer.so.0:ags_menu_action_add_synth_callback
+libgsequencer.so.0:ags_menu_action_add_vst3_bridge_callback
 libgsequencer.so.0:ags_menu_action_automation_callback
 libgsequencer.so.0:ags_menu_action_export_callback
 libgsequencer.so.0:ags_menu_action_midi_export_track_callback
@@ -8087,6 +8101,7 @@ libgsequencer.so.0:ags_vautomation_edit_box_class_init
 libgsequencer.so.0:ags_vautomation_edit_box_get_type
 libgsequencer.so.0:ags_vautomation_edit_box_init
 libgsequencer.so.0:ags_vautomation_edit_box_new
+libgsequencer.so.0:ags_vst3_bridge_menu_new
 libgsequencer.so.0:ags_vwave_edit_box_class_init
 libgsequencer.so.0:ags_vwave_edit_box_get_type
 libgsequencer.so.0:ags_vwave_edit_box_init
@@ -8300,6 +8315,7 @@ libgsequencer.so.0:ags_xorg_application_context_get_window
 libgsequencer.so.0:ags_xorg_application_context_get_worker
 libgsequencer.so.0:ags_xorg_application_context_init
 libgsequencer.so.0:ags_xorg_application_context_is_operating
+libgsequencer.so.0:ags_xorg_application_context_loader_timeout
 libgsequencer.so.0:ags_xorg_application_context_message_monitor_timeout
 libgsequencer.so.0:ags_xorg_application_context_new
 libgsequencer.so.0:ags_xorg_application_context_prepare
