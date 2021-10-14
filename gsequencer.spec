@@ -6,7 +6,7 @@
 #
 Name     : gsequencer
 Version  : 3.11.7
-Release  : 39
+Release  : 40
 URL      : https://download.savannah.nongnu.org/releases/gsequencer/3.11.x/gsequencer-3.11.7.tar.gz
 Source0  : https://download.savannah.nongnu.org/releases/gsequencer/3.11.x/gsequencer-3.11.7.tar.gz
 Source1  : https://download.savannah.nongnu.org/releases/gsequencer/3.11.x/gsequencer-3.11.7.tar.gz.sig
@@ -15,6 +15,7 @@ Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
 Requires: gsequencer-bin = %{version}-%{release}
 Requires: gsequencer-data = %{version}-%{release}
+Requires: gsequencer-filemap = %{version}-%{release}
 Requires: gsequencer-lib = %{version}-%{release}
 Requires: gsequencer-license = %{version}-%{release}
 Requires: gsequencer-locales = %{version}-%{release}
@@ -68,6 +69,7 @@ Summary: bin components for the gsequencer package.
 Group: Binaries
 Requires: gsequencer-data = %{version}-%{release}
 Requires: gsequencer-license = %{version}-%{release}
+Requires: gsequencer-filemap = %{version}-%{release}
 
 %description bin
 bin components for the gsequencer package.
@@ -103,11 +105,20 @@ Requires: gsequencer-man = %{version}-%{release}
 doc components for the gsequencer package.
 
 
+%package filemap
+Summary: filemap components for the gsequencer package.
+Group: Default
+
+%description filemap
+filemap components for the gsequencer package.
+
+
 %package lib
 Summary: lib components for the gsequencer package.
 Group: Libraries
 Requires: gsequencer-data = %{version}-%{release}
 Requires: gsequencer-license = %{version}-%{release}
+Requires: gsequencer-filemap = %{version}-%{release}
 
 %description lib
 lib components for the gsequencer package.
@@ -149,7 +160,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1632349934
+export SOURCE_DATE_EPOCH=1634222812
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -164,11 +175,11 @@ make  %{?_smp_mflags}
 
 unset PKG_CONFIG_PATH
 pushd ../buildavx512/
-export CFLAGS="$CFLAGS -m64 -march=skylake-avx512 -mprefer-vector-width=256"
-export CXXFLAGS="$CXXFLAGS -m64 -march=skylake-avx512 -mprefer-vector-width=256"
-export FFLAGS="$FFLAGS -m64 -march=skylake-avx512 -mprefer-vector-width=256"
-export FCFLAGS="$FCFLAGS -m64 -march=skylake-avx512 -mprefer-vector-width=256"
-export LDFLAGS="$LDFLAGS -m64 -march=skylake-avx512"
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v4"
 %configure --disable-static --enable-pulse \
 --disable-jack
 make  %{?_smp_mflags}
@@ -183,7 +194,7 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1632349934
+export SOURCE_DATE_EPOCH=1634222812
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-3.11.7/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -195,10 +206,11 @@ cp %{_builddir}/gsequencer-3.11.7/license-notice-gnu-agpl-3-0+-sym.txt %{buildro
 cp %{_builddir}/gsequencer-3.11.7/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
 cp %{_builddir}/gsequencer-3.11.7/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/0064571b622bf5a778941c9610c02ad9a4e91d90
 pushd ../buildavx512/
-%make_install_avx512
+%make_install_v4
 popd
 %make_install
 %find_lang gsequencer
+/usr/bin/elf-move.py avx512 %{buildroot}-v4 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -206,9 +218,8 @@ popd
 %files bin
 %defattr(-,root,root,-)
 /usr/bin/gsequencer
-/usr/bin/haswell/avx512_1/gsequencer
-/usr/bin/haswell/avx512_1/midi2xml
 /usr/bin/midi2xml
+/usr/share/clear/optimized-elf/bin*
 
 %files data
 %defattr(-,root,root,-)
@@ -773,8 +784,6 @@ popd
 /usr/include/ags/widget/ags_vlevel_box.h
 /usr/include/ags/widget/ags_vscale_box.h
 /usr/include/ags/widget/ags_widget_marshal.h
-/usr/lib64/haswell/avx512_1/libags.so
-/usr/lib64/haswell/avx512_1/libags_audio.so
 /usr/lib64/libags.so
 /usr/lib64/libags_audio.so
 /usr/lib64/libags_gui.so
@@ -790,12 +799,12 @@ popd
 %defattr(0644,root,root,0755)
 %doc /usr/share/doc/gsequencer/*
 
+%files filemap
+%defattr(-,root,root,-)
+/usr/share/clear/filemap/filemap-gsequencer
+
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/haswell/avx512_1/libags.so.3
-/usr/lib64/haswell/avx512_1/libags.so.3.0.0
-/usr/lib64/haswell/avx512_1/libags_audio.so.3
-/usr/lib64/haswell/avx512_1/libags_audio.so.3.0.0
 /usr/lib64/libags.so.3
 /usr/lib64/libags.so.3.0.0
 /usr/lib64/libags_audio.so.3
@@ -808,6 +817,7 @@ popd
 /usr/lib64/libags_thread.so.3.0.0
 /usr/lib64/libgsequencer.so.0
 /usr/lib64/libgsequencer.so.0.0.1
+/usr/share/clear/optimized-elf/lib*
 
 %files license
 %defattr(0644,root,root,0755)
