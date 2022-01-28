@@ -6,7 +6,7 @@
 #
 Name     : gsequencer
 Version  : 3.16.13
-Release  : 41
+Release  : 42
 URL      : https://download.savannah.nongnu.org/releases/gsequencer/3.16.x/gsequencer-3.16.13.tar.gz
 Source0  : https://download.savannah.nongnu.org/releases/gsequencer/3.16.x/gsequencer-3.16.13.tar.gz
 Source1  : https://download.savannah.nongnu.org/releases/gsequencer/3.16.x/gsequencer-3.16.13.tar.gz.sig
@@ -160,7 +160,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1643398111
+export SOURCE_DATE_EPOCH=1643403128
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -169,7 +169,8 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
-%configure --disable-static --enable-pulse \
+%configure --disable-static --enable-silent-rules \
+--enable-pulse \
 --disable-jack
 make  %{?_smp_mflags}
 
@@ -180,7 +181,8 @@ export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256 -Wl,-
 export FFLAGS="$FFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v4"
-%configure --disable-static --enable-pulse \
+%configure --disable-static --enable-silent-rules \
+--enable-pulse \
 --disable-jack
 make  %{?_smp_mflags}
 popd
@@ -194,7 +196,7 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1643398111
+export SOURCE_DATE_EPOCH=1643403128
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-3.16.13/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
