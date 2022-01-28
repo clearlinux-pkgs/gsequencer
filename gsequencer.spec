@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1D9C340615229383 (joel@xn--krhemann-1za.com)
 #
 Name     : gsequencer
-Version  : 3.11.7
-Release  : 40
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/3.11.x/gsequencer-3.11.7.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/3.11.x/gsequencer-3.11.7.tar.gz
-Source1  : https://download.savannah.nongnu.org/releases/gsequencer/3.11.x/gsequencer-3.11.7.tar.gz.sig
+Version  : 3.16.13
+Release  : 41
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/3.16.x/gsequencer-3.16.13.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/3.16.x/gsequencer-3.16.13.tar.gz
+Source1  : https://download.savannah.nongnu.org/releases/gsequencer/3.16.x/gsequencer-3.16.13.tar.gz.sig
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
@@ -149,10 +149,10 @@ man components for the gsequencer package.
 
 
 %prep
-%setup -q -n gsequencer-3.11.7
-cd %{_builddir}/gsequencer-3.11.7
+%setup -q -n gsequencer-3.16.13
+cd %{_builddir}/gsequencer-3.16.13
 pushd ..
-cp -a gsequencer-3.11.7 buildavx512
+cp -a gsequencer-3.16.13 buildavx512
 popd
 
 %build
@@ -160,7 +160,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1634222812
+export SOURCE_DATE_EPOCH=1643398111
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -175,8 +175,8 @@ make  %{?_smp_mflags}
 
 unset PKG_CONFIG_PATH
 pushd ../buildavx512/
-export CFLAGS="$CFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
-export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256 -Wl,-z,x86-64-v4"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256 -Wl,-z,x86-64-v4"
 export FFLAGS="$FFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v4"
@@ -194,17 +194,17 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1634222812
+export SOURCE_DATE_EPOCH=1643398111
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
-cp %{_builddir}/gsequencer-3.11.7/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/gsequencer-3.11.7/COPYING.docs %{buildroot}/usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
-cp %{_builddir}/gsequencer-3.11.7/COPYING.server %{buildroot}/usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
-cp %{_builddir}/gsequencer-3.11.7/COPYING.stk-4.3 %{buildroot}/usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
-cp %{_builddir}/gsequencer-3.11.7/license-notice-gnu-agpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7
-cp %{_builddir}/gsequencer-3.11.7/license-notice-gnu-agpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/7ebc86f953750b510db38c5cd2a3bf4c814412a1
-cp %{_builddir}/gsequencer-3.11.7/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
-cp %{_builddir}/gsequencer-3.11.7/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/0064571b622bf5a778941c9610c02ad9a4e91d90
+cp %{_builddir}/gsequencer-3.16.13/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/gsequencer-3.16.13/COPYING.docs %{buildroot}/usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
+cp %{_builddir}/gsequencer-3.16.13/COPYING.server %{buildroot}/usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
+cp %{_builddir}/gsequencer-3.16.13/COPYING.stk-4.3 %{buildroot}/usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
+cp %{_builddir}/gsequencer-3.16.13/license-notice-gnu-agpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7
+cp %{_builddir}/gsequencer-3.16.13/license-notice-gnu-agpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/9cbbf4ca39657759b5897bb110c62f6008fb9469
+cp %{_builddir}/gsequencer-3.16.13/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
+cp %{_builddir}/gsequencer-3.16.13/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/838c63f755afa4a58cde028a6973d8016d00b56b
 pushd ../buildavx512/
 %make_install_v4
 popd
@@ -238,12 +238,13 @@ popd
 /usr/share/icons/hicolor/32x32/apps/gsequencer.png
 /usr/share/icons/hicolor/48x48/apps/gsequencer.png
 /usr/share/icons/hicolor/64x64/apps/gsequencer.png
+/usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/3.11.7/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.11.7/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.11.7/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.11.7/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.16.13/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.16.13/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.16.13/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/3.16.13/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
@@ -259,6 +260,7 @@ popd
 /usr/include/ags/audio/ags_buffer.h
 /usr/include/ags/audio/ags_channel.h
 /usr/include/ags/audio/ags_char_buffer_util.h
+/usr/include/ags/audio/ags_chorus_util.h
 /usr/include/ags/audio/ags_devin.h
 /usr/include/ags/audio/ags_devout.h
 /usr/include/ags/audio/ags_diatonic_scale.h
@@ -288,6 +290,7 @@ popd
 /usr/include/ags/audio/ags_linear_interpolate_util.h
 /usr/include/ags/audio/ags_midi.h
 /usr/include/ags/audio/ags_midiin.h
+/usr/include/ags/audio/ags_noise_util.h
 /usr/include/ags/audio/ags_notation.h
 /usr/include/ags/audio/ags_note.h
 /usr/include/ags/audio/ags_output.h
@@ -332,9 +335,13 @@ popd
 /usr/include/ags/audio/ags_synth_enums.h
 /usr/include/ags/audio/ags_synth_generator.h
 /usr/include/ags/audio/ags_synth_util.h
+/usr/include/ags/audio/ags_time_stretch_util.h
 /usr/include/ags/audio/ags_track.h
 /usr/include/ags/audio/ags_volume_util.h
 /usr/include/ags/audio/ags_wave.h
+/usr/include/ags/audio/alsa/ags_alsa_devin.h
+/usr/include/ags/audio/alsa/ags_alsa_devout.h
+/usr/include/ags/audio/alsa/ags_alsa_midiin.h
 /usr/include/ags/audio/audio-unit/ags_audio_unit_client.h
 /usr/include/ags/audio/audio-unit/ags_audio_unit_devin.h
 /usr/include/ags/audio/audio-unit/ags_audio_unit_devout.h
@@ -376,6 +383,12 @@ popd
 /usr/include/ags/audio/fx/ags_fx_buffer_channel.h
 /usr/include/ags/audio/fx/ags_fx_buffer_channel_processor.h
 /usr/include/ags/audio/fx/ags_fx_buffer_recycling.h
+/usr/include/ags/audio/fx/ags_fx_chorus_audio.h
+/usr/include/ags/audio/fx/ags_fx_chorus_audio_processor.h
+/usr/include/ags/audio/fx/ags_fx_chorus_audio_signal.h
+/usr/include/ags/audio/fx/ags_fx_chorus_channel.h
+/usr/include/ags/audio/fx/ags_fx_chorus_channel_processor.h
+/usr/include/ags/audio/fx/ags_fx_chorus_recycling.h
 /usr/include/ags/audio/fx/ags_fx_dssi_audio.h
 /usr/include/ags/audio/fx/ags_fx_dssi_audio_processor.h
 /usr/include/ags/audio/fx/ags_fx_dssi_audio_signal.h
@@ -394,6 +407,18 @@ popd
 /usr/include/ags/audio/fx/ags_fx_eq10_channel.h
 /usr/include/ags/audio/fx/ags_fx_eq10_channel_processor.h
 /usr/include/ags/audio/fx/ags_fx_eq10_recycling.h
+/usr/include/ags/audio/fx/ags_fx_fm_synth_audio.h
+/usr/include/ags/audio/fx/ags_fx_fm_synth_audio_processor.h
+/usr/include/ags/audio/fx/ags_fx_fm_synth_audio_signal.h
+/usr/include/ags/audio/fx/ags_fx_fm_synth_channel.h
+/usr/include/ags/audio/fx/ags_fx_fm_synth_channel_processor.h
+/usr/include/ags/audio/fx/ags_fx_fm_synth_recycling.h
+/usr/include/ags/audio/fx/ags_fx_high_pass_audio.h
+/usr/include/ags/audio/fx/ags_fx_high_pass_audio_processor.h
+/usr/include/ags/audio/fx/ags_fx_high_pass_audio_signal.h
+/usr/include/ags/audio/fx/ags_fx_high_pass_channel.h
+/usr/include/ags/audio/fx/ags_fx_high_pass_channel_processor.h
+/usr/include/ags/audio/fx/ags_fx_high_pass_recycling.h
 /usr/include/ags/audio/fx/ags_fx_ladspa_audio.h
 /usr/include/ags/audio/fx/ags_fx_ladspa_audio_processor.h
 /usr/include/ags/audio/fx/ags_fx_ladspa_audio_signal.h
@@ -406,6 +431,12 @@ popd
 /usr/include/ags/audio/fx/ags_fx_lfo_channel.h
 /usr/include/ags/audio/fx/ags_fx_lfo_channel_processor.h
 /usr/include/ags/audio/fx/ags_fx_lfo_recycling.h
+/usr/include/ags/audio/fx/ags_fx_low_pass_audio.h
+/usr/include/ags/audio/fx/ags_fx_low_pass_audio_processor.h
+/usr/include/ags/audio/fx/ags_fx_low_pass_audio_signal.h
+/usr/include/ags/audio/fx/ags_fx_low_pass_channel.h
+/usr/include/ags/audio/fx/ags_fx_low_pass_channel_processor.h
+/usr/include/ags/audio/fx/ags_fx_low_pass_recycling.h
 /usr/include/ags/audio/fx/ags_fx_lv2_audio.h
 /usr/include/ags/audio/fx/ags_fx_lv2_audio_processor.h
 /usr/include/ags/audio/fx/ags_fx_lv2_audio_signal.h
@@ -436,6 +467,18 @@ popd
 /usr/include/ags/audio/fx/ags_fx_playback_channel.h
 /usr/include/ags/audio/fx/ags_fx_playback_channel_processor.h
 /usr/include/ags/audio/fx/ags_fx_playback_recycling.h
+/usr/include/ags/audio/fx/ags_fx_sf2_synth_audio.h
+/usr/include/ags/audio/fx/ags_fx_sf2_synth_audio_processor.h
+/usr/include/ags/audio/fx/ags_fx_sf2_synth_audio_signal.h
+/usr/include/ags/audio/fx/ags_fx_sf2_synth_channel.h
+/usr/include/ags/audio/fx/ags_fx_sf2_synth_channel_processor.h
+/usr/include/ags/audio/fx/ags_fx_sf2_synth_recycling.h
+/usr/include/ags/audio/fx/ags_fx_synth_audio.h
+/usr/include/ags/audio/fx/ags_fx_synth_audio_processor.h
+/usr/include/ags/audio/fx/ags_fx_synth_audio_signal.h
+/usr/include/ags/audio/fx/ags_fx_synth_channel.h
+/usr/include/ags/audio/fx/ags_fx_synth_channel_processor.h
+/usr/include/ags/audio/fx/ags_fx_synth_recycling.h
 /usr/include/ags/audio/fx/ags_fx_two_pass_aliase_audio.h
 /usr/include/ags/audio/fx/ags_fx_two_pass_aliase_audio_processor.h
 /usr/include/ags/audio/fx/ags_fx_two_pass_aliase_audio_signal.h
@@ -488,6 +531,9 @@ popd
 /usr/include/ags/audio/osc/controller/ags_osc_renew_controller.h
 /usr/include/ags/audio/osc/controller/ags_osc_status_controller.h
 /usr/include/ags/audio/osc/xmlrpc/ags_osc_xmlrpc_controller.h
+/usr/include/ags/audio/oss/ags_oss_devin.h
+/usr/include/ags/audio/oss/ags_oss_devout.h
+/usr/include/ags/audio/oss/ags_oss_midiin.h
 /usr/include/ags/audio/pulse/ags_pulse_client.h
 /usr/include/ags/audio/pulse/ags_pulse_devin.h
 /usr/include/ags/audio/pulse/ags_pulse_devout.h
@@ -591,6 +637,7 @@ popd
 /usr/include/ags/audio/task/ags_apply_bpm.h
 /usr/include/ags/audio/task/ags_apply_presets.h
 /usr/include/ags/audio/task/ags_apply_sequencer_length.h
+/usr/include/ags/audio/task/ags_apply_sf2_midi_locale.h
 /usr/include/ags/audio/task/ags_apply_sf2_synth.h
 /usr/include/ags/audio/task/ags_apply_sfz_synth.h
 /usr/include/ags/audio/task/ags_apply_sound_config.h
@@ -634,6 +681,7 @@ popd
 /usr/include/ags/audio/task/ags_start_soundcard.h
 /usr/include/ags/audio/task/ags_stop_sequencer.h
 /usr/include/ags/audio/task/ags_stop_soundcard.h
+/usr/include/ags/audio/task/ags_stop_thread.h
 /usr/include/ags/audio/task/ags_switch_buffer_flag.h
 /usr/include/ags/audio/task/ags_tic_device.h
 /usr/include/ags/audio/task/ags_toggle_pattern_bit.h
@@ -643,6 +691,7 @@ popd
 /usr/include/ags/audio/thread/ags_export_thread.h
 /usr/include/ags/audio/thread/ags_sequencer_thread.h
 /usr/include/ags/audio/thread/ags_sf2_loader.h
+/usr/include/ags/audio/thread/ags_sf2_midi_locale_loader.h
 /usr/include/ags/audio/thread/ags_sfz_loader.h
 /usr/include/ags/audio/thread/ags_soundcard_thread.h
 /usr/include/ags/audio/thread/ags_wave_loader.h
@@ -779,6 +828,7 @@ popd
 /usr/include/ags/widget/ags_scrolled_level_box.h
 /usr/include/ags/widget/ags_scrolled_piano.h
 /usr/include/ags/widget/ags_scrolled_scale_box.h
+/usr/include/ags/widget/ags_viewport.h
 /usr/include/ags/widget/ags_vindicator.h
 /usr/include/ags/widget/ags_vled_array.h
 /usr/include/ags/widget/ags_vlevel_box.h
@@ -821,12 +871,12 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/gsequencer/0064571b622bf5a778941c9610c02ad9a4e91d90
 /usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
 /usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
 /usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
-/usr/share/package-licenses/gsequencer/7ebc86f953750b510db38c5cd2a3bf4c814412a1
+/usr/share/package-licenses/gsequencer/838c63f755afa4a58cde028a6973d8016d00b56b
 /usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+/usr/share/package-licenses/gsequencer/9cbbf4ca39657759b5897bb110c62f6008fb9469
 /usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
 /usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7
 
