@@ -1,7 +1,9 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
-ladspa_sdk-dev
-lv2-dev
-glib-dev
-libinstpatch-dev
+CUnit-dev
 dssi-dev
+glib-dev
+gobject-introspection-dev
+ladspa_sdk-dev
+libinstpatch-dev
+lv2-dev
