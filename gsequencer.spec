@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1D9C340615229383 (joel@xn--krhemann-1za.com)
 #
 Name     : gsequencer
-Version  : 3.18.2
-Release  : 45
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/3.18.x/gsequencer-3.18.2.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/3.18.x/gsequencer-3.18.2.tar.gz
-Source1  : https://download.savannah.nongnu.org/releases/gsequencer/3.18.x/gsequencer-3.18.2.tar.gz.sig
+Version  : 4.0.8
+Release  : 46
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/4.0.x/gsequencer-4.0.8.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/4.0.x/gsequencer-4.0.8.tar.gz
+Source1  : https://download.savannah.nongnu.org/releases/gsequencer/4.0.x/gsequencer-4.0.8.tar.gz.sig
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
@@ -45,15 +45,14 @@ BuildRequires : pkgconfig(gstreamer-audio-1.0)
 BuildRequires : pkgconfig(gstreamer-pbutils-1.0)
 BuildRequires : pkgconfig(gstreamer-video-1.0)
 BuildRequires : pkgconfig(gthread-2.0)
-BuildRequires : pkgconfig(gtk+-3.0)
+BuildRequires : pkgconfig(gtk4)
 BuildRequires : pkgconfig(libpulse-mainloop-glib)
-BuildRequires : pkgconfig(libsoup-2.4)
+BuildRequires : pkgconfig(libsoup-3.0)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(poppler-glib)
 BuildRequires : pkgconfig(samplerate)
 BuildRequires : pkgconfig(sndfile)
 BuildRequires : pkgconfig(uuid)
-BuildRequires : pkgconfig(webkit2gtk-4.0)
 
 %description
 Advanced Gtk+ Sequencer
@@ -149,10 +148,10 @@ man components for the gsequencer package.
 
 
 %prep
-%setup -q -n gsequencer-3.18.2
-cd %{_builddir}/gsequencer-3.18.2
+%setup -q -n gsequencer-4.0.8
+cd %{_builddir}/gsequencer-4.0.8
 pushd ..
-cp -a gsequencer-3.18.2 buildavx512
+cp -a gsequencer-4.0.8 buildavx512
 popd
 
 %build
@@ -160,7 +159,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1645742424
+export SOURCE_DATE_EPOCH=1653662516
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -196,17 +195,17 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1645742424
+export SOURCE_DATE_EPOCH=1653662516
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
-cp %{_builddir}/gsequencer-3.18.2/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/gsequencer-3.18.2/COPYING.docs %{buildroot}/usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
-cp %{_builddir}/gsequencer-3.18.2/COPYING.server %{buildroot}/usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
-cp %{_builddir}/gsequencer-3.18.2/COPYING.stk-4.3 %{buildroot}/usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
-cp %{_builddir}/gsequencer-3.18.2/license-notice-gnu-agpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7
-cp %{_builddir}/gsequencer-3.18.2/license-notice-gnu-agpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/9cbbf4ca39657759b5897bb110c62f6008fb9469
-cp %{_builddir}/gsequencer-3.18.2/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
-cp %{_builddir}/gsequencer-3.18.2/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/838c63f755afa4a58cde028a6973d8016d00b56b
+cp %{_builddir}/gsequencer-4.0.8/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/gsequencer-4.0.8/COPYING.docs %{buildroot}/usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
+cp %{_builddir}/gsequencer-4.0.8/COPYING.server %{buildroot}/usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
+cp %{_builddir}/gsequencer-4.0.8/COPYING.stk-4.3 %{buildroot}/usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
+cp %{_builddir}/gsequencer-4.0.8/license-notice-gnu-agpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7
+cp %{_builddir}/gsequencer-4.0.8/license-notice-gnu-agpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/9cbbf4ca39657759b5897bb110c62f6008fb9469
+cp %{_builddir}/gsequencer-4.0.8/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
+cp %{_builddir}/gsequencer-4.0.8/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/838c63f755afa4a58cde028a6973d8016d00b56b
 pushd ../buildavx512/
 %make_install_v4
 popd
@@ -239,10 +238,10 @@ popd
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/3.18.2/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.18.2/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.18.2/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/3.18.2/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/4.0.8/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/4.0.8/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/4.0.8/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/4.0.8/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
@@ -259,19 +258,16 @@ popd
 /usr/include/ags/audio/ags_channel.h
 /usr/include/ags/audio/ags_char_buffer_util.h
 /usr/include/ags/audio/ags_chorus_util.h
-/usr/include/ags/audio/ags_devin.h
-/usr/include/ags/audio/ags_devout.h
+/usr/include/ags/audio/ags_common_pitch_util.h
 /usr/include/ags/audio/ags_diatonic_scale.h
 /usr/include/ags/audio/ags_envelope_util.h
 /usr/include/ags/audio/ags_fast_pitch_util.h
 /usr/include/ags/audio/ags_fifoout.h
-/usr/include/ags/audio/ags_filter_util.h
 /usr/include/ags/audio/ags_fluid_iir_filter_util.h
 /usr/include/ags/audio/ags_fluid_interpolate_4th_order_util.h
 /usr/include/ags/audio/ags_fluid_interpolate_7th_order_util.h
 /usr/include/ags/audio/ags_fluid_interpolate_linear_util.h
 /usr/include/ags/audio/ags_fluid_interpolate_none_util.h
-/usr/include/ags/audio/ags_fluid_pitch_util.h
 /usr/include/ags/audio/ags_fluid_util.h
 /usr/include/ags/audio/ags_fm_synth_util.h
 /usr/include/ags/audio/ags_fourier_transform_util.h
@@ -279,7 +275,6 @@ popd
 /usr/include/ags/audio/ags_frequency_map.h
 /usr/include/ags/audio/ags_frequency_map_manager.h
 /usr/include/ags/audio/ags_fx_factory.h
-/usr/include/ags/audio/ags_generic_pitch_util.h
 /usr/include/ags/audio/ags_generic_recall_channel_run.h
 /usr/include/ags/audio/ags_generic_recall_recycling.h
 /usr/include/ags/audio/ags_hq_pitch_util.h
@@ -287,7 +282,6 @@ popd
 /usr/include/ags/audio/ags_lfo_synth_util.h
 /usr/include/ags/audio/ags_linear_interpolate_util.h
 /usr/include/ags/audio/ags_midi.h
-/usr/include/ags/audio/ags_midiin.h
 /usr/include/ags/audio/ags_noise_util.h
 /usr/include/ags/audio/ags_notation.h
 /usr/include/ags/audio/ags_note.h
@@ -308,14 +302,7 @@ popd
 /usr/include/ags/audio/ags_recall_channel_run.h
 /usr/include/ags/audio/ags_recall_container.h
 /usr/include/ags/audio/ags_recall_dependency.h
-/usr/include/ags/audio/ags_recall_dssi.h
-/usr/include/ags/audio/ags_recall_dssi_run.h
-/usr/include/ags/audio/ags_recall_factory.h
 /usr/include/ags/audio/ags_recall_id.h
-/usr/include/ags/audio/ags_recall_ladspa.h
-/usr/include/ags/audio/ags_recall_ladspa_run.h
-/usr/include/ags/audio/ags_recall_lv2.h
-/usr/include/ags/audio/ags_recall_lv2_run.h
 /usr/include/ags/audio/ags_recall_recycling.h
 /usr/include/ags/audio/ags_recycling.h
 /usr/include/ags/audio/ags_recycling_context.h
@@ -323,10 +310,8 @@ popd
 /usr/include/ags/audio/ags_sequencer_util.h
 /usr/include/ags/audio/ags_sf2_synth_generator.h
 /usr/include/ags/audio/ags_sf2_synth_util.h
-/usr/include/ags/audio/ags_sf2_util.h
 /usr/include/ags/audio/ags_sfz_synth_generator.h
 /usr/include/ags/audio/ags_sfz_synth_util.h
-/usr/include/ags/audio/ags_sfz_util.h
 /usr/include/ags/audio/ags_sound_enums.h
 /usr/include/ags/audio/ags_sound_provider.h
 /usr/include/ags/audio/ags_soundcard_util.h
@@ -381,12 +366,6 @@ popd
 /usr/include/ags/audio/fx/ags_fx_buffer_channel.h
 /usr/include/ags/audio/fx/ags_fx_buffer_channel_processor.h
 /usr/include/ags/audio/fx/ags_fx_buffer_recycling.h
-/usr/include/ags/audio/fx/ags_fx_chorus_audio.h
-/usr/include/ags/audio/fx/ags_fx_chorus_audio_processor.h
-/usr/include/ags/audio/fx/ags_fx_chorus_audio_signal.h
-/usr/include/ags/audio/fx/ags_fx_chorus_channel.h
-/usr/include/ags/audio/fx/ags_fx_chorus_channel_processor.h
-/usr/include/ags/audio/fx/ags_fx_chorus_recycling.h
 /usr/include/ags/audio/fx/ags_fx_dssi_audio.h
 /usr/include/ags/audio/fx/ags_fx_dssi_audio_processor.h
 /usr/include/ags/audio/fx/ags_fx_dssi_audio_signal.h
@@ -543,99 +522,8 @@ popd
 /usr/include/ags/audio/pulse/ags_pulse_devout.h
 /usr/include/ags/audio/pulse/ags_pulse_port.h
 /usr/include/ags/audio/pulse/ags_pulse_server.h
-/usr/include/ags/audio/recall/ags_analyse_audio_signal.h
-/usr/include/ags/audio/recall/ags_analyse_channel.h
-/usr/include/ags/audio/recall/ags_analyse_channel_run.h
-/usr/include/ags/audio/recall/ags_analyse_recycling.h
-/usr/include/ags/audio/recall/ags_buffer_audio_signal.h
-/usr/include/ags/audio/recall/ags_buffer_channel.h
-/usr/include/ags/audio/recall/ags_buffer_channel_run.h
-/usr/include/ags/audio/recall/ags_buffer_recycling.h
-/usr/include/ags/audio/recall/ags_capture_wave_audio.h
-/usr/include/ags/audio/recall/ags_capture_wave_audio_run.h
-/usr/include/ags/audio/recall/ags_capture_wave_channel.h
-/usr/include/ags/audio/recall/ags_capture_wave_channel_run.h
-/usr/include/ags/audio/recall/ags_copy_audio_signal.h
-/usr/include/ags/audio/recall/ags_copy_channel.h
-/usr/include/ags/audio/recall/ags_copy_channel_run.h
-/usr/include/ags/audio/recall/ags_copy_pattern_audio.h
-/usr/include/ags/audio/recall/ags_copy_pattern_audio_run.h
-/usr/include/ags/audio/recall/ags_copy_pattern_channel.h
-/usr/include/ags/audio/recall/ags_copy_pattern_channel_run.h
-/usr/include/ags/audio/recall/ags_copy_recycling.h
-/usr/include/ags/audio/recall/ags_count_beats_audio.h
-/usr/include/ags/audio/recall/ags_count_beats_audio_run.h
-/usr/include/ags/audio/recall/ags_delay_audio.h
-/usr/include/ags/audio/recall/ags_delay_audio_run.h
-/usr/include/ags/audio/recall/ags_envelope_audio_signal.h
-/usr/include/ags/audio/recall/ags_envelope_channel.h
-/usr/include/ags/audio/recall/ags_envelope_channel_run.h
-/usr/include/ags/audio/recall/ags_envelope_recycling.h
-/usr/include/ags/audio/recall/ags_eq10_audio_signal.h
-/usr/include/ags/audio/recall/ags_eq10_channel.h
-/usr/include/ags/audio/recall/ags_eq10_channel_run.h
-/usr/include/ags/audio/recall/ags_eq10_recycling.h
-/usr/include/ags/audio/recall/ags_feed_audio_signal.h
-/usr/include/ags/audio/recall/ags_feed_channel.h
-/usr/include/ags/audio/recall/ags_feed_channel_run.h
-/usr/include/ags/audio/recall/ags_feed_recycling.h
-/usr/include/ags/audio/recall/ags_lfo_audio_signal.h
-/usr/include/ags/audio/recall/ags_lfo_channel.h
-/usr/include/ags/audio/recall/ags_lfo_channel_run.h
-/usr/include/ags/audio/recall/ags_lfo_recycling.h
-/usr/include/ags/audio/recall/ags_loop_channel.h
-/usr/include/ags/audio/recall/ags_loop_channel_run.h
-/usr/include/ags/audio/recall/ags_mute_audio.h
-/usr/include/ags/audio/recall/ags_mute_audio_run.h
-/usr/include/ags/audio/recall/ags_mute_audio_signal.h
-/usr/include/ags/audio/recall/ags_mute_channel.h
-/usr/include/ags/audio/recall/ags_mute_channel_run.h
-/usr/include/ags/audio/recall/ags_mute_recycling.h
-/usr/include/ags/audio/recall/ags_peak_audio_signal.h
-/usr/include/ags/audio/recall/ags_peak_channel.h
-/usr/include/ags/audio/recall/ags_peak_channel_run.h
-/usr/include/ags/audio/recall/ags_peak_recycling.h
-/usr/include/ags/audio/recall/ags_play_audio.h
-/usr/include/ags/audio/recall/ags_play_audio_signal.h
-/usr/include/ags/audio/recall/ags_play_channel.h
-/usr/include/ags/audio/recall/ags_play_channel_run.h
-/usr/include/ags/audio/recall/ags_play_channel_run_master.h
-/usr/include/ags/audio/recall/ags_play_dssi_audio.h
-/usr/include/ags/audio/recall/ags_play_dssi_audio_run.h
-/usr/include/ags/audio/recall/ags_play_lv2_audio.h
-/usr/include/ags/audio/recall/ags_play_lv2_audio_run.h
-/usr/include/ags/audio/recall/ags_play_notation_audio.h
-/usr/include/ags/audio/recall/ags_play_notation_audio_run.h
-/usr/include/ags/audio/recall/ags_play_recycling.h
-/usr/include/ags/audio/recall/ags_play_wave_audio.h
-/usr/include/ags/audio/recall/ags_play_wave_audio_run.h
-/usr/include/ags/audio/recall/ags_play_wave_channel.h
-/usr/include/ags/audio/recall/ags_play_wave_channel_run.h
-/usr/include/ags/audio/recall/ags_prepare_audio_signal.h
-/usr/include/ags/audio/recall/ags_prepare_channel.h
-/usr/include/ags/audio/recall/ags_prepare_channel_run.h
-/usr/include/ags/audio/recall/ags_prepare_recycling.h
-/usr/include/ags/audio/recall/ags_record_midi_audio.h
-/usr/include/ags/audio/recall/ags_record_midi_audio_run.h
-/usr/include/ags/audio/recall/ags_route_dssi_audio.h
-/usr/include/ags/audio/recall/ags_route_dssi_audio_run.h
-/usr/include/ags/audio/recall/ags_route_lv2_audio.h
-/usr/include/ags/audio/recall/ags_route_lv2_audio_run.h
-/usr/include/ags/audio/recall/ags_rt_stream_audio_signal.h
-/usr/include/ags/audio/recall/ags_rt_stream_channel.h
-/usr/include/ags/audio/recall/ags_rt_stream_channel_run.h
-/usr/include/ags/audio/recall/ags_rt_stream_recycling.h
-/usr/include/ags/audio/recall/ags_stream_audio_signal.h
-/usr/include/ags/audio/recall/ags_stream_channel.h
-/usr/include/ags/audio/recall/ags_stream_channel_run.h
-/usr/include/ags/audio/recall/ags_stream_recycling.h
-/usr/include/ags/audio/recall/ags_volume_audio_signal.h
-/usr/include/ags/audio/recall/ags_volume_channel.h
-/usr/include/ags/audio/recall/ags_volume_channel_run.h
-/usr/include/ags/audio/recall/ags_volume_recycling.h
 /usr/include/ags/audio/task/ags_add_audio.h
 /usr/include/ags/audio/task/ags_add_audio_signal.h
-/usr/include/ags/audio/task/ags_add_effect.h
 /usr/include/ags/audio/task/ags_add_note.h
 /usr/include/ags/audio/task/ags_add_soundcard.h
 /usr/include/ags/audio/task/ags_apply_bpm.h
@@ -667,11 +555,9 @@ popd
 /usr/include/ags/audio/task/ags_remove_audio_signal.h
 /usr/include/ags/audio/task/ags_remove_note.h
 /usr/include/ags/audio/task/ags_remove_soundcard.h
-/usr/include/ags/audio/task/ags_reset_amplitude.h
 /usr/include/ags/audio/task/ags_reset_fx_analyse.h
 /usr/include/ags/audio/task/ags_reset_fx_peak.h
 /usr/include/ags/audio/task/ags_reset_note.h
-/usr/include/ags/audio/task/ags_reset_peak.h
 /usr/include/ags/audio/task/ags_resize_audio.h
 /usr/include/ags/audio/task/ags_seek_soundcard.h
 /usr/include/ags/audio/task/ags_set_audio_channels.h
@@ -812,14 +698,9 @@ popd
 /usr/include/ags/util/ags_list_util.h
 /usr/include/ags/util/ags_soundcard_helper.h
 /usr/include/ags/widget/ags_cartesian.h
-/usr/include/ags/widget/ags_container.h
 /usr/include/ags/widget/ags_dial.h
 /usr/include/ags/widget/ags_expander.h
 /usr/include/ags/widget/ags_expander_set.h
-/usr/include/ags/widget/ags_hindicator.h
-/usr/include/ags/widget/ags_hled_array.h
-/usr/include/ags/widget/ags_hlevel_box.h
-/usr/include/ags/widget/ags_hscale_box.h
 /usr/include/ags/widget/ags_indicator.h
 /usr/include/ags/widget/ags_led.h
 /usr/include/ags/widget/ags_led_array.h
@@ -834,11 +715,6 @@ popd
 /usr/include/ags/widget/ags_scrolled_level_box.h
 /usr/include/ags/widget/ags_scrolled_piano.h
 /usr/include/ags/widget/ags_scrolled_scale_box.h
-/usr/include/ags/widget/ags_viewport.h
-/usr/include/ags/widget/ags_vindicator.h
-/usr/include/ags/widget/ags_vled_array.h
-/usr/include/ags/widget/ags_vlevel_box.h
-/usr/include/ags/widget/ags_vscale_box.h
 /usr/include/ags/widget/ags_widget_marshal.h
 /usr/lib64/libags.so
 /usr/lib64/libags_audio.so
@@ -861,16 +737,16 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/libags.so.3
-/usr/lib64/libags.so.3.0.0
-/usr/lib64/libags_audio.so.3
-/usr/lib64/libags_audio.so.3.0.0
-/usr/lib64/libags_gui.so.3
-/usr/lib64/libags_gui.so.3.0.0
-/usr/lib64/libags_server.so.3
-/usr/lib64/libags_server.so.3.0.0
-/usr/lib64/libags_thread.so.3
-/usr/lib64/libags_thread.so.3.0.0
+/usr/lib64/libags.so.4
+/usr/lib64/libags.so.4.0.0
+/usr/lib64/libags_audio.so.4
+/usr/lib64/libags_audio.so.4.0.0
+/usr/lib64/libags_gui.so.4
+/usr/lib64/libags_gui.so.4.0.0
+/usr/lib64/libags_server.so.4
+/usr/lib64/libags_server.so.4.0.0
+/usr/lib64/libags_thread.so.4
+/usr/lib64/libags_thread.so.4.0.0
 /usr/lib64/libgsequencer.so.0
 /usr/lib64/libgsequencer.so.0.0.1
 /usr/share/clear/optimized-elf/lib*
