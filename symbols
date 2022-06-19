@@ -5719,8 +5719,10 @@ libgsequencer.so.0:ags_effect_bridge_map_recall
 libgsequencer.so.0:ags_effect_bridge_new
 libgsequencer.so.0:ags_effect_bridge_real_find_port
 libgsequencer.so.0:ags_effect_bridge_real_map_recall
+libgsequencer.so.0:ags_effect_bridge_real_refresh_port
 libgsequencer.so.0:ags_effect_bridge_real_resize_audio_channels
 libgsequencer.so.0:ags_effect_bridge_real_resize_pads
+libgsequencer.so.0:ags_effect_bridge_refresh_port
 libgsequencer.so.0:ags_effect_bridge_remove_input_effect_pad
 libgsequencer.so.0:ags_effect_bridge_remove_output_effect_pad
 libgsequencer.so.0:ags_effect_bridge_resize_audio_channels
@@ -5763,9 +5765,11 @@ libgsequencer.so.0:ags_effect_bulk_plugin_free
 libgsequencer.so.0:ags_effect_bulk_real_add_plugin
 libgsequencer.so.0:ags_effect_bulk_real_find_port
 libgsequencer.so.0:ags_effect_bulk_real_map_recall
+libgsequencer.so.0:ags_effect_bulk_real_refresh_port
 libgsequencer.so.0:ags_effect_bulk_real_remove_plugin
 libgsequencer.so.0:ags_effect_bulk_real_resize_audio_channels
 libgsequencer.so.0:ags_effect_bulk_real_resize_pads
+libgsequencer.so.0:ags_effect_bulk_refresh_port
 libgsequencer.so.0:ags_effect_bulk_remove_bulk_member
 libgsequencer.so.0:ags_effect_bulk_remove_bulk_member_entry
 libgsequencer.so.0:ags_effect_bulk_remove_callback
@@ -5807,8 +5811,10 @@ libgsequencer.so.0:ags_effect_line_plugin_free
 libgsequencer.so.0:ags_effect_line_real_add_plugin
 libgsequencer.so.0:ags_effect_line_real_find_port
 libgsequencer.so.0:ags_effect_line_real_map_recall
+libgsequencer.so.0:ags_effect_line_real_refresh_port
 libgsequencer.so.0:ags_effect_line_real_remove_plugin
 libgsequencer.so.0:ags_effect_line_real_set_channel
+libgsequencer.so.0:ags_effect_line_refresh_port
 libgsequencer.so.0:ags_effect_line_remove_line_member
 libgsequencer.so.0:ags_effect_line_remove_plugin
 libgsequencer.so.0:ags_effect_line_samplerate_changed
@@ -5830,8 +5836,10 @@ libgsequencer.so.0:ags_effect_pad_map_recall
 libgsequencer.so.0:ags_effect_pad_new
 libgsequencer.so.0:ags_effect_pad_real_find_port
 libgsequencer.so.0:ags_effect_pad_real_map_recall
+libgsequencer.so.0:ags_effect_pad_real_refresh_port
 libgsequencer.so.0:ags_effect_pad_real_resize_lines
 libgsequencer.so.0:ags_effect_pad_real_set_channel
+libgsequencer.so.0:ags_effect_pad_refresh_port
 libgsequencer.so.0:ags_effect_pad_remove_effect_line
 libgsequencer.so.0:ags_effect_pad_resize_lines
 libgsequencer.so.0:ags_effect_pad_samplerate_changed
@@ -5976,6 +5984,7 @@ libgsequencer.so.0:ags_export_window_replace_files_response_callback
 libgsequencer.so.0:ags_export_window_start_export
 libgsequencer.so.0:ags_export_window_stop_callback
 libgsequencer.so.0:ags_export_window_stop_export
+libgsequencer.so.0:ags_export_window_stop_timeout
 libgsequencer.so.0:ags_export_window_tact_callback
 libgsequencer.so.0:ags_ffplayer_aliase_a_amount_callback
 libgsequencer.so.0:ags_ffplayer_aliase_a_phase_callback
@@ -6272,6 +6281,7 @@ libgsequencer.so.0:ags_gsequencer_application_context_signal_handler
 libgsequencer.so.0:ags_gsequencer_application_context_sound_provider_interface_init
 libgsequencer.so.0:ags_gsequencer_application_context_task_timeout
 libgsequencer.so.0:ags_gsequencer_application_context_ui_provider_interface_init
+libgsequencer.so.0:ags_gsequencer_application_context_update_ui_timeout
 libgsequencer.so.0:ags_gsequencer_application_context_write
 libgsequencer.so.0:ags_gsequencer_application_get_type
 libgsequencer.so.0:ags_gsequencer_application_init
@@ -6321,6 +6331,7 @@ libgsequencer.so.0:ags_hybrid_fm_synth_new
 libgsequencer.so.0:ags_hybrid_fm_synth_noise_gain_callback
 libgsequencer.so.0:ags_hybrid_fm_synth_output_map_recall
 libgsequencer.so.0:ags_hybrid_fm_synth_pitch_tuning_callback
+libgsequencer.so.0:ags_hybrid_fm_synth_refresh_port
 libgsequencer.so.0:ags_hybrid_fm_synth_resize_audio_channels
 libgsequencer.so.0:ags_hybrid_fm_synth_resize_pads
 libgsequencer.so.0:ags_hybrid_fm_synth_sequencer_enabled_callback
@@ -6380,6 +6391,7 @@ libgsequencer.so.0:ags_hybrid_synth_new
 libgsequencer.so.0:ags_hybrid_synth_noise_gain_callback
 libgsequencer.so.0:ags_hybrid_synth_output_map_recall
 libgsequencer.so.0:ags_hybrid_synth_pitch_tuning_callback
+libgsequencer.so.0:ags_hybrid_synth_refresh_port
 libgsequencer.so.0:ags_hybrid_synth_resize_audio_channels
 libgsequencer.so.0:ags_hybrid_synth_resize_pads
 libgsequencer.so.0:ags_hybrid_synth_sequencer_enabled_callback
@@ -6537,8 +6549,10 @@ libgsequencer.so.0:ags_line_plugin_free
 libgsequencer.so.0:ags_line_real_add_plugin
 libgsequencer.so.0:ags_line_real_find_port
 libgsequencer.so.0:ags_line_real_map_recall
+libgsequencer.so.0:ags_line_real_refresh_port
 libgsequencer.so.0:ags_line_real_remove_plugin
 libgsequencer.so.0:ags_line_real_set_channel
+libgsequencer.so.0:ags_line_refresh_port
 libgsequencer.so.0:ags_line_remove_effect_separator
 libgsequencer.so.0:ags_line_remove_line_member
 libgsequencer.so.0:ags_line_remove_plugin
@@ -6872,9 +6886,13 @@ libgsequencer.so.0:ags_machine_radio_button_notify_machine_name_callback
 libgsequencer.so.0:ags_machine_radio_button_set_property
 libgsequencer.so.0:ags_machine_real_find_port
 libgsequencer.so.0:ags_machine_real_map_recall
+libgsequencer.so.0:ags_machine_real_refresh_port
 libgsequencer.so.0:ags_machine_real_resize_audio_channels
 libgsequencer.so.0:ags_machine_real_resize_pads
 libgsequencer.so.0:ags_machine_recall_set_loop
+libgsequencer.so.0:ags_machine_refresh_port
+libgsequencer.so.0:ags_machine_refresh_port_callback
+libgsequencer.so.0:ags_machine_refresh_port_update_ui_callback
 libgsequencer.so.0:ags_machine_remove_dialog_model
 libgsequencer.so.0:ags_machine_remove_input_pad
 libgsequencer.so.0:ags_machine_remove_output_pad
@@ -7281,8 +7299,10 @@ libgsequencer.so.0:ags_pad_new
 libgsequencer.so.0:ags_pad_play
 libgsequencer.so.0:ags_pad_real_find_port
 libgsequencer.so.0:ags_pad_real_map_recall
+libgsequencer.so.0:ags_pad_real_refresh_port
 libgsequencer.so.0:ags_pad_real_resize_lines
 libgsequencer.so.0:ags_pad_real_set_channel
+libgsequencer.so.0:ags_pad_refresh_port
 libgsequencer.so.0:ags_pad_remove_line
 libgsequencer.so.0:ags_pad_resize_lines
 libgsequencer.so.0:ags_pad_samplerate_changed
@@ -7747,6 +7767,7 @@ libgsequencer.so.0:ags_sf2_synth_open_dialog_response_callback
 libgsequencer.so.0:ags_sf2_synth_open_filename
 libgsequencer.so.0:ags_sf2_synth_output_map_recall
 libgsequencer.so.0:ags_sf2_synth_program_tree_view_callback
+libgsequencer.so.0:ags_sf2_synth_refresh_port
 libgsequencer.so.0:ags_sf2_synth_resize_audio_channels
 libgsequencer.so.0:ags_sf2_synth_resize_pads
 libgsequencer.so.0:ags_sf2_synth_sf2_loader_completed_timeout
@@ -7778,6 +7799,7 @@ libgsequencer.so.0:ags_sfz_synth_open_clicked_callback
 libgsequencer.so.0:ags_sfz_synth_open_dialog_response_callback
 libgsequencer.so.0:ags_sfz_synth_open_filename
 libgsequencer.so.0:ags_sfz_synth_output_map_recall
+libgsequencer.so.0:ags_sfz_synth_refresh_port
 libgsequencer.so.0:ags_sfz_synth_resize_audio_channels
 libgsequencer.so.0:ags_sfz_synth_resize_pads
 libgsequencer.so.0:ags_sfz_synth_sfz_loader_completed_timeout
@@ -8179,6 +8201,7 @@ libgsequencer.so.0:ags_ui_provider_set_sample_browser
 libgsequencer.so.0:ags_ui_provider_set_show_animation
 libgsequencer.so.0:ags_ui_provider_set_window
 libgsequencer.so.0:ags_ui_provider_setup_completed
+libgsequencer.so.0:ags_ui_provider_update_ui
 libgsequencer.so.0:ags_wave_edit_auto_scroll_timeout
 libgsequencer.so.0:ags_wave_edit_box_add_wave_edit
 libgsequencer.so.0:ags_wave_edit_box_child_height_request
