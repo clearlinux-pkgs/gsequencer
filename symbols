@@ -5782,6 +5782,7 @@ libgsequencer.so.0:ags_effect_bulk_set_flags
 libgsequencer.so.0:ags_effect_bulk_set_property
 libgsequencer.so.0:ags_effect_bulk_test_flags
 libgsequencer.so.0:ags_effect_bulk_unset_flags
+libgsequencer.so.0:ags_effect_line_add_effect_separator
 libgsequencer.so.0:ags_effect_line_add_ladspa_plugin
 libgsequencer.so.0:ags_effect_line_add_line_member
 libgsequencer.so.0:ags_effect_line_add_lv2_plugin
@@ -5799,6 +5800,7 @@ libgsequencer.so.0:ags_effect_line_finalize
 libgsequencer.so.0:ags_effect_line_find_next_grouped
 libgsequencer.so.0:ags_effect_line_find_port
 libgsequencer.so.0:ags_effect_line_format_changed
+libgsequencer.so.0:ags_effect_line_get_effect_separator
 libgsequencer.so.0:ags_effect_line_get_line_member
 libgsequencer.so.0:ags_effect_line_get_property
 libgsequencer.so.0:ags_effect_line_get_type
@@ -5815,6 +5817,7 @@ libgsequencer.so.0:ags_effect_line_real_refresh_port
 libgsequencer.so.0:ags_effect_line_real_remove_plugin
 libgsequencer.so.0:ags_effect_line_real_set_channel
 libgsequencer.so.0:ags_effect_line_refresh_port
+libgsequencer.so.0:ags_effect_line_remove_effect_separator
 libgsequencer.so.0:ags_effect_line_remove_line_member
 libgsequencer.so.0:ags_effect_line_remove_plugin
 libgsequencer.so.0:ags_effect_line_samplerate_changed
