@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1D9C340615229383 (joel@xn--krhemann-1za.com)
 #
 Name     : gsequencer
-Version  : 4.3.0
-Release  : 58
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/4.3.x/gsequencer-4.3.0.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/4.3.x/gsequencer-4.3.0.tar.gz
-Source1  : https://download.savannah.nongnu.org/releases/gsequencer/4.3.x/gsequencer-4.3.0.tar.gz.sig
+Version  : 4.3.3
+Release  : 59
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/4.3.x/gsequencer-4.3.3.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/4.3.x/gsequencer-4.3.3.tar.gz
+Source1  : https://download.savannah.nongnu.org/releases/gsequencer/4.3.x/gsequencer-4.3.3.tar.gz.sig
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
@@ -149,10 +149,10 @@ man components for the gsequencer package.
 
 
 %prep
-%setup -q -n gsequencer-4.3.0
-cd %{_builddir}/gsequencer-4.3.0
+%setup -q -n gsequencer-4.3.3
+cd %{_builddir}/gsequencer-4.3.3
 pushd ..
-cp -a gsequencer-4.3.0 buildavx512
+cp -a gsequencer-4.3.3 buildavx512
 popd
 
 %build
@@ -160,7 +160,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1659105294
+export SOURCE_DATE_EPOCH=1659365427
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -196,7 +196,7 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1659105294
+export SOURCE_DATE_EPOCH=1659365427
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -239,10 +239,10 @@ popd
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/4.3.0/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/4.3.0/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/4.3.0/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/4.3.0/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/4.3.3/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/4.3.3/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/4.3.3/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/4.3.3/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
