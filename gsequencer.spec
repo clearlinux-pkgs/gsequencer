@@ -6,7 +6,7 @@
 #
 Name     : gsequencer
 Version  : 4.3.4
-Release  : 61
+Release  : 62
 URL      : https://download.savannah.nongnu.org/releases/gsequencer/4.3.x/gsequencer-4.3.4.tar.gz
 Source0  : https://download.savannah.nongnu.org/releases/gsequencer/4.3.x/gsequencer-4.3.4.tar.gz
 Source1  : https://download.savannah.nongnu.org/releases/gsequencer/4.3.x/gsequencer-4.3.4.tar.gz.sig
