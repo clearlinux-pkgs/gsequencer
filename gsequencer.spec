@@ -4,7 +4,7 @@
 #
 Name     : gsequencer
 Version  : 4.4.3
-Release  : 65
+Release  : 66
 URL      : https://download.savannah.nongnu.org/releases/gsequencer/4.4.x/gsequencer-4.4.3.tar.gz
 Source0  : https://download.savannah.nongnu.org/releases/gsequencer/4.4.x/gsequencer-4.4.3.tar.gz
 Summary  : Advanced Gtk+ Sequencer audio processing engine
