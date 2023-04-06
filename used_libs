@@ -29,5 +29,6 @@ libpulse.so.0
 libsamplerate.so.0
 libsndfile.so.1
 libsoup-3.0.so.0
+libstdc++.so.6
 libuuid.so.1
 libxml2.so.2
