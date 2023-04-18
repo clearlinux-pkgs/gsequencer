@@ -7334,6 +7334,7 @@ libgsequencer.so.0:ags_pad_real_resize_lines
 libgsequencer.so.0:ags_pad_real_set_channel
 libgsequencer.so.0:ags_pad_refresh_port
 libgsequencer.so.0:ags_pad_remove_line
+libgsequencer.so.0:ags_pad_reset_flags
 libgsequencer.so.0:ags_pad_resize_lines
 libgsequencer.so.0:ags_pad_samplerate_changed
 libgsequencer.so.0:ags_pad_set_channel
@@ -8248,6 +8249,7 @@ libgsequencer.so.0:ags_ui_provider_set_show_animation
 libgsequencer.so.0:ags_ui_provider_set_window
 libgsequencer.so.0:ags_ui_provider_setup_completed
 libgsequencer.so.0:ags_ui_provider_update_ui
+libgsequencer.so.0:ags_ui_recall_flags_get_type
 libgsequencer.so.0:ags_wave_edit_auto_scroll_timeout
 libgsequencer.so.0:ags_wave_edit_box_add_wave_edit
 libgsequencer.so.0:ags_wave_edit_box_child_height_request
