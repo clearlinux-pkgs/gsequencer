@@ -4,16 +4,15 @@
 # Using build pattern: configure
 #
 Name     : gsequencer
-Version  : 4.5.5
-Release  : 69
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/4.5.x/gsequencer-4.5.5.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/4.5.x/gsequencer-4.5.5.tar.gz
+Version  : 5.0.2
+Release  : 70
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/5.0.x/gsequencer-5.0.2.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/5.0.x/gsequencer-5.0.2.tar.gz
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
 Requires: gsequencer-bin = %{version}-%{release}
 Requires: gsequencer-data = %{version}-%{release}
-Requires: gsequencer-filemap = %{version}-%{release}
 Requires: gsequencer-lib = %{version}-%{release}
 Requires: gsequencer-license = %{version}-%{release}
 Requires: gsequencer-locales = %{version}-%{release}
@@ -70,7 +69,6 @@ Summary: bin components for the gsequencer package.
 Group: Binaries
 Requires: gsequencer-data = %{version}-%{release}
 Requires: gsequencer-license = %{version}-%{release}
-Requires: gsequencer-filemap = %{version}-%{release}
 
 %description bin
 bin components for the gsequencer package.
@@ -106,20 +104,11 @@ Requires: gsequencer-man = %{version}-%{release}
 doc components for the gsequencer package.
 
 
-%package filemap
-Summary: filemap components for the gsequencer package.
-Group: Default
-
-%description filemap
-filemap components for the gsequencer package.
-
-
 %package lib
 Summary: lib components for the gsequencer package.
 Group: Libraries
 Requires: gsequencer-data = %{version}-%{release}
 Requires: gsequencer-license = %{version}-%{release}
-Requires: gsequencer-filemap = %{version}-%{release}
 
 %description lib
 lib components for the gsequencer package.
@@ -150,10 +139,13 @@ man components for the gsequencer package.
 
 
 %prep
-%setup -q -n gsequencer-4.5.5
-cd %{_builddir}/gsequencer-4.5.5
+%setup -q -n gsequencer-5.0.2
+cd %{_builddir}/gsequencer-5.0.2
 pushd ..
-cp -a gsequencer-4.5.5 buildavx512
+cp -a gsequencer-5.0.2 buildavx2
+popd
+pushd ..
+cp -a gsequencer-5.0.2 buildavx512
 popd
 
 %build
@@ -161,20 +153,32 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681828518
+export SOURCE_DATE_EPOCH=1683298133
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 %configure --disable-static --enable-silent-rules \
 --enable-pulse \
 --disable-jack
 make  %{?_smp_mflags}
 
+unset PKG_CONFIG_PATH
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3"
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
+%configure --disable-static --enable-silent-rules \
+--enable-pulse \
+--disable-jack
+make  %{?_smp_mflags}
+popd
 unset PKG_CONFIG_PATH
 pushd ../buildavx512/
 export CFLAGS="$CFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=512 -Wl,-z,x86-64-v4 "
@@ -193,11 +197,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check || :
+cd ../buildavx2;
+make %{?_smp_mflags} check || : || :
 cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1681828518
+export SOURCE_DATE_EPOCH=1683298133
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -207,12 +213,15 @@ cp %{_builddir}/gsequencer-%{version}/COPYING.stk-4.3 %{buildroot}/usr/share/pac
 cp %{_builddir}/gsequencer-%{version}/license-notice-gnu-agpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7 || :
 cp %{_builddir}/gsequencer-%{version}/license-notice-gnu-agpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/9cbbf4ca39657759b5897bb110c62f6008fb9469 || :
 cp %{_builddir}/gsequencer-%{version}/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369 || :
-cp %{_builddir}/gsequencer-%{version}/license-notice-gnu-gpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/838c63f755afa4a58cde028a6973d8016d00b56b || :
+pushd ../buildavx2/
+%make_install_v3
+popd
 pushd ../buildavx512/
 %make_install_v4
 popd
 %make_install
 %find_lang gsequencer
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 /usr/bin/elf-move.py avx512 %{buildroot}-v4 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
@@ -220,9 +229,12 @@ popd
 
 %files bin
 %defattr(-,root,root,-)
+/V3/usr/bin/gsequencer
+/V3/usr/bin/midi2xml
+/V4/usr/bin/gsequencer
+/V4/usr/bin/midi2xml
 /usr/bin/gsequencer
 /usr/bin/midi2xml
-/usr/share/clear/optimized-elf/bin*
 
 %files data
 %defattr(-,root,root,-)
@@ -240,15 +252,27 @@ popd
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/4.5.5/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/4.5.5/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/4.5.5/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/4.5.5/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.0.2/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.0.2/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.0.2/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.0.2/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
 %files dev
 %defattr(-,root,root,-)
+/V3/usr/lib64/libags.so
+/V3/usr/lib64/libags_audio.so
+/V3/usr/lib64/libags_gui.so
+/V3/usr/lib64/libags_server.so
+/V3/usr/lib64/libags_thread.so
+/V3/usr/lib64/libgsequencer.so
+/V4/usr/lib64/libags.so
+/V4/usr/lib64/libags_audio.so
+/V4/usr/lib64/libags_gui.so
+/V4/usr/lib64/libags_server.so
+/V4/usr/lib64/libags_thread.so
+/V4/usr/lib64/libgsequencer.so
 /usr/include/ags/ags_api_config.h
 /usr/include/ags/audio/ags_acceleration.h
 /usr/include/ags/audio/ags_audio.h
@@ -718,12 +742,6 @@ popd
 /usr/include/ags/widget/ags_scrolled_piano.h
 /usr/include/ags/widget/ags_scrolled_scale_box.h
 /usr/include/ags/widget/ags_widget_marshal.h
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags.so
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_audio.so
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_gui.so
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_server.so
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_thread.so
-/usr/lib64/glibc-hwcaps/x86-64-v4/libgsequencer.so
 /usr/lib64/libags.so
 /usr/lib64/libags_audio.so
 /usr/lib64/libags_gui.so
@@ -739,34 +757,42 @@ popd
 %defattr(0644,root,root,0755)
 /usr/share/doc/gsequencer/*
 
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-gsequencer
-
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags.so.4
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags.so.4.0.0
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_audio.so.4
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_audio.so.4.0.0
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_gui.so.4
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_gui.so.4.0.0
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_server.so.4
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_server.so.4.0.0
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_thread.so.4
-/usr/lib64/glibc-hwcaps/x86-64-v4/libags_thread.so.4.0.0
-/usr/lib64/glibc-hwcaps/x86-64-v4/libgsequencer.so.0
-/usr/lib64/glibc-hwcaps/x86-64-v4/libgsequencer.so.0.0.1
-/usr/lib64/libags.so.4
-/usr/lib64/libags.so.4.0.0
-/usr/lib64/libags_audio.so.4
-/usr/lib64/libags_audio.so.4.0.0
-/usr/lib64/libags_gui.so.4
-/usr/lib64/libags_gui.so.4.0.0
-/usr/lib64/libags_server.so.4
-/usr/lib64/libags_server.so.4.0.0
-/usr/lib64/libags_thread.so.4
-/usr/lib64/libags_thread.so.4.0.0
+/V3/usr/lib64/libags.so.5
+/V3/usr/lib64/libags.so.5.0.0
+/V3/usr/lib64/libags_audio.so.5
+/V3/usr/lib64/libags_audio.so.5.0.0
+/V3/usr/lib64/libags_gui.so.5
+/V3/usr/lib64/libags_gui.so.5.0.0
+/V3/usr/lib64/libags_server.so.5
+/V3/usr/lib64/libags_server.so.5.0.0
+/V3/usr/lib64/libags_thread.so.5
+/V3/usr/lib64/libags_thread.so.5.0.0
+/V3/usr/lib64/libgsequencer.so.0
+/V3/usr/lib64/libgsequencer.so.0.0.1
+/V4/usr/lib64/libags.so.5
+/V4/usr/lib64/libags.so.5.0.0
+/V4/usr/lib64/libags_audio.so.5
+/V4/usr/lib64/libags_audio.so.5.0.0
+/V4/usr/lib64/libags_gui.so.5
+/V4/usr/lib64/libags_gui.so.5.0.0
+/V4/usr/lib64/libags_server.so.5
+/V4/usr/lib64/libags_server.so.5.0.0
+/V4/usr/lib64/libags_thread.so.5
+/V4/usr/lib64/libags_thread.so.5.0.0
+/V4/usr/lib64/libgsequencer.so.0
+/V4/usr/lib64/libgsequencer.so.0.0.1
+/usr/lib64/libags.so.5
+/usr/lib64/libags.so.5.0.0
+/usr/lib64/libags_audio.so.5
+/usr/lib64/libags_audio.so.5.0.0
+/usr/lib64/libags_gui.so.5
+/usr/lib64/libags_gui.so.5.0.0
+/usr/lib64/libags_server.so.5
+/usr/lib64/libags_server.so.5.0.0
+/usr/lib64/libags_thread.so.5
+/usr/lib64/libags_thread.so.5.0.0
 /usr/lib64/libgsequencer.so.0
 /usr/lib64/libgsequencer.so.0.0.1
 
@@ -775,7 +801,6 @@ popd
 /usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369
 /usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
 /usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
-/usr/share/package-licenses/gsequencer/838c63f755afa4a58cde028a6973d8016d00b56b
 /usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
 /usr/share/package-licenses/gsequencer/9cbbf4ca39657759b5897bb110c62f6008fb9469
 /usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
