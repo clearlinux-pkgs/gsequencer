@@ -7990,6 +7990,8 @@ libgsequencer.so.0:ags_simple_file_read_pad_list
 libgsequencer.so.0:ags_simple_file_read_pitch_sampler_launch
 libgsequencer.so.0:ags_simple_file_read_preset
 libgsequencer.so.0:ags_simple_file_read_preset_list
+libgsequencer.so.0:ags_simple_file_read_program
+libgsequencer.so.0:ags_simple_file_read_program_list
 libgsequencer.so.0:ags_simple_file_read_property
 libgsequencer.so.0:ags_simple_file_read_property_list
 libgsequencer.so.0:ags_simple_file_read_resolve
@@ -8054,6 +8056,8 @@ libgsequencer.so.0:ags_simple_file_write_pad
 libgsequencer.so.0:ags_simple_file_write_pad_list
 libgsequencer.so.0:ags_simple_file_write_preset
 libgsequencer.so.0:ags_simple_file_write_preset_list
+libgsequencer.so.0:ags_simple_file_write_program
+libgsequencer.so.0:ags_simple_file_write_program_list
 libgsequencer.so.0:ags_simple_file_write_property
 libgsequencer.so.0:ags_simple_file_write_property_list
 libgsequencer.so.0:ags_simple_file_write_resolve
