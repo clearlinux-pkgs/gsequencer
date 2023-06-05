@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : gsequencer
-Version  : 5.1.4
-Release  : 72
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/5.1.x/gsequencer-5.1.4.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/5.1.x/gsequencer-5.1.4.tar.gz
+Version  : 5.3.0
+Release  : 73
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/5.3.x/gsequencer-5.3.0.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/5.3.x/gsequencer-5.3.0.tar.gz
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
@@ -44,6 +44,7 @@ BuildRequires : pkgconfig(gstreamer-video-1.0)
 BuildRequires : pkgconfig(gthread-2.0)
 BuildRequires : pkgconfig(gtk4)
 BuildRequires : pkgconfig(gtk4-unix-print)
+BuildRequires : pkgconfig(json-glib-1.0)
 BuildRequires : pkgconfig(libpulse-mainloop-glib)
 BuildRequires : pkgconfig(libsoup-3.0)
 BuildRequires : pkgconfig(libxml-2.0)
@@ -139,13 +140,13 @@ man components for the gsequencer package.
 
 
 %prep
-%setup -q -n gsequencer-5.1.4
-cd %{_builddir}/gsequencer-5.1.4
+%setup -q -n gsequencer-5.3.0
+cd %{_builddir}/gsequencer-5.3.0
 pushd ..
-cp -a gsequencer-5.1.4 buildavx2
+cp -a gsequencer-5.3.0 buildavx2
 popd
 pushd ..
-cp -a gsequencer-5.1.4 buildavx512
+cp -a gsequencer-5.3.0 buildavx512
 popd
 
 %build
@@ -153,7 +154,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684180974
+export SOURCE_DATE_EPOCH=1685975829
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -203,7 +204,7 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1684180974
+export SOURCE_DATE_EPOCH=1685975829
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -252,27 +253,15 @@ popd
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/5.1.4/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/5.1.4/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/5.1.4/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/5.1.4/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.3.0/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.3.0/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.3.0/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.3.0/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libags.so
-/V3/usr/lib64/libags_audio.so
-/V3/usr/lib64/libags_gui.so
-/V3/usr/lib64/libags_server.so
-/V3/usr/lib64/libags_thread.so
-/V3/usr/lib64/libgsequencer.so
-/V4/usr/lib64/libags.so
-/V4/usr/lib64/libags_audio.so
-/V4/usr/lib64/libags_gui.so
-/V4/usr/lib64/libags_server.so
-/V4/usr/lib64/libags_thread.so
-/V4/usr/lib64/libgsequencer.so
 /usr/include/ags/ags_api_config.h
 /usr/include/ags/audio/ags_acceleration.h
 /usr/include/ags/audio/ags_audio.h
@@ -348,6 +337,7 @@ popd
 /usr/include/ags/audio/ags_synth_util.h
 /usr/include/ags/audio/ags_time_stretch_util.h
 /usr/include/ags/audio/ags_track.h
+/usr/include/ags/audio/ags_tremolo_util.h
 /usr/include/ags/audio/ags_volume_util.h
 /usr/include/ags/audio/ags_wave.h
 /usr/include/ags/audio/alsa/ags_alsa_devin.h
@@ -490,6 +480,12 @@ popd
 /usr/include/ags/audio/fx/ags_fx_synth_channel.h
 /usr/include/ags/audio/fx/ags_fx_synth_channel_processor.h
 /usr/include/ags/audio/fx/ags_fx_synth_recycling.h
+/usr/include/ags/audio/fx/ags_fx_tremolo_audio.h
+/usr/include/ags/audio/fx/ags_fx_tremolo_audio_processor.h
+/usr/include/ags/audio/fx/ags_fx_tremolo_audio_signal.h
+/usr/include/ags/audio/fx/ags_fx_tremolo_channel.h
+/usr/include/ags/audio/fx/ags_fx_tremolo_channel_processor.h
+/usr/include/ags/audio/fx/ags_fx_tremolo_recycling.h
 /usr/include/ags/audio/fx/ags_fx_two_pass_aliase_audio.h
 /usr/include/ags/audio/fx/ags_fx_two_pass_aliase_audio_processor.h
 /usr/include/ags/audio/fx/ags_fx_two_pass_aliase_audio_signal.h
@@ -502,6 +498,12 @@ popd
 /usr/include/ags/audio/fx/ags_fx_volume_channel.h
 /usr/include/ags/audio/fx/ags_fx_volume_channel_processor.h
 /usr/include/ags/audio/fx/ags_fx_volume_recycling.h
+/usr/include/ags/audio/fx/ags_fx_wah_wah_audio.h
+/usr/include/ags/audio/fx/ags_fx_wah_wah_audio_processor.h
+/usr/include/ags/audio/fx/ags_fx_wah_wah_audio_signal.h
+/usr/include/ags/audio/fx/ags_fx_wah_wah_channel.h
+/usr/include/ags/audio/fx/ags_fx_wah_wah_channel_processor.h
+/usr/include/ags/audio/fx/ags_fx_wah_wah_recycling.h
 /usr/include/ags/audio/gstreamer/ags_gstreamer_client.h
 /usr/include/ags/audio/gstreamer/ags_gstreamer_devin.h
 /usr/include/ags/audio/gstreamer/ags_gstreamer_devout.h
@@ -762,29 +764,17 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libags.so.5
 /V3/usr/lib64/libags.so.5.0.0
-/V3/usr/lib64/libags_audio.so.5
 /V3/usr/lib64/libags_audio.so.5.0.0
-/V3/usr/lib64/libags_gui.so.5
 /V3/usr/lib64/libags_gui.so.5.0.0
-/V3/usr/lib64/libags_server.so.5
 /V3/usr/lib64/libags_server.so.5.0.0
-/V3/usr/lib64/libags_thread.so.5
 /V3/usr/lib64/libags_thread.so.5.0.0
-/V3/usr/lib64/libgsequencer.so.0
 /V3/usr/lib64/libgsequencer.so.0.0.1
-/V4/usr/lib64/libags.so.5
 /V4/usr/lib64/libags.so.5.0.0
-/V4/usr/lib64/libags_audio.so.5
 /V4/usr/lib64/libags_audio.so.5.0.0
-/V4/usr/lib64/libags_gui.so.5
 /V4/usr/lib64/libags_gui.so.5.0.0
-/V4/usr/lib64/libags_server.so.5
 /V4/usr/lib64/libags_server.so.5.0.0
-/V4/usr/lib64/libags_thread.so.5
 /V4/usr/lib64/libags_thread.so.5.0.0
-/V4/usr/lib64/libgsequencer.so.0
 /V4/usr/lib64/libgsequencer.so.0.0.1
 /usr/lib64/libags.so.5
 /usr/lib64/libags.so.5.0.0
