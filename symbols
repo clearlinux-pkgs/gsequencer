@@ -374,6 +374,7 @@ libags.so.5:ags_solver_matrix_new
 libags.so.5:ags_solver_matrix_parse
 libags.so.5:ags_solver_matrix_remove_vector
 libags.so.5:ags_solver_matrix_set_source_function
+libags.so.5:ags_solver_matrix_solve_default
 libags.so.5:ags_solver_polynomial_add
 libags.so.5:ags_solver_polynomial_divide
 libags.so.5:ags_solver_polynomial_error_quark
