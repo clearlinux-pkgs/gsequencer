@@ -5,7 +5,7 @@
 #
 Name     : gsequencer
 Version  : 5.3.7
-Release  : 76
+Release  : 77
 URL      : https://download.savannah.nongnu.org/releases/gsequencer/5.3.x/gsequencer-5.3.7.tar.gz
 Source0  : https://download.savannah.nongnu.org/releases/gsequencer/5.3.x/gsequencer-5.3.7.tar.gz
 Summary  : Advanced Gtk+ Sequencer audio processing engine
