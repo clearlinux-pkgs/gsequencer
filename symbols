@@ -1130,6 +1130,7 @@ libags_audio.so.5:ags_automation_is_acceleration_selected
 libags_audio.so.5:ags_automation_new
 libags_audio.so.5:ags_automation_remove_acceleration
 libags_audio.so.5:ags_automation_remove_acceleration_at_position
+libags_audio.so.5:ags_automation_remove_all_empty
 libags_audio.so.5:ags_automation_remove_point_from_selection
 libags_audio.so.5:ags_automation_remove_region_from_selection
 libags_audio.so.5:ags_automation_set_acceleration
@@ -3621,10 +3622,12 @@ libags_audio.so.5:ags_program_find_region
 libags_audio.so.5:ags_program_flags_get_type
 libags_audio.so.5:ags_program_free_all_selection
 libags_audio.so.5:ags_program_free_selection
+libags_audio.so.5:ags_program_get_control_name
 libags_audio.so.5:ags_program_get_control_name_unique
 libags_audio.so.5:ags_program_get_marker
 libags_audio.so.5:ags_program_get_obj_mutex
 libags_audio.so.5:ags_program_get_selection
+libags_audio.so.5:ags_program_get_timestamp
 libags_audio.so.5:ags_program_get_type
 libags_audio.so.5:ags_program_insert_from_clipboard
 libags_audio.so.5:ags_program_insert_from_clipboard_extended
@@ -3633,8 +3636,10 @@ libags_audio.so.5:ags_program_new
 libags_audio.so.5:ags_program_remove_marker
 libags_audio.so.5:ags_program_remove_marker_at_position
 libags_audio.so.5:ags_program_remove_region_from_selection
+libags_audio.so.5:ags_program_set_control_name
 libags_audio.so.5:ags_program_set_flags
 libags_audio.so.5:ags_program_set_marker
+libags_audio.so.5:ags_program_set_timestamp
 libags_audio.so.5:ags_program_sort_func
 libags_audio.so.5:ags_program_test_flags
 libags_audio.so.5:ags_program_unset_flags
@@ -5437,6 +5442,7 @@ libgsequencer.so.0:ags_automation_edit_box_notify_height_request_callback
 libgsequencer.so.0:ags_automation_edit_box_notify_width_request_callback
 libgsequencer.so.0:ags_automation_edit_box_remove_automation_edit
 libgsequencer.so.0:ags_automation_edit_class_init
+libgsequencer.so.0:ags_automation_edit_compare_x_offset_func
 libgsequencer.so.0:ags_automation_edit_connect
 libgsequencer.so.0:ags_automation_edit_connectable_interface_init
 libgsequencer.so.0:ags_automation_edit_disconnect
@@ -5461,6 +5467,8 @@ libgsequencer.so.0:ags_automation_edit_drawing_area_motion_notify_position_curso
 libgsequencer.so.0:ags_automation_edit_drawing_area_motion_notify_select_acceleration
 libgsequencer.so.0:ags_automation_edit_drawing_area_resize_callback
 libgsequencer.so.0:ags_automation_edit_finalize
+libgsequencer.so.0:ags_automation_edit_find_first_drawn_func
+libgsequencer.so.0:ags_automation_edit_find_last_drawn_func
 libgsequencer.so.0:ags_automation_edit_frame_clock_update_callback
 libgsequencer.so.0:ags_automation_edit_gesture_click_pressed_callback
 libgsequencer.so.0:ags_automation_edit_gesture_click_released_callback
@@ -8437,6 +8445,7 @@ libgsequencer.so.0:ags_synth_update
 libgsequencer.so.0:ags_synth_update_callback
 libgsequencer.so.0:ags_tempo_edit_auto_scroll_timeout
 libgsequencer.so.0:ags_tempo_edit_class_init
+libgsequencer.so.0:ags_tempo_edit_compare_x_offset_func
 libgsequencer.so.0:ags_tempo_edit_connect
 libgsequencer.so.0:ags_tempo_edit_connectable_interface_init
 libgsequencer.so.0:ags_tempo_edit_disconnect
@@ -8461,6 +8470,8 @@ libgsequencer.so.0:ags_tempo_edit_drawing_area_motion_notify_position_cursor
 libgsequencer.so.0:ags_tempo_edit_drawing_area_motion_notify_select_marker
 libgsequencer.so.0:ags_tempo_edit_drawing_area_resize_callback
 libgsequencer.so.0:ags_tempo_edit_finalize
+libgsequencer.so.0:ags_tempo_edit_find_first_drawn_func
+libgsequencer.so.0:ags_tempo_edit_find_last_drawn_func
 libgsequencer.so.0:ags_tempo_edit_frame_clock_update_callback
 libgsequencer.so.0:ags_tempo_edit_gesture_click_pressed_callback
 libgsequencer.so.0:ags_tempo_edit_gesture_click_released_callback
