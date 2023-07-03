@@ -783,6 +783,7 @@ libags_audio.so.5:ags_audio_file_link_new
 libags_audio.so.5:ags_audio_file_manager_add_audio_file
 libags_audio.so.5:ags_audio_file_manager_find_audio_file
 libags_audio.so.5:ags_audio_file_manager_get_instance
+libags_audio.so.5:ags_audio_file_manager_get_obj_mutex
 libags_audio.so.5:ags_audio_file_manager_get_type
 libags_audio.so.5:ags_audio_file_manager_new
 libags_audio.so.5:ags_audio_file_manager_remove_audio_file
@@ -891,6 +892,7 @@ libags_audio.so.5:ags_audio_open_midi_file_as_notation
 libags_audio.so.5:ags_audio_play_recall
 libags_audio.so.5:ags_audio_recursive_run_stage
 libags_audio.so.5:ags_audio_recursive_set_property
+libags_audio.so.5:ags_audio_remove_all_empty_automation
 libags_audio.so.5:ags_audio_remove_automation
 libags_audio.so.5:ags_audio_remove_automation_port
 libags_audio.so.5:ags_audio_remove_cursor
@@ -1094,8 +1096,14 @@ libags_audio.so.5:ags_automation_add_acceleration
 libags_audio.so.5:ags_automation_add_all_to_selection
 libags_audio.so.5:ags_automation_add_point_to_selection
 libags_audio.so.5:ags_automation_add_region_to_selection
+libags_audio.so.5:ags_automation_control_name_key_manager_find_automation
+libags_audio.so.5:ags_automation_control_name_key_manager_get_instance
+libags_audio.so.5:ags_automation_control_name_key_manager_get_obj_mutex
+libags_audio.so.5:ags_automation_control_name_key_manager_get_type
+libags_audio.so.5:ags_automation_control_name_key_manager_new
 libags_audio.so.5:ags_automation_copy_selection
 libags_audio.so.5:ags_automation_cut_selection
+libags_audio.so.5:ags_automation_filter
 libags_audio.so.5:ags_automation_find_channel_type_with_control_name
 libags_audio.so.5:ags_automation_find_near_timestamp
 libags_audio.so.5:ags_automation_find_near_timestamp_extended
@@ -1110,6 +1118,7 @@ libags_audio.so.5:ags_automation_free_selection
 libags_audio.so.5:ags_automation_get_acceleration
 libags_audio.so.5:ags_automation_get_audio
 libags_audio.so.5:ags_automation_get_channel_type
+libags_audio.so.5:ags_automation_get_control_key
 libags_audio.so.5:ags_automation_get_control_name
 libags_audio.so.5:ags_automation_get_default_value
 libags_audio.so.5:ags_automation_get_line
@@ -1136,6 +1145,7 @@ libags_audio.so.5:ags_automation_remove_region_from_selection
 libags_audio.so.5:ags_automation_set_acceleration
 libags_audio.so.5:ags_automation_set_audio
 libags_audio.so.5:ags_automation_set_channel_type
+libags_audio.so.5:ags_automation_set_control_key
 libags_audio.so.5:ags_automation_set_control_name
 libags_audio.so.5:ags_automation_set_default_value
 libags_audio.so.5:ags_automation_set_flags
@@ -3563,6 +3573,9 @@ libags_audio.so.5:ags_port_add_automation
 libags_audio.so.5:ags_port_find_plugin_port
 libags_audio.so.5:ags_port_find_specifier
 libags_audio.so.5:ags_port_flags_get_type
+libags_audio.so.5:ags_port_get_automation
+libags_audio.so.5:ags_port_get_channel_type
+libags_audio.so.5:ags_port_get_line
 libags_audio.so.5:ags_port_get_type
 libags_audio.so.5:ags_port_new
 libags_audio.so.5:ags_port_remove_automation
@@ -3612,8 +3625,14 @@ libags_audio.so.5:ags_program_add
 libags_audio.so.5:ags_program_add_all_to_selection
 libags_audio.so.5:ags_program_add_marker
 libags_audio.so.5:ags_program_add_region_to_selection
+libags_audio.so.5:ags_program_control_name_key_manager_find_program
+libags_audio.so.5:ags_program_control_name_key_manager_get_instance
+libags_audio.so.5:ags_program_control_name_key_manager_get_obj_mutex
+libags_audio.so.5:ags_program_control_name_key_manager_get_type
+libags_audio.so.5:ags_program_control_name_key_manager_new
 libags_audio.so.5:ags_program_copy_selection
 libags_audio.so.5:ags_program_cut_selection
+libags_audio.so.5:ags_program_filter
 libags_audio.so.5:ags_program_find_control_name
 libags_audio.so.5:ags_program_find_near_timestamp
 libags_audio.so.5:ags_program_find_near_timestamp_extended
@@ -3622,6 +3641,7 @@ libags_audio.so.5:ags_program_find_region
 libags_audio.so.5:ags_program_flags_get_type
 libags_audio.so.5:ags_program_free_all_selection
 libags_audio.so.5:ags_program_free_selection
+libags_audio.so.5:ags_program_get_control_key
 libags_audio.so.5:ags_program_get_control_name
 libags_audio.so.5:ags_program_get_control_name_unique
 libags_audio.so.5:ags_program_get_marker
@@ -3636,6 +3656,7 @@ libags_audio.so.5:ags_program_new
 libags_audio.so.5:ags_program_remove_marker
 libags_audio.so.5:ags_program_remove_marker_at_position
 libags_audio.so.5:ags_program_remove_region_from_selection
+libags_audio.so.5:ags_program_set_control_key
 libags_audio.so.5:ags_program_set_control_name
 libags_audio.so.5:ags_program_set_flags
 libags_audio.so.5:ags_program_set_marker
