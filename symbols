@@ -3653,6 +3653,7 @@ libags_audio.so.5:ags_program_insert_from_clipboard
 libags_audio.so.5:ags_program_insert_from_clipboard_extended
 libags_audio.so.5:ags_program_is_marker_selected
 libags_audio.so.5:ags_program_new
+libags_audio.so.5:ags_program_remove_all_empty
 libags_audio.so.5:ags_program_remove_marker
 libags_audio.so.5:ags_program_remove_marker_at_position
 libags_audio.so.5:ags_program_remove_region_from_selection
@@ -4337,6 +4338,7 @@ libags_audio.so.5:ags_sound_provider_get_program
 libags_audio.so.5:ags_sound_provider_get_sequencer
 libags_audio.so.5:ags_sound_provider_get_sound_server
 libags_audio.so.5:ags_sound_provider_get_soundcard
+libags_audio.so.5:ags_sound_provider_get_tempo
 libags_audio.so.5:ags_sound_provider_get_type
 libags_audio.so.5:ags_sound_provider_set_audio
 libags_audio.so.5:ags_sound_provider_set_default_soundcard
@@ -4346,6 +4348,7 @@ libags_audio.so.5:ags_sound_provider_set_program
 libags_audio.so.5:ags_sound_provider_set_sequencer
 libags_audio.so.5:ags_sound_provider_set_sound_server
 libags_audio.so.5:ags_sound_provider_set_soundcard
+libags_audio.so.5:ags_sound_provider_set_tempo
 libags_audio.so.5:ags_sound_resource_close
 libags_audio.so.5:ags_sound_resource_flush
 libags_audio.so.5:ags_sound_resource_get_presets
@@ -6498,6 +6501,7 @@ libgsequencer.so.0:ags_gsequencer_application_context_get_show_animation
 libgsequencer.so.0:ags_gsequencer_application_context_get_sound_server
 libgsequencer.so.0:ags_gsequencer_application_context_get_soundcard
 libgsequencer.so.0:ags_gsequencer_application_context_get_task_launcher
+libgsequencer.so.0:ags_gsequencer_application_context_get_tempo
 libgsequencer.so.0:ags_gsequencer_application_context_get_thread_pool
 libgsequencer.so.0:ags_gsequencer_application_context_get_type
 libgsequencer.so.0:ags_gsequencer_application_context_get_window
@@ -6547,6 +6551,7 @@ libgsequencer.so.0:ags_gsequencer_application_context_set_show_animation
 libgsequencer.so.0:ags_gsequencer_application_context_set_sound_server
 libgsequencer.so.0:ags_gsequencer_application_context_set_soundcard
 libgsequencer.so.0:ags_gsequencer_application_context_set_task_launcher
+libgsequencer.so.0:ags_gsequencer_application_context_set_tempo
 libgsequencer.so.0:ags_gsequencer_application_context_set_thread_pool
 libgsequencer.so.0:ags_gsequencer_application_context_set_window
 libgsequencer.so.0:ags_gsequencer_application_context_set_worker
