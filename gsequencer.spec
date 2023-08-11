@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : gsequencer
-Version  : 5.4.3
-Release  : 82
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/5.4.x/gsequencer-5.4.3.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/5.4.x/gsequencer-5.4.3.tar.gz
+Version  : 5.5.3
+Release  : 83
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/5.5.x/gsequencer-5.5.3.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/5.5.x/gsequencer-5.5.3.tar.gz
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
@@ -59,11 +59,13 @@ BuildRequires : pkgconfig(uuid)
 %description
 Advanced Gtk+ Sequencer
 ====
-The gsequencer binary provides you a user interface. It allows you to play, capture and create music. There is a piano roll,
-automation and wave form editor. It has machines for playing drum samples, Soundfont2 sound containers and synthesizers. They
-usually can be connected to a MIDI input source (instrument). All sources need to be connected to the sink provided by AgsPanel,
-thus the properties dialog from machine's context menu is responsible. The engine is extensible by following plugin formats:
-LADSPA, DSSI, LV2 and VST3. It has support for various audio backends like ALSA, Pulseaudio, JACK, OSSv4 and CoreAudio.
+The gsequencer binary provides you a user interface. It allows you to play,
+capture and create music. There is a piano roll, automation and wave form
+editor. It has machines for playing drum samples, Soundfont2 sound containers
+and synthesizers. They usually can be connected to a MIDI input source
+(instrument). All sources need to be connected to the sink provided by
+AgsPanel, thus the properties dialog from machine's context menu is
+responsible.
 
 %package bin
 Summary: bin components for the gsequencer package.
@@ -140,13 +142,13 @@ man components for the gsequencer package.
 
 
 %prep
-%setup -q -n gsequencer-5.4.3
-cd %{_builddir}/gsequencer-5.4.3
+%setup -q -n gsequencer-5.5.3
+cd %{_builddir}/gsequencer-5.5.3
 pushd ..
-cp -a gsequencer-5.4.3 buildavx2
+cp -a gsequencer-5.5.3 buildavx2
 popd
 pushd ..
-cp -a gsequencer-5.4.3 buildavx512
+cp -a gsequencer-5.5.3 buildavx512
 popd
 
 %build
@@ -154,7 +156,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1690231311
+export SOURCE_DATE_EPOCH=1691767270
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -204,7 +206,7 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1690231311
+export SOURCE_DATE_EPOCH=1691767270
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -253,10 +255,10 @@ popd
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/5.4.3/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/5.4.3/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/5.4.3/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/5.4.3/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.5.3/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.5.3/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.5.3/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/5.5.3/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
@@ -520,6 +522,7 @@ popd
 /usr/include/ags/audio/jack/ags_jack_server.h
 /usr/include/ags/audio/midi/ags_midi_buffer_util.h
 /usr/include/ags/audio/midi/ags_midi_builder.h
+/usr/include/ags/audio/midi/ags_midi_ci_util.h
 /usr/include/ags/audio/midi/ags_midi_file.h
 /usr/include/ags/audio/midi/ags_midi_parser.h
 /usr/include/ags/audio/midi/ags_midi_util.h
