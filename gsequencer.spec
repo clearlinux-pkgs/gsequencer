@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : gsequencer
-Version  : 5.5.4
-Release  : 84
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/5.5.x/gsequencer-5.5.4.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/5.5.x/gsequencer-5.5.4.tar.gz
+Version  : 6.0.3
+Release  : 85
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/6.0.x/gsequencer-6.0.3.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/6.0.x/gsequencer-6.0.3.tar.gz
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
@@ -142,13 +142,13 @@ man components for the gsequencer package.
 
 
 %prep
-%setup -q -n gsequencer-5.5.4
-cd %{_builddir}/gsequencer-5.5.4
+%setup -q -n gsequencer-6.0.3
+cd %{_builddir}/gsequencer-6.0.3
 pushd ..
-cp -a gsequencer-5.5.4 buildavx2
+cp -a gsequencer-6.0.3 buildavx2
 popd
 pushd ..
-cp -a gsequencer-5.5.4 buildavx512
+cp -a gsequencer-6.0.3 buildavx512
 popd
 
 %build
@@ -156,7 +156,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1692370437
+export SOURCE_DATE_EPOCH=1693321685
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -206,7 +206,7 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1692370437
+export SOURCE_DATE_EPOCH=1693321685
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -214,7 +214,6 @@ cp %{_builddir}/gsequencer-%{version}/COPYING.docs %{buildroot}/usr/share/packag
 cp %{_builddir}/gsequencer-%{version}/COPYING.server %{buildroot}/usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837 || :
 cp %{_builddir}/gsequencer-%{version}/COPYING.stk-4.3 %{buildroot}/usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd || :
 cp %{_builddir}/gsequencer-%{version}/license-notice-gnu-agpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7 || :
-cp %{_builddir}/gsequencer-%{version}/license-notice-gnu-agpl-3-0+-sym.txt %{buildroot}/usr/share/package-licenses/gsequencer/9cbbf4ca39657759b5897bb110c62f6008fb9469 || :
 cp %{_builddir}/gsequencer-%{version}/license-notice-gnu-gpl-3-0+-c.txt %{buildroot}/usr/share/package-licenses/gsequencer/19a9f9334535d8418421d7018a7ca0abe6d4c369 || :
 pushd ../buildavx2/
 %make_install_v3
@@ -255,10 +254,10 @@ popd
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/5.5.4/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/5.5.4/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/5.5.4/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/5.5.4/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.0.3/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.0.3/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.0.3/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.0.3/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
@@ -520,11 +519,11 @@ popd
 /usr/include/ags/audio/jack/ags_jack_midiin.h
 /usr/include/ags/audio/jack/ags_jack_port.h
 /usr/include/ags/audio/jack/ags_jack_server.h
-/usr/include/ags/audio/midi/ags_midi_buffer_util.h
 /usr/include/ags/audio/midi/ags_midi_builder.h
 /usr/include/ags/audio/midi/ags_midi_ci_util.h
 /usr/include/ags/audio/midi/ags_midi_file.h
 /usr/include/ags/audio/midi/ags_midi_parser.h
+/usr/include/ags/audio/midi/ags_midi_smf_util.h
 /usr/include/ags/audio/midi/ags_midi_ump_util.h
 /usr/include/ags/audio/midi/ags_midi_util.h
 /usr/include/ags/audio/osc/ags_osc_buffer_util.h
@@ -772,28 +771,28 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libags.so.5.0.0
-/V3/usr/lib64/libags_audio.so.5.0.0
-/V3/usr/lib64/libags_gui.so.5.0.0
-/V3/usr/lib64/libags_server.so.5.0.0
-/V3/usr/lib64/libags_thread.so.5.0.0
+/V3/usr/lib64/libags.so.6.0.0
+/V3/usr/lib64/libags_audio.so.6.0.0
+/V3/usr/lib64/libags_gui.so.6.0.0
+/V3/usr/lib64/libags_server.so.6.0.0
+/V3/usr/lib64/libags_thread.so.6.0.0
 /V3/usr/lib64/libgsequencer.so.0.0.1
-/V4/usr/lib64/libags.so.5.0.0
-/V4/usr/lib64/libags_audio.so.5.0.0
-/V4/usr/lib64/libags_gui.so.5.0.0
-/V4/usr/lib64/libags_server.so.5.0.0
-/V4/usr/lib64/libags_thread.so.5.0.0
+/V4/usr/lib64/libags.so.6.0.0
+/V4/usr/lib64/libags_audio.so.6.0.0
+/V4/usr/lib64/libags_gui.so.6.0.0
+/V4/usr/lib64/libags_server.so.6.0.0
+/V4/usr/lib64/libags_thread.so.6.0.0
 /V4/usr/lib64/libgsequencer.so.0.0.1
-/usr/lib64/libags.so.5
-/usr/lib64/libags.so.5.0.0
-/usr/lib64/libags_audio.so.5
-/usr/lib64/libags_audio.so.5.0.0
-/usr/lib64/libags_gui.so.5
-/usr/lib64/libags_gui.so.5.0.0
-/usr/lib64/libags_server.so.5
-/usr/lib64/libags_server.so.5.0.0
-/usr/lib64/libags_thread.so.5
-/usr/lib64/libags_thread.so.5.0.0
+/usr/lib64/libags.so.6
+/usr/lib64/libags.so.6.0.0
+/usr/lib64/libags_audio.so.6
+/usr/lib64/libags_audio.so.6.0.0
+/usr/lib64/libags_gui.so.6
+/usr/lib64/libags_gui.so.6.0.0
+/usr/lib64/libags_server.so.6
+/usr/lib64/libags_server.so.6.0.0
+/usr/lib64/libags_thread.so.6
+/usr/lib64/libags_thread.so.6.0.0
 /usr/lib64/libgsequencer.so.0
 /usr/lib64/libgsequencer.so.0.0.1
 
@@ -803,7 +802,6 @@ popd
 /usr/share/package-licenses/gsequencer/4dd48cd5313054fa2d2b4d4aea8bd1084eee03cd
 /usr/share/package-licenses/gsequencer/78e50e186b04c8fe1defaa098f1c192181b3d837
 /usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-/usr/share/package-licenses/gsequencer/9cbbf4ca39657759b5897bb110c62f6008fb9469
 /usr/share/package-licenses/gsequencer/e1d31e42d2a477d6def889000aa8ffc251f2354c
 /usr/share/package-licenses/gsequencer/f0577b80018542d52160156fa1ee8c69d47692c7
 
