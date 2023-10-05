@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : gsequencer
-Version  : 6.1.2
-Release  : 88
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/6.1.x/gsequencer-6.1.2.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/6.1.x/gsequencer-6.1.2.tar.gz
+Version  : 6.1.3
+Release  : 89
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/6.1.x/gsequencer-6.1.3.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/6.1.x/gsequencer-6.1.3.tar.gz
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
@@ -142,13 +142,13 @@ man components for the gsequencer package.
 
 
 %prep
-%setup -q -n gsequencer-6.1.2
-cd %{_builddir}/gsequencer-6.1.2
+%setup -q -n gsequencer-6.1.3
+cd %{_builddir}/gsequencer-6.1.3
 pushd ..
-cp -a gsequencer-6.1.2 buildavx2
+cp -a gsequencer-6.1.3 buildavx2
 popd
 pushd ..
-cp -a gsequencer-6.1.2 buildavx512
+cp -a gsequencer-6.1.3 buildavx512
 popd
 
 %build
@@ -156,7 +156,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1696344346
+export SOURCE_DATE_EPOCH=1696517626
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -226,7 +226,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1696344346
+export SOURCE_DATE_EPOCH=1696517626
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -274,10 +274,10 @@ popd
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/6.1.2/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/6.1.2/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/6.1.2/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/6.1.2/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.1.3/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.1.3/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.1.3/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.1.3/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
