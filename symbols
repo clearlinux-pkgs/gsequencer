@@ -5763,11 +5763,12 @@ libgsequencer.so.0:ags_add_sheet_page_dialog_response_callback
 libgsequencer.so.0:ags_add_sheet_page_dialog_set_update
 libgsequencer.so.0:ags_animation_window_class_init
 libgsequencer.so.0:ags_animation_window_draw
+libgsequencer.so.0:ags_animation_window_finalize
 libgsequencer.so.0:ags_animation_window_get_type
 libgsequencer.so.0:ags_animation_window_init
 libgsequencer.so.0:ags_animation_window_new
-libgsequencer.so.0:ags_animation_window_progress_timeout
 libgsequencer.so.0:ags_animation_window_snapshot
+libgsequencer.so.0:ags_animation_window_update_ui_callback
 libgsequencer.so.0:ags_app_action_util_about
 libgsequencer.so.0:ags_app_action_util_add_audiorec
 libgsequencer.so.0:ags_app_action_util_add_desk
@@ -5841,7 +5842,6 @@ libgsequencer.so.0:ags_audiorec_fast_export_run
 libgsequencer.so.0:ags_audiorec_finalize
 libgsequencer.so.0:ags_audiorec_get_indicator
 libgsequencer.so.0:ags_audiorec_get_type
-libgsequencer.so.0:ags_audiorec_indicator_queue_draw_timeout
 libgsequencer.so.0:ags_audiorec_init
 libgsequencer.so.0:ags_audiorec_input_map_recall
 libgsequencer.so.0:ags_audiorec_keep_data_callback
@@ -5857,8 +5857,8 @@ libgsequencer.so.0:ags_audiorec_replace_data_callback
 libgsequencer.so.0:ags_audiorec_resize_audio_channels
 libgsequencer.so.0:ags_audiorec_resize_pads
 libgsequencer.so.0:ags_audiorec_show
+libgsequencer.so.0:ags_audiorec_update_ui_callback
 libgsequencer.so.0:ags_audiorec_wave_loader_completed_timeout
-libgsequencer.so.0:ags_automation_edit_auto_scroll_timeout
 libgsequencer.so.0:ags_automation_edit_box_add_automation_edit
 libgsequencer.so.0:ags_automation_edit_box_child_height_request
 libgsequencer.so.0:ags_automation_edit_box_child_width_request
@@ -5907,6 +5907,7 @@ libgsequencer.so.0:ags_automation_edit_get_property
 libgsequencer.so.0:ags_automation_edit_get_type
 libgsequencer.so.0:ags_automation_edit_hscrollbar_value_changed
 libgsequencer.so.0:ags_automation_edit_init
+libgsequencer.so.0:ags_automation_edit_is_connected
 libgsequencer.so.0:ags_automation_edit_key_pressed_callback
 libgsequencer.so.0:ags_automation_edit_key_released_callback
 libgsequencer.so.0:ags_automation_edit_measure
@@ -5920,6 +5921,7 @@ libgsequencer.so.0:ags_automation_edit_set_property
 libgsequencer.so.0:ags_automation_edit_show
 libgsequencer.so.0:ags_automation_edit_size_allocate
 libgsequencer.so.0:ags_automation_edit_unrealize
+libgsequencer.so.0:ags_automation_edit_update_ui_callback
 libgsequencer.so.0:ags_automation_edit_vscrollbar_value_changed
 libgsequencer.so.0:ags_automation_meta_class_init
 libgsequencer.so.0:ags_automation_meta_connect
@@ -5977,13 +5979,14 @@ libgsequencer.so.0:ags_cell_pattern_gesture_click_released_callback
 libgsequencer.so.0:ags_cell_pattern_get_type
 libgsequencer.so.0:ags_cell_pattern_highlight_gutter_point
 libgsequencer.so.0:ags_cell_pattern_init
+libgsequencer.so.0:ags_cell_pattern_is_connected
 libgsequencer.so.0:ags_cell_pattern_key_pressed_callback
 libgsequencer.so.0:ags_cell_pattern_key_released_callback
-libgsequencer.so.0:ags_cell_pattern_led_queue_draw_timeout
 libgsequencer.so.0:ags_cell_pattern_modifiers_callback
 libgsequencer.so.0:ags_cell_pattern_new
 libgsequencer.so.0:ags_cell_pattern_redraw_gutter_point
 libgsequencer.so.0:ags_cell_pattern_unpaint_gutter_point
+libgsequencer.so.0:ags_cell_pattern_update_ui_callback
 libgsequencer.so.0:ags_composite_edit_add_to_registry
 libgsequencer.so.0:ags_composite_edit_class_init
 libgsequencer.so.0:ags_composite_edit_connect
@@ -6251,6 +6254,7 @@ libgsequencer.so.0:ags_crop_note_dialog_disconnect
 libgsequencer.so.0:ags_crop_note_dialog_finalize
 libgsequencer.so.0:ags_crop_note_dialog_get_type
 libgsequencer.so.0:ags_crop_note_dialog_init
+libgsequencer.so.0:ags_crop_note_dialog_is_connected
 libgsequencer.so.0:ags_crop_note_dialog_new
 libgsequencer.so.0:ags_crop_note_dialog_reset
 libgsequencer.so.0:ags_crop_note_dialog_response_callback
@@ -6423,8 +6427,8 @@ libgsequencer.so.0:ags_effect_bulk_get_bulk_member
 libgsequencer.so.0:ags_effect_bulk_get_bulk_member_entry
 libgsequencer.so.0:ags_effect_bulk_get_property
 libgsequencer.so.0:ags_effect_bulk_get_type
-libgsequencer.so.0:ags_effect_bulk_indicator_refresh_timeout
 libgsequencer.so.0:ags_effect_bulk_init
+libgsequencer.so.0:ags_effect_bulk_is_connected
 libgsequencer.so.0:ags_effect_bulk_map_recall
 libgsequencer.so.0:ags_effect_bulk_new
 libgsequencer.so.0:ags_effect_bulk_plugin_alloc
@@ -6451,6 +6455,7 @@ libgsequencer.so.0:ags_effect_bulk_set_flags
 libgsequencer.so.0:ags_effect_bulk_set_property
 libgsequencer.so.0:ags_effect_bulk_test_flags
 libgsequencer.so.0:ags_effect_bulk_unset_flags
+libgsequencer.so.0:ags_effect_bulk_update_ui_callback
 libgsequencer.so.0:ags_effect_line_add_effect_separator
 libgsequencer.so.0:ags_effect_line_add_ladspa_plugin
 libgsequencer.so.0:ags_effect_line_add_line_member
@@ -6473,8 +6478,8 @@ libgsequencer.so.0:ags_effect_line_get_effect_separator
 libgsequencer.so.0:ags_effect_line_get_line_member
 libgsequencer.so.0:ags_effect_line_get_property
 libgsequencer.so.0:ags_effect_line_get_type
-libgsequencer.so.0:ags_effect_line_indicator_queue_draw_timeout
 libgsequencer.so.0:ags_effect_line_init
+libgsequencer.so.0:ags_effect_line_is_connected
 libgsequencer.so.0:ags_effect_line_map_recall
 libgsequencer.so.0:ags_effect_line_new
 libgsequencer.so.0:ags_effect_line_plugin_alloc
@@ -6495,6 +6500,7 @@ libgsequencer.so.0:ags_effect_line_set_flags
 libgsequencer.so.0:ags_effect_line_set_property
 libgsequencer.so.0:ags_effect_line_test_flags
 libgsequencer.so.0:ags_effect_line_unset_flags
+libgsequencer.so.0:ags_effect_line_update_ui_callback
 libgsequencer.so.0:ags_effect_pad_add_effect_line
 libgsequencer.so.0:ags_effect_pad_buffer_size_changed
 libgsequencer.so.0:ags_effect_pad_class_init
@@ -6564,6 +6570,7 @@ libgsequencer.so.0:ags_envelope_editor_disconnect
 libgsequencer.so.0:ags_envelope_editor_get_active_preset
 libgsequencer.so.0:ags_envelope_editor_get_type
 libgsequencer.so.0:ags_envelope_editor_init
+libgsequencer.so.0:ags_envelope_editor_is_connected
 libgsequencer.so.0:ags_envelope_editor_load_preset
 libgsequencer.so.0:ags_envelope_editor_new
 libgsequencer.so.0:ags_envelope_editor_plot
@@ -6591,6 +6598,7 @@ libgsequencer.so.0:ags_envelope_info_disconnect
 libgsequencer.so.0:ags_envelope_info_finalize
 libgsequencer.so.0:ags_envelope_info_get_type
 libgsequencer.so.0:ags_envelope_info_init
+libgsequencer.so.0:ags_envelope_info_is_connected
 libgsequencer.so.0:ags_envelope_info_new
 libgsequencer.so.0:ags_envelope_info_plot
 libgsequencer.so.0:ags_envelope_info_plot_callback
@@ -7181,8 +7189,8 @@ libgsequencer.so.0:ags_line_get_property
 libgsequencer.so.0:ags_line_get_type
 libgsequencer.so.0:ags_line_group_changed
 libgsequencer.so.0:ags_line_group_toggled_callback
-libgsequencer.so.0:ags_line_indicator_refresh_timeout
 libgsequencer.so.0:ags_line_init
+libgsequencer.so.0:ags_line_is_connected
 libgsequencer.so.0:ags_line_map_recall
 libgsequencer.so.0:ags_line_member_button_clicked_callback
 libgsequencer.so.0:ags_line_member_chained_event
@@ -7263,6 +7271,7 @@ libgsequencer.so.0:ags_line_stop
 libgsequencer.so.0:ags_line_stop_callback
 libgsequencer.so.0:ags_line_test_flags
 libgsequencer.so.0:ags_line_unset_flags
+libgsequencer.so.0:ags_line_update_ui_callback
 libgsequencer.so.0:ags_link_editor_applicable_interface_init
 libgsequencer.so.0:ags_link_editor_apply
 libgsequencer.so.0:ags_link_editor_class_init
@@ -7847,6 +7856,7 @@ libgsequencer.so.0:ags_move_note_dialog_disconnect
 libgsequencer.so.0:ags_move_note_dialog_finalize
 libgsequencer.so.0:ags_move_note_dialog_get_type
 libgsequencer.so.0:ags_move_note_dialog_init
+libgsequencer.so.0:ags_move_note_dialog_is_connected
 libgsequencer.so.0:ags_move_note_dialog_new
 libgsequencer.so.0:ags_move_note_dialog_relative_callback
 libgsequencer.so.0:ags_move_note_dialog_reset
@@ -7860,13 +7870,13 @@ libgsequencer.so.0:ags_navigation_connect
 libgsequencer.so.0:ags_navigation_connectable_interface_init
 libgsequencer.so.0:ags_navigation_disconnect
 libgsequencer.so.0:ags_navigation_duration_tact_callback
-libgsequencer.so.0:ags_navigation_duration_time_queue_draw_timeout
 libgsequencer.so.0:ags_navigation_expander_callback
 libgsequencer.so.0:ags_navigation_finalize
 libgsequencer.so.0:ags_navigation_forward_callback
 libgsequencer.so.0:ags_navigation_get_property
 libgsequencer.so.0:ags_navigation_get_type
 libgsequencer.so.0:ags_navigation_init
+libgsequencer.so.0:ags_navigation_is_connected
 libgsequencer.so.0:ags_navigation_loop_callback
 libgsequencer.so.0:ags_navigation_loop_left_tact_callback
 libgsequencer.so.0:ags_navigation_loop_right_tact_callback
@@ -7878,13 +7888,14 @@ libgsequencer.so.0:ags_navigation_prev_callback
 libgsequencer.so.0:ags_navigation_real_change_position
 libgsequencer.so.0:ags_navigation_relative_tact_to_time_string
 libgsequencer.so.0:ags_navigation_rewind_callback
+libgsequencer.so.0:ags_navigation_scroll_callback
 libgsequencer.so.0:ags_navigation_set_property
 libgsequencer.so.0:ags_navigation_set_seeking_sensitive
 libgsequencer.so.0:ags_navigation_soundcard_stop_callback
 libgsequencer.so.0:ags_navigation_stop_callback
 libgsequencer.so.0:ags_navigation_tact_to_time_string
 libgsequencer.so.0:ags_navigation_update_time_string
-libgsequencer.so.0:ags_notation_edit_auto_scroll_timeout
+libgsequencer.so.0:ags_navigation_update_ui_callback
 libgsequencer.so.0:ags_notation_edit_class_init
 libgsequencer.so.0:ags_notation_edit_connect
 libgsequencer.so.0:ags_notation_edit_connectable_interface_init
@@ -7916,6 +7927,7 @@ libgsequencer.so.0:ags_notation_edit_gesture_click_released_callback
 libgsequencer.so.0:ags_notation_edit_get_type
 libgsequencer.so.0:ags_notation_edit_hscrollbar_value_changed
 libgsequencer.so.0:ags_notation_edit_init
+libgsequencer.so.0:ags_notation_edit_is_connected
 libgsequencer.so.0:ags_notation_edit_key_pressed_callback
 libgsequencer.so.0:ags_notation_edit_key_released_callback
 libgsequencer.so.0:ags_notation_edit_measure
@@ -7928,6 +7940,7 @@ libgsequencer.so.0:ags_notation_edit_reset_vscrollbar
 libgsequencer.so.0:ags_notation_edit_show
 libgsequencer.so.0:ags_notation_edit_size_allocate
 libgsequencer.so.0:ags_notation_edit_unrealize
+libgsequencer.so.0:ags_notation_edit_update_ui_callback
 libgsequencer.so.0:ags_notation_edit_vscrollbar_value_changed
 libgsequencer.so.0:ags_notation_meta_class_init
 libgsequencer.so.0:ags_notation_meta_connect
@@ -8063,7 +8076,7 @@ libgsequencer.so.0:ags_pattern_box_finalize
 libgsequencer.so.0:ags_pattern_box_get_pad
 libgsequencer.so.0:ags_pattern_box_get_type
 libgsequencer.so.0:ags_pattern_box_init
-libgsequencer.so.0:ags_pattern_box_led_queue_draw_timeout
+libgsequencer.so.0:ags_pattern_box_is_connected
 libgsequencer.so.0:ags_pattern_box_new
 libgsequencer.so.0:ags_pattern_box_offset_callback
 libgsequencer.so.0:ags_pattern_box_pad_callback
@@ -8071,6 +8084,7 @@ libgsequencer.so.0:ags_pattern_box_realize
 libgsequencer.so.0:ags_pattern_box_remove_pad
 libgsequencer.so.0:ags_pattern_box_set_pattern
 libgsequencer.so.0:ags_pattern_box_show
+libgsequencer.so.0:ags_pattern_box_update_ui_callback
 libgsequencer.so.0:ags_pattern_envelope_add_preset
 libgsequencer.so.0:ags_pattern_envelope_applicable_interface_init
 libgsequencer.so.0:ags_pattern_envelope_apply
@@ -8089,6 +8103,7 @@ libgsequencer.so.0:ags_pattern_envelope_finalize
 libgsequencer.so.0:ags_pattern_envelope_get_active_preset
 libgsequencer.so.0:ags_pattern_envelope_get_type
 libgsequencer.so.0:ags_pattern_envelope_init
+libgsequencer.so.0:ags_pattern_envelope_is_connected
 libgsequencer.so.0:ags_pattern_envelope_load_preset
 libgsequencer.so.0:ags_pattern_envelope_new
 libgsequencer.so.0:ags_pattern_envelope_pad_end_callback
@@ -8219,6 +8234,7 @@ libgsequencer.so.0:ags_position_automation_cursor_dialog_disconnect
 libgsequencer.so.0:ags_position_automation_cursor_dialog_finalize
 libgsequencer.so.0:ags_position_automation_cursor_dialog_get_type
 libgsequencer.so.0:ags_position_automation_cursor_dialog_init
+libgsequencer.so.0:ags_position_automation_cursor_dialog_is_connected
 libgsequencer.so.0:ags_position_automation_cursor_dialog_new
 libgsequencer.so.0:ags_position_automation_cursor_dialog_reset
 libgsequencer.so.0:ags_position_automation_cursor_dialog_response_callback
@@ -8232,6 +8248,7 @@ libgsequencer.so.0:ags_position_notation_cursor_dialog_disconnect
 libgsequencer.so.0:ags_position_notation_cursor_dialog_finalize
 libgsequencer.so.0:ags_position_notation_cursor_dialog_get_type
 libgsequencer.so.0:ags_position_notation_cursor_dialog_init
+libgsequencer.so.0:ags_position_notation_cursor_dialog_is_connected
 libgsequencer.so.0:ags_position_notation_cursor_dialog_new
 libgsequencer.so.0:ags_position_notation_cursor_dialog_reset
 libgsequencer.so.0:ags_position_notation_cursor_dialog_response_callback
@@ -8258,6 +8275,7 @@ libgsequencer.so.0:ags_position_wave_cursor_dialog_disconnect
 libgsequencer.so.0:ags_position_wave_cursor_dialog_finalize
 libgsequencer.so.0:ags_position_wave_cursor_dialog_get_type
 libgsequencer.so.0:ags_position_wave_cursor_dialog_init
+libgsequencer.so.0:ags_position_wave_cursor_dialog_is_connected
 libgsequencer.so.0:ags_position_wave_cursor_dialog_new
 libgsequencer.so.0:ags_position_wave_cursor_dialog_reset
 libgsequencer.so.0:ags_position_wave_cursor_dialog_response_callback
@@ -8335,6 +8353,7 @@ libgsequencer.so.0:ags_ramp_acceleration_dialog_disconnect
 libgsequencer.so.0:ags_ramp_acceleration_dialog_finalize
 libgsequencer.so.0:ags_ramp_acceleration_dialog_get_type
 libgsequencer.so.0:ags_ramp_acceleration_dialog_init
+libgsequencer.so.0:ags_ramp_acceleration_dialog_is_connected
 libgsequencer.so.0:ags_ramp_acceleration_dialog_machine_changed_callback
 libgsequencer.so.0:ags_ramp_acceleration_dialog_new
 libgsequencer.so.0:ags_ramp_acceleration_dialog_port_callback
@@ -8351,6 +8370,7 @@ libgsequencer.so.0:ags_ramp_marker_dialog_disconnect
 libgsequencer.so.0:ags_ramp_marker_dialog_finalize
 libgsequencer.so.0:ags_ramp_marker_dialog_get_type
 libgsequencer.so.0:ags_ramp_marker_dialog_init
+libgsequencer.so.0:ags_ramp_marker_dialog_is_connected
 libgsequencer.so.0:ags_ramp_marker_dialog_machine_changed_callback
 libgsequencer.so.0:ags_ramp_marker_dialog_new
 libgsequencer.so.0:ags_ramp_marker_dialog_reset
@@ -8404,6 +8424,7 @@ libgsequencer.so.0:ags_select_acceleration_dialog_disconnect
 libgsequencer.so.0:ags_select_acceleration_dialog_finalize
 libgsequencer.so.0:ags_select_acceleration_dialog_get_type
 libgsequencer.so.0:ags_select_acceleration_dialog_init
+libgsequencer.so.0:ags_select_acceleration_dialog_is_connected
 libgsequencer.so.0:ags_select_acceleration_dialog_machine_changed_callback
 libgsequencer.so.0:ags_select_acceleration_dialog_new
 libgsequencer.so.0:ags_select_acceleration_dialog_reset
@@ -8418,6 +8439,7 @@ libgsequencer.so.0:ags_select_buffer_dialog_disconnect
 libgsequencer.so.0:ags_select_buffer_dialog_finalize
 libgsequencer.so.0:ags_select_buffer_dialog_get_type
 libgsequencer.so.0:ags_select_buffer_dialog_init
+libgsequencer.so.0:ags_select_buffer_dialog_is_connected
 libgsequencer.so.0:ags_select_buffer_dialog_new
 libgsequencer.so.0:ags_select_buffer_dialog_reset
 libgsequencer.so.0:ags_select_buffer_dialog_response_callback
@@ -8431,6 +8453,7 @@ libgsequencer.so.0:ags_select_note_dialog_disconnect
 libgsequencer.so.0:ags_select_note_dialog_finalize
 libgsequencer.so.0:ags_select_note_dialog_get_type
 libgsequencer.so.0:ags_select_note_dialog_init
+libgsequencer.so.0:ags_select_note_dialog_is_connected
 libgsequencer.so.0:ags_select_note_dialog_new
 libgsequencer.so.0:ags_select_note_dialog_reset
 libgsequencer.so.0:ags_select_note_dialog_response_callback
@@ -8789,7 +8812,6 @@ libgsequencer.so.0:ags_soundcard_editor_samplerate_changed_callback
 libgsequencer.so.0:ags_soundcard_editor_set_update
 libgsequencer.so.0:ags_soundcard_editor_show_wasapi_control
 libgsequencer.so.0:ags_spectrometer_buffer_size_changed_callback
-libgsequencer.so.0:ags_spectrometer_cartesian_queue_draw_timeout
 libgsequencer.so.0:ags_spectrometer_class_init
 libgsequencer.so.0:ags_spectrometer_connect
 libgsequencer.so.0:ags_spectrometer_connectable_interface_init
@@ -8805,6 +8827,7 @@ libgsequencer.so.0:ags_spectrometer_new
 libgsequencer.so.0:ags_spectrometer_output_map_recall
 libgsequencer.so.0:ags_spectrometer_resize_audio_channels_callback
 libgsequencer.so.0:ags_spectrometer_resize_pads_callback
+libgsequencer.so.0:ags_spectrometer_update_ui_callback
 libgsequencer.so.0:ags_spectrometer_x_big_scale_func
 libgsequencer.so.0:ags_spectrometer_x_label_func
 libgsequencer.so.0:ags_spectrometer_x_small_scale_func
@@ -8877,7 +8900,6 @@ libgsequencer.so.0:ags_synth_test_flags
 libgsequencer.so.0:ags_synth_unset_flags
 libgsequencer.so.0:ags_synth_update
 libgsequencer.so.0:ags_synth_update_callback
-libgsequencer.so.0:ags_tempo_edit_auto_scroll_timeout
 libgsequencer.so.0:ags_tempo_edit_class_init
 libgsequencer.so.0:ags_tempo_edit_compare_x_offset_func
 libgsequencer.so.0:ags_tempo_edit_connect
@@ -8913,6 +8935,7 @@ libgsequencer.so.0:ags_tempo_edit_get_property
 libgsequencer.so.0:ags_tempo_edit_get_type
 libgsequencer.so.0:ags_tempo_edit_hscrollbar_value_changed
 libgsequencer.so.0:ags_tempo_edit_init
+libgsequencer.so.0:ags_tempo_edit_is_connected
 libgsequencer.so.0:ags_tempo_edit_key_pressed_callback
 libgsequencer.so.0:ags_tempo_edit_key_released_callback
 libgsequencer.so.0:ags_tempo_edit_measure
@@ -8926,6 +8949,7 @@ libgsequencer.so.0:ags_tempo_edit_set_property
 libgsequencer.so.0:ags_tempo_edit_show
 libgsequencer.so.0:ags_tempo_edit_size_allocate
 libgsequencer.so.0:ags_tempo_edit_unrealize
+libgsequencer.so.0:ags_tempo_edit_update_ui_callback
 libgsequencer.so.0:ags_tempo_edit_vscrollbar_value_changed
 libgsequencer.so.0:ags_time_stretch_buffer_dialog_applicable_interface_init
 libgsequencer.so.0:ags_time_stretch_buffer_dialog_apply
@@ -9041,7 +9065,6 @@ libgsequencer.so.0:ags_ui_provider_set_window
 libgsequencer.so.0:ags_ui_provider_setup_completed
 libgsequencer.so.0:ags_ui_provider_update_ui
 libgsequencer.so.0:ags_ui_recall_flags_get_type
-libgsequencer.so.0:ags_wave_edit_auto_scroll_timeout
 libgsequencer.so.0:ags_wave_edit_box_add_wave_edit
 libgsequencer.so.0:ags_wave_edit_box_child_height_request
 libgsequencer.so.0:ags_wave_edit_box_child_width_request
@@ -9083,6 +9106,7 @@ libgsequencer.so.0:ags_wave_edit_get_property
 libgsequencer.so.0:ags_wave_edit_get_type
 libgsequencer.so.0:ags_wave_edit_hscrollbar_value_changed
 libgsequencer.so.0:ags_wave_edit_init
+libgsequencer.so.0:ags_wave_edit_is_connected
 libgsequencer.so.0:ags_wave_edit_key_pressed_callback
 libgsequencer.so.0:ags_wave_edit_key_released_callback
 libgsequencer.so.0:ags_wave_edit_measure
@@ -9096,6 +9120,7 @@ libgsequencer.so.0:ags_wave_edit_set_property
 libgsequencer.so.0:ags_wave_edit_show
 libgsequencer.so.0:ags_wave_edit_size_allocate
 libgsequencer.so.0:ags_wave_edit_unrealize
+libgsequencer.so.0:ags_wave_edit_update_ui_callback
 libgsequencer.so.0:ags_wave_edit_vscrollbar_value_changed
 libgsequencer.so.0:ags_wave_export_dialog_applicable_interface_init
 libgsequencer.so.0:ags_wave_export_dialog_apply
@@ -9140,6 +9165,7 @@ libgsequencer.so.0:ags_window_get_machine
 libgsequencer.so.0:ags_window_get_property
 libgsequencer.so.0:ags_window_get_type
 libgsequencer.so.0:ags_window_init
+libgsequencer.so.0:ags_window_is_connected
 libgsequencer.so.0:ags_window_load_add_menu_dssi
 libgsequencer.so.0:ags_window_load_add_menu_ladspa
 libgsequencer.so.0:ags_window_load_add_menu_live_dssi
