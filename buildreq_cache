@@ -1,12 +1,2 @@
-6.10.1
+6.12.5
 file
-json-glib-dev
-libsamplerate-dev
-libxslt-bin
-pkgconfig(fftw3)
-pkgconfig(gtk4)
-pkgconfig(json-glib-1.0)
-pkgconfig(libpulse-mainloop-glib)
-pkgconfig(libsoup-3.0)
-pkgconfig(libxml-2.0)
-pkgconfig(samplerate)
