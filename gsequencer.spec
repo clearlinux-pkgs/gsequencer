@@ -9,7 +9,7 @@
 #
 Name     : gsequencer
 Version  : 6.12.7
-Release  : 108
+Release  : 109
 URL      : https://download.savannah.nongnu.org/releases/gsequencer/6.12.x/gsequencer-6.12.7.tar.gz
 Source0  : https://download.savannah.nongnu.org/releases/gsequencer/6.12.x/gsequencer-6.12.7.tar.gz
 Source1  : https://download.savannah.nongnu.org/releases/gsequencer/6.12.x/gsequencer-6.12.7.tar.gz.sig
