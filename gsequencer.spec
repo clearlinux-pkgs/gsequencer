@@ -5,15 +5,15 @@
 # autospec version: v18
 # autospec commit: 356da6275008
 #
-# Source0 file verified with key 0xD77B2DE97E6D8DA9 (jkraehemann@gmail.com)
+# Source0 file verified with key 0xE5844A3BCB591BA1 (jkraehemann@gmail.com)
 #
 Name     : gsequencer
-Version  : 6.16.8
-Release  : 113
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/6.16.x/gsequencer-6.16.8.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/6.16.x/gsequencer-6.16.8.tar.gz
-Source1  : https://download.savannah.nongnu.org/releases/gsequencer/6.16.x/gsequencer-6.16.8.tar.gz.sig
-Source2  : D77B2DE97E6D8DA9.pkey
+Version  : 6.16.16
+Release  : 114
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/6.16.x/gsequencer-6.16.16.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/6.16.x/gsequencer-6.16.16.tar.gz
+Source1  : https://download.savannah.nongnu.org/releases/gsequencer/6.16.x/gsequencer-6.16.16.tar.gz.sig
+Source2  : E5844A3BCB591BA1.pkey
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
 License  : AGPL-3.0 GFDL-1.3 GPL-3.0 MIT
@@ -154,14 +154,14 @@ mkdir .gnupg
 chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE2}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE1} %{SOURCE0} > gpg.status
-grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) D77B2DE97E6D8DA9' gpg.status
-%setup -q -n gsequencer-6.16.8
-cd %{_builddir}/gsequencer-6.16.8
+grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) E5844A3BCB591BA1' gpg.status
+%setup -q -n gsequencer-6.16.16
+cd %{_builddir}/gsequencer-6.16.16
 pushd ..
-cp -a gsequencer-6.16.8 buildavx2
+cp -a gsequencer-6.16.16 buildavx2
 popd
 pushd ..
-cp -a gsequencer-6.16.8 buildavx512
+cp -a gsequencer-6.16.16 buildavx512
 popd
 
 %build
@@ -169,7 +169,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1722007569
+export SOURCE_DATE_EPOCH=1722015792
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -242,7 +242,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1722007569
+export SOURCE_DATE_EPOCH=1722015792
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -294,10 +294,10 @@ GOAMD64=v2
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/6.16.8/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/6.16.8/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/6.16.8/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/6.16.8/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.16.16/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.16.16/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.16.16/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/6.16.16/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
