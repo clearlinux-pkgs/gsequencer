@@ -7728,6 +7728,7 @@ libgsequencer.so.0:ags_machine_radio_button_finalize
 libgsequencer.so.0:ags_machine_radio_button_get_property
 libgsequencer.so.0:ags_machine_radio_button_get_type
 libgsequencer.so.0:ags_machine_radio_button_init
+libgsequencer.so.0:ags_machine_radio_button_is_connected
 libgsequencer.so.0:ags_machine_radio_button_new
 libgsequencer.so.0:ags_machine_radio_button_notify_machine_name_callback
 libgsequencer.so.0:ags_machine_radio_button_set_property
@@ -7781,6 +7782,7 @@ libgsequencer.so.0:ags_machine_selector_get_type
 libgsequencer.so.0:ags_machine_selector_init
 libgsequencer.so.0:ags_machine_selector_insert_index
 libgsequencer.so.0:ags_machine_selector_insert_machine_radio_button
+libgsequencer.so.0:ags_machine_selector_is_connected
 libgsequencer.so.0:ags_machine_selector_new
 libgsequencer.so.0:ags_machine_selector_popup_insert_machine
 libgsequencer.so.0:ags_machine_selector_popup_remove_machine
@@ -9431,9 +9433,6 @@ libgsequencer.so.0:ags_window_load_add_menu_lv2
 libgsequencer.so.0:ags_window_load_add_menu_vst3
 libgsequencer.so.0:ags_window_load_file_timeout
 libgsequencer.so.0:ags_window_new
-libgsequencer.so.0:ags_window_notify_default_height_callback
-libgsequencer.so.0:ags_window_notify_default_width_callback
-libgsequencer.so.0:ags_window_notify_maximized_callback
 libgsequencer.so.0:ags_window_remove_machine
 libgsequencer.so.0:ags_window_set_property
 libgsequencer.so.0:ags_window_setup_completed_callback
