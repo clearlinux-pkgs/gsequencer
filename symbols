@@ -5296,7 +5296,9 @@ libags_audio.so.6:ags_wave_add_all_to_selection
 libags_audio.so.6:ags_wave_add_buffer
 libags_audio.so.6:ags_wave_add_region_to_selection
 libags_audio.so.6:ags_wave_copy_selection
+libags_audio.so.6:ags_wave_copy_selection_as_base64
 libags_audio.so.6:ags_wave_cut_selection
+libags_audio.so.6:ags_wave_cut_selection_as_base64
 libags_audio.so.6:ags_wave_find_exact_point
 libags_audio.so.6:ags_wave_find_near_timestamp
 libags_audio.so.6:ags_wave_find_point
@@ -5314,6 +5316,8 @@ libags_audio.so.6:ags_wave_get_samplerate
 libags_audio.so.6:ags_wave_get_selection
 libags_audio.so.6:ags_wave_get_timestamp
 libags_audio.so.6:ags_wave_get_type
+libags_audio.so.6:ags_wave_insert_base64_from_clipboard
+libags_audio.so.6:ags_wave_insert_base64_from_clipboard_extended
 libags_audio.so.6:ags_wave_insert_from_clipboard
 libags_audio.so.6:ags_wave_insert_from_clipboard_extended
 libags_audio.so.6:ags_wave_is_buffer_selected
