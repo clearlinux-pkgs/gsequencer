@@ -9378,7 +9378,7 @@ libgsequencer.so.0:ags_time_stretch_buffer_popover_modifiers_callback
 libgsequencer.so.0:ags_time_stretch_buffer_popover_new
 libgsequencer.so.0:ags_time_stretch_buffer_popover_reset
 libgsequencer.so.0:ags_time_stretch_buffer_popover_set_update
-libgsequencer.so.0:ags_track_collection_add_mapper
+libgsequencer.so.0:ags_track_collection_add_all_track_mapper
 libgsequencer.so.0:ags_track_collection_add_track_mapper
 libgsequencer.so.0:ags_track_collection_applicable_interface_init
 libgsequencer.so.0:ags_track_collection_apply
@@ -9403,6 +9403,7 @@ libgsequencer.so.0:ags_track_mapper_connect
 libgsequencer.so.0:ags_track_mapper_connectable_interface_init
 libgsequencer.so.0:ags_track_mapper_disconnect
 libgsequencer.so.0:ags_track_mapper_find_instrument_with_sequence
+libgsequencer.so.0:ags_track_mapper_find_midi_channel
 libgsequencer.so.0:ags_track_mapper_get_property
 libgsequencer.so.0:ags_track_mapper_get_type
 libgsequencer.so.0:ags_track_mapper_init
