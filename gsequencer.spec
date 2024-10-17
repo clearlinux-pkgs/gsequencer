@@ -8,11 +8,11 @@
 # Source0 file verified with key 0xE5844A3BCB591BA1 (jkraehemann@gmail.com)
 #
 Name     : gsequencer
-Version  : 6.16.22
-Release  : 118
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/6.16.x/gsequencer-6.16.22.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/6.16.x/gsequencer-6.16.22.tar.gz
-Source1  : https://download.savannah.nongnu.org/releases/gsequencer/6.16.x/gsequencer-6.16.22.tar.gz.sig
+Version  : 7.0.1
+Release  : 119
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/7.0.x/gsequencer-7.0.1.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/7.0.x/gsequencer-7.0.1.tar.gz
+Source1  : https://download.savannah.nongnu.org/releases/gsequencer/7.0.x/gsequencer-7.0.1.tar.gz.sig
 Source2  : E5844A3BCB591BA1.pkey
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
@@ -155,13 +155,13 @@ chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE2}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE1} %{SOURCE0} > gpg.status
 grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) E5844A3BCB591BA1' gpg.status
-%setup -q -n gsequencer-6.16.22
-cd %{_builddir}/gsequencer-6.16.22
+%setup -q -n gsequencer-7.0.1
+cd %{_builddir}/gsequencer-7.0.1
 pushd ..
-cp -a gsequencer-6.16.22 buildavx2
+cp -a gsequencer-7.0.1 buildavx2
 popd
 pushd ..
-cp -a gsequencer-6.16.22 buildavx512
+cp -a gsequencer-7.0.1 buildavx512
 popd
 
 %build
@@ -169,7 +169,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1727118403
+export SOURCE_DATE_EPOCH=1729176419
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -242,7 +242,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1727118403
+export SOURCE_DATE_EPOCH=1729176419
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -294,10 +294,10 @@ GOAMD64=v2
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/6.16.22/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/6.16.22/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/6.16.22/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/6.16.22/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.0.1/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.0.1/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.0.1/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.0.1/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
@@ -377,6 +377,7 @@ GOAMD64=v2
 /usr/include/ags/audio/ags_sfz_synth_util.h
 /usr/include/ags/audio/ags_sound_enums.h
 /usr/include/ags/audio/ags_sound_provider.h
+/usr/include/ags/audio/ags_sound_types.h
 /usr/include/ags/audio/ags_soundcard_util.h
 /usr/include/ags/audio/ags_synth_enums.h
 /usr/include/ags/audio/ags_synth_generator.h
@@ -384,6 +385,8 @@ GOAMD64=v2
 /usr/include/ags/audio/ags_time_stretch_util.h
 /usr/include/ags/audio/ags_track.h
 /usr/include/ags/audio/ags_tremolo_util.h
+/usr/include/ags/audio/ags_vdsp_256_manager.h
+/usr/include/ags/audio/ags_vector_256_manager.h
 /usr/include/ags/audio/ags_volume_util.h
 /usr/include/ags/audio/ags_wah_wah_util.h
 /usr/include/ags/audio/ags_wave.h
@@ -823,28 +826,28 @@ GOAMD64=v2
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libags.so.6.0.0
-/V3/usr/lib64/libags_audio.so.6.0.0
-/V3/usr/lib64/libags_gui.so.6.0.0
-/V3/usr/lib64/libags_server.so.6.0.0
-/V3/usr/lib64/libags_thread.so.6.0.0
+/V3/usr/lib64/libags.so.7.0.0
+/V3/usr/lib64/libags_audio.so.7.0.0
+/V3/usr/lib64/libags_gui.so.7.0.0
+/V3/usr/lib64/libags_server.so.7.0.0
+/V3/usr/lib64/libags_thread.so.7.0.0
 /V3/usr/lib64/libgsequencer.so.0.0.1
-/V4/usr/lib64/libags.so.6.0.0
-/V4/usr/lib64/libags_audio.so.6.0.0
-/V4/usr/lib64/libags_gui.so.6.0.0
-/V4/usr/lib64/libags_server.so.6.0.0
-/V4/usr/lib64/libags_thread.so.6.0.0
+/V4/usr/lib64/libags.so.7.0.0
+/V4/usr/lib64/libags_audio.so.7.0.0
+/V4/usr/lib64/libags_gui.so.7.0.0
+/V4/usr/lib64/libags_server.so.7.0.0
+/V4/usr/lib64/libags_thread.so.7.0.0
 /V4/usr/lib64/libgsequencer.so.0.0.1
-/usr/lib64/libags.so.6
-/usr/lib64/libags.so.6.0.0
-/usr/lib64/libags_audio.so.6
-/usr/lib64/libags_audio.so.6.0.0
-/usr/lib64/libags_gui.so.6
-/usr/lib64/libags_gui.so.6.0.0
-/usr/lib64/libags_server.so.6
-/usr/lib64/libags_server.so.6.0.0
-/usr/lib64/libags_thread.so.6
-/usr/lib64/libags_thread.so.6.0.0
+/usr/lib64/libags.so.7
+/usr/lib64/libags.so.7.0.0
+/usr/lib64/libags_audio.so.7
+/usr/lib64/libags_audio.so.7.0.0
+/usr/lib64/libags_gui.so.7
+/usr/lib64/libags_gui.so.7.0.0
+/usr/lib64/libags_server.so.7
+/usr/lib64/libags_server.so.7.0.0
+/usr/lib64/libags_thread.so.7
+/usr/lib64/libags_thread.so.7.0.0
 /usr/lib64/libgsequencer.so.0
 /usr/lib64/libgsequencer.so.0.0.1
 
