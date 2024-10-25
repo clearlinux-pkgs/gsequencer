@@ -8,11 +8,11 @@
 # Source0 file verified with key 0xE5844A3BCB591BA1 (jkraehemann@gmail.com)
 #
 Name     : gsequencer
-Version  : 7.0.4
-Release  : 121
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/7.0.x/gsequencer-7.0.4.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/7.0.x/gsequencer-7.0.4.tar.gz
-Source1  : https://download.savannah.nongnu.org/releases/gsequencer/7.0.x/gsequencer-7.0.4.tar.gz.sig
+Version  : 7.0.5
+Release  : 122
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/7.0.x/gsequencer-7.0.5.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/7.0.x/gsequencer-7.0.5.tar.gz
+Source1  : https://download.savannah.nongnu.org/releases/gsequencer/7.0.x/gsequencer-7.0.5.tar.gz.sig
 Source2  : E5844A3BCB591BA1.pkey
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
@@ -155,13 +155,13 @@ chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE2}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE1} %{SOURCE0} > gpg.status
 grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) E5844A3BCB591BA1' gpg.status
-%setup -q -n gsequencer-7.0.4
-cd %{_builddir}/gsequencer-7.0.4
+%setup -q -n gsequencer-7.0.5
+cd %{_builddir}/gsequencer-7.0.5
 pushd ..
-cp -a gsequencer-7.0.4 buildavx2
+cp -a gsequencer-7.0.5 buildavx2
 popd
 pushd ..
-cp -a gsequencer-7.0.4 buildavx512
+cp -a gsequencer-7.0.5 buildavx512
 popd
 
 %build
@@ -169,7 +169,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1729451966
+export SOURCE_DATE_EPOCH=1729867528
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -242,7 +242,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1729451966
+export SOURCE_DATE_EPOCH=1729867528
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -294,10 +294,10 @@ GOAMD64=v2
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/7.0.4/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/7.0.4/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/7.0.4/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/7.0.4/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.0.5/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.0.5/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.0.5/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.0.5/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
