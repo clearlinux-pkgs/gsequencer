@@ -1401,10 +1401,12 @@ libags_audio.so.7:ags_channel_get_absolute_key
 libags_audio.so.7:ags_channel_get_audio
 libags_audio.so.7:ags_channel_get_audio_channel
 libags_audio.so.7:ags_channel_get_buffer_size
+libags_audio.so.7:ags_channel_get_first_recycling
 libags_audio.so.7:ags_channel_get_format
 libags_audio.so.7:ags_channel_get_input_soundcard
 libags_audio.so.7:ags_channel_get_input_soundcard_channel
 libags_audio.so.7:ags_channel_get_key
+libags_audio.so.7:ags_channel_get_last_recycling
 libags_audio.so.7:ags_channel_get_level
 libags_audio.so.7:ags_channel_get_line
 libags_audio.so.7:ags_channel_get_link
