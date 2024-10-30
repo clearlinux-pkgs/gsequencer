@@ -6132,6 +6132,7 @@ libags_thread.so.7:ags_thread_pool_start
 libags_thread.so.7:ags_thread_prepare_current_sync
 libags_thread.so.7:ags_thread_prepare_tree_sync_recursive
 libags_thread.so.7:ags_thread_prev
+libags_thread.so.7:ags_thread_recover_dead_lock
 libags_thread.so.7:ags_thread_remove_child
 libags_thread.so.7:ags_thread_run
 libags_thread.so.7:ags_thread_self
@@ -9319,6 +9320,7 @@ libgsequencer.so.0:ags_simple_file_real_write
 libgsequencer.so.0:ags_simple_file_real_write_resolve
 libgsequencer.so.0:ags_simple_file_rw_open
 libgsequencer.so.0:ags_simple_file_set_property
+libgsequencer.so.0:ags_simple_file_start_queue_timeout
 libgsequencer.so.0:ags_simple_file_str2md5
 libgsequencer.so.0:ags_simple_file_write
 libgsequencer.so.0:ags_simple_file_write_automation
