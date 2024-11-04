@@ -7295,6 +7295,7 @@ libgsequencer.so.0:ags_generic_preferences_create_segmentation
 libgsequencer.so.0:ags_generic_preferences_disconnect
 libgsequencer.so.0:ags_generic_preferences_get_type
 libgsequencer.so.0:ags_generic_preferences_init
+libgsequencer.so.0:ags_generic_preferences_is_connected
 libgsequencer.so.0:ags_generic_preferences_new
 libgsequencer.so.0:ags_generic_preferences_reset
 libgsequencer.so.0:ags_generic_preferences_rt_safe_callback
@@ -8673,6 +8674,7 @@ libgsequencer.so.0:ags_performance_preferences_connectable_interface_init
 libgsequencer.so.0:ags_performance_preferences_disconnect
 libgsequencer.so.0:ags_performance_preferences_get_type
 libgsequencer.so.0:ags_performance_preferences_init
+libgsequencer.so.0:ags_performance_preferences_is_connected
 libgsequencer.so.0:ags_performance_preferences_new
 libgsequencer.so.0:ags_performance_preferences_reset
 libgsequencer.so.0:ags_performance_preferences_set_update
