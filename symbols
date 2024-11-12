@@ -6702,6 +6702,8 @@ libgsequencer.so.0:ags_crop_note_popover_modifiers_callback
 libgsequencer.so.0:ags_crop_note_popover_new
 libgsequencer.so.0:ags_crop_note_popover_reset
 libgsequencer.so.0:ags_crop_note_popover_set_update
+libgsequencer.so.0:ags_crop_note_popover_xml_compose
+libgsequencer.so.0:ags_crop_note_popover_xml_parse
 libgsequencer.so.0:ags_desk_class_init
 libgsequencer.so.0:ags_desk_connect
 libgsequencer.so.0:ags_desk_connectable_interface_init
@@ -8393,6 +8395,8 @@ libgsequencer.so.0:ags_move_note_popover_new
 libgsequencer.so.0:ags_move_note_popover_relative_callback
 libgsequencer.so.0:ags_move_note_popover_reset
 libgsequencer.so.0:ags_move_note_popover_set_update
+libgsequencer.so.0:ags_move_note_popover_xml_compose
+libgsequencer.so.0:ags_move_note_popover_xml_parse
 libgsequencer.so.0:ags_navigation_absolute_tact_to_time_string
 libgsequencer.so.0:ags_navigation_bpm_callback
 libgsequencer.so.0:ags_navigation_change_position
@@ -8824,6 +8828,8 @@ libgsequencer.so.0:ags_position_notation_cursor_popover_modifiers_callback
 libgsequencer.so.0:ags_position_notation_cursor_popover_new
 libgsequencer.so.0:ags_position_notation_cursor_popover_reset
 libgsequencer.so.0:ags_position_notation_cursor_popover_set_update
+libgsequencer.so.0:ags_position_notation_cursor_popover_xml_compose
+libgsequencer.so.0:ags_position_notation_cursor_popover_xml_parse
 libgsequencer.so.0:ags_position_sheet_cursor_dialog_applicable_interface_init
 libgsequencer.so.0:ags_position_sheet_cursor_dialog_apply
 libgsequencer.so.0:ags_position_sheet_cursor_dialog_class_init
