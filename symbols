@@ -5651,10 +5651,14 @@ libags_gui.so.7:ags_expander_set_child_free
 libags_gui.so.7:ags_expander_set_get_type
 libags_gui.so.7:ags_expander_set_new
 libags_gui.so.7:ags_expander_set_remove
+libags_gui.so.7:ags_file_dialog_get_download_link
 libags_gui.so.7:ags_file_dialog_get_file_widget
 libags_gui.so.7:ags_file_dialog_get_type
 libags_gui.so.7:ags_file_dialog_new
 libags_gui.so.7:ags_file_dialog_response
+libags_gui.so.7:ags_file_dialog_set_flags
+libags_gui.so.7:ags_file_dialog_test_flags
+libags_gui.so.7:ags_file_dialog_unset_flags
 libags_gui.so.7:ags_file_widget_add_bookmark
 libags_gui.so.7:ags_file_widget_add_location
 libags_gui.so.7:ags_file_widget_create_dir
@@ -8681,6 +8685,7 @@ libgsequencer.so.0:ags_pcm_file_dialog_activate_button_callback
 libgsequencer.so.0:ags_pcm_file_dialog_class_init
 libgsequencer.so.0:ags_pcm_file_dialog_close_request_callback
 libgsequencer.so.0:ags_pcm_file_dialog_get_audio_channel
+libgsequencer.so.0:ags_pcm_file_dialog_get_download_link
 libgsequencer.so.0:ags_pcm_file_dialog_get_existing_channel
 libgsequencer.so.0:ags_pcm_file_dialog_get_file_widget
 libgsequencer.so.0:ags_pcm_file_dialog_get_new_channel
