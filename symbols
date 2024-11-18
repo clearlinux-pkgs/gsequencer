@@ -6228,6 +6228,7 @@ libgsequencer.so.0:ags_app_action_util_add_spectrometer
 libgsequencer.so.0:ags_app_action_util_add_syncsynth
 libgsequencer.so.0:ags_app_action_util_add_synth
 libgsequencer.so.0:ags_app_action_util_add_vst3_bridge
+libgsequencer.so.0:ags_app_action_util_download
 libgsequencer.so.0:ags_app_action_util_edit_automation
 libgsequencer.so.0:ags_app_action_util_edit_meta
 libgsequencer.so.0:ags_app_action_util_edit_notation
@@ -6744,6 +6745,20 @@ libgsequencer.so.0:ags_desk_resize_audio_channels
 libgsequencer.so.0:ags_desk_resize_audio_channels_callback
 libgsequencer.so.0:ags_desk_resize_pads
 libgsequencer.so.0:ags_desk_resize_pads_callback
+libgsequencer.so.0:ags_download_window_activate_button_callback
+libgsequencer.so.0:ags_download_window_class_init
+libgsequencer.so.0:ags_download_window_close_request_callback
+libgsequencer.so.0:ags_download_window_connect
+libgsequencer.so.0:ags_download_window_connectable_interface_init
+libgsequencer.so.0:ags_download_window_disconnect
+libgsequencer.so.0:ags_download_window_finalize
+libgsequencer.so.0:ags_download_window_get_type
+libgsequencer.so.0:ags_download_window_init
+libgsequencer.so.0:ags_download_window_is_connected
+libgsequencer.so.0:ags_download_window_key_pressed_callback
+libgsequencer.so.0:ags_download_window_key_released_callback
+libgsequencer.so.0:ags_download_window_modifiers_callback
+libgsequencer.so.0:ags_download_window_new
 libgsequencer.so.0:ags_drum_class_init
 libgsequencer.so.0:ags_drum_connect
 libgsequencer.so.0:ags_drum_connectable_interface_init
@@ -7374,6 +7389,7 @@ libgsequencer.so.0:ags_gsequencer_application_context_get_audio
 libgsequencer.so.0:ags_gsequencer_application_context_get_composite_editor
 libgsequencer.so.0:ags_gsequencer_application_context_get_default_soundcard
 libgsequencer.so.0:ags_gsequencer_application_context_get_default_soundcard_thread
+libgsequencer.so.0:ags_gsequencer_application_context_get_download_window
 libgsequencer.so.0:ags_gsequencer_application_context_get_export_window
 libgsequencer.so.0:ags_gsequencer_application_context_get_file_ready
 libgsequencer.so.0:ags_gsequencer_application_context_get_gui_ready
@@ -7425,6 +7441,7 @@ libgsequencer.so.0:ags_gsequencer_application_context_set_audio
 libgsequencer.so.0:ags_gsequencer_application_context_set_composite_editor
 libgsequencer.so.0:ags_gsequencer_application_context_set_default_soundcard
 libgsequencer.so.0:ags_gsequencer_application_context_set_default_soundcard_thread
+libgsequencer.so.0:ags_gsequencer_application_context_set_download_window
 libgsequencer.so.0:ags_gsequencer_application_context_set_export_window
 libgsequencer.so.0:ags_gsequencer_application_context_set_file_ready
 libgsequencer.so.0:ags_gsequencer_application_context_set_gui_ready
@@ -7469,6 +7486,7 @@ libgsequencer.so.0:ags_gsequencer_application_new
 libgsequencer.so.0:ags_gsequencer_application_open
 libgsequencer.so.0:ags_gsequencer_application_refresh_window_menu
 libgsequencer.so.0:ags_gsequencer_application_startup
+libgsequencer.so.0:ags_gsequencer_download_callback
 libgsequencer.so.0:ags_gsequencer_edit_automation_callback
 libgsequencer.so.0:ags_gsequencer_edit_meta_callback
 libgsequencer.so.0:ags_gsequencer_edit_notation_callback
@@ -7482,6 +7500,7 @@ libgsequencer.so.0:ags_gsequencer_meta_data_callback
 libgsequencer.so.0:ags_gsequencer_open_callback
 libgsequencer.so.0:ags_gsequencer_preferences_callback
 libgsequencer.so.0:ags_gsequencer_present_app_window_callback
+libgsequencer.so.0:ags_gsequencer_present_download_window_callback
 libgsequencer.so.0:ags_gsequencer_present_export_window_callback
 libgsequencer.so.0:ags_gsequencer_present_help_window_callback
 libgsequencer.so.0:ags_gsequencer_present_meta_data_window_callback
@@ -7552,6 +7571,7 @@ libgsequencer.so.0:ags_hybrid_fm_synth_synth_2_octave_callback
 libgsequencer.so.0:ags_hybrid_fm_synth_synth_2_oscillator_callback
 libgsequencer.so.0:ags_hybrid_fm_synth_synth_2_phase_callback
 libgsequencer.so.0:ags_hybrid_fm_synth_synth_2_volume_callback
+libgsequencer.so.0:ags_hybrid_fm_synth_synth_pitch_type_callback
 libgsequencer.so.0:ags_hybrid_fm_synth_volume_callback
 libgsequencer.so.0:ags_hybrid_synth_chorus_delay_callback
 libgsequencer.so.0:ags_hybrid_synth_chorus_depth_callback
@@ -7615,6 +7635,7 @@ libgsequencer.so.0:ags_hybrid_synth_synth_1_sync_phase_1_callback
 libgsequencer.so.0:ags_hybrid_synth_synth_1_sync_phase_2_callback
 libgsequencer.so.0:ags_hybrid_synth_synth_1_sync_relative_attack_factor_callback
 libgsequencer.so.0:ags_hybrid_synth_synth_1_volume_callback
+libgsequencer.so.0:ags_hybrid_synth_synth_pitch_type_callback
 libgsequencer.so.0:ags_hybrid_synth_volume_callback
 libgsequencer.so.0:ags_ladspa_bridge_class_init
 libgsequencer.so.0:ags_ladspa_bridge_connect
@@ -7673,8 +7694,8 @@ libgsequencer.so.0:ags_line_get_effect_separator
 libgsequencer.so.0:ags_line_get_line_member
 libgsequencer.so.0:ags_line_get_property
 libgsequencer.so.0:ags_line_get_type
+libgsequencer.so.0:ags_line_group_callback
 libgsequencer.so.0:ags_line_group_changed
-libgsequencer.so.0:ags_line_group_toggled_callback
 libgsequencer.so.0:ags_line_init
 libgsequencer.so.0:ags_line_is_connected
 libgsequencer.so.0:ags_line_map_recall
@@ -8563,11 +8584,11 @@ libgsequencer.so.0:ags_pad_format_changed
 libgsequencer.so.0:ags_pad_get_line
 libgsequencer.so.0:ags_pad_get_property
 libgsequencer.so.0:ags_pad_get_type
-libgsequencer.so.0:ags_pad_group_clicked_callback
+libgsequencer.so.0:ags_pad_group_callback
 libgsequencer.so.0:ags_pad_init
 libgsequencer.so.0:ags_pad_is_connected
 libgsequencer.so.0:ags_pad_map_recall
-libgsequencer.so.0:ags_pad_mute_clicked_callback
+libgsequencer.so.0:ags_pad_mute_callback
 libgsequencer.so.0:ags_pad_new
 libgsequencer.so.0:ags_pad_play
 libgsequencer.so.0:ags_pad_real_find_port
@@ -8583,7 +8604,7 @@ libgsequencer.so.0:ags_pad_samplerate_changed
 libgsequencer.so.0:ags_pad_set_channel
 libgsequencer.so.0:ags_pad_set_flags
 libgsequencer.so.0:ags_pad_set_property
-libgsequencer.so.0:ags_pad_solo_clicked_callback
+libgsequencer.so.0:ags_pad_solo_callback
 libgsequencer.so.0:ags_pad_test_flags
 libgsequencer.so.0:ags_pad_unset_flags
 libgsequencer.so.0:ags_panel_class_init
@@ -9083,6 +9104,8 @@ libgsequencer.so.0:ags_select_note_popover_modifiers_callback
 libgsequencer.so.0:ags_select_note_popover_new
 libgsequencer.so.0:ags_select_note_popover_reset
 libgsequencer.so.0:ags_select_note_popover_set_update
+libgsequencer.so.0:ags_select_note_popover_xml_compose
+libgsequencer.so.0:ags_select_note_popover_xml_parse
 libgsequencer.so.0:ags_sequencer_editor_add_sequencer
 libgsequencer.so.0:ags_sequencer_editor_add_source
 libgsequencer.so.0:ags_sequencer_editor_add_source_callback
@@ -9660,6 +9683,7 @@ libgsequencer.so.0:ags_ui_provider_clean_message
 libgsequencer.so.0:ags_ui_provider_get_animation_window
 libgsequencer.so.0:ags_ui_provider_get_app
 libgsequencer.so.0:ags_ui_provider_get_composite_editor
+libgsequencer.so.0:ags_ui_provider_get_download_window
 libgsequencer.so.0:ags_ui_provider_get_export_window
 libgsequencer.so.0:ags_ui_provider_get_file_ready
 libgsequencer.so.0:ags_ui_provider_get_gui_ready
@@ -9683,6 +9707,7 @@ libgsequencer.so.0:ags_ui_provider_schedule_task_all
 libgsequencer.so.0:ags_ui_provider_set_animation_window
 libgsequencer.so.0:ags_ui_provider_set_app
 libgsequencer.so.0:ags_ui_provider_set_composite_editor
+libgsequencer.so.0:ags_ui_provider_set_download_window
 libgsequencer.so.0:ags_ui_provider_set_export_window
 libgsequencer.so.0:ags_ui_provider_set_file_ready
 libgsequencer.so.0:ags_ui_provider_set_gui_ready
