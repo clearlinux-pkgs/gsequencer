@@ -1,5 +1,5 @@
 PKG_NAME := gsequencer
-URL = https://download.savannah.nongnu.org/releases/gsequencer/7.3.x/gsequencer-7.3.7.tar.gz
+URL = https://download.savannah.nongnu.org/releases/gsequencer/7.3.x/gsequencer-7.3.15.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common

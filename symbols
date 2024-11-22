@@ -463,7 +463,9 @@ libags.so.7:ags_sound_server_get_soundcard
 libags.so.7:ags_sound_server_get_type
 libags.so.7:ags_sound_server_get_url
 libags.so.7:ags_sound_server_register_sequencer
+libags.so.7:ags_sound_server_register_sequencer_with_params
 libags.so.7:ags_sound_server_register_soundcard
+libags.so.7:ags_sound_server_register_soundcard_with_params
 libags.so.7:ags_sound_server_set_ports
 libags.so.7:ags_sound_server_set_sequencer
 libags.so.7:ags_sound_server_set_soundcard
@@ -1657,7 +1659,11 @@ libags_audio.so.7:ags_core_audio_midiin_test_flags
 libags_audio.so.7:ags_core_audio_midiin_unset_flags
 libags_audio.so.7:ags_core_audio_port_find
 libags_audio.so.7:ags_core_audio_port_flags_get_type
+libags_audio.so.7:ags_core_audio_port_get_buffer_size
+libags_audio.so.7:ags_core_audio_port_get_format
 libags_audio.so.7:ags_core_audio_port_get_latency
+libags_audio.so.7:ags_core_audio_port_get_pcm_channels
+libags_audio.so.7:ags_core_audio_port_get_samplerate
 libags_audio.so.7:ags_core_audio_port_get_type
 libags_audio.so.7:ags_core_audio_port_new
 libags_audio.so.7:ags_core_audio_port_register
