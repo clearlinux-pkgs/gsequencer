@@ -8,11 +8,11 @@
 # Source0 file verified with key 0xE5844A3BCB591BA1 (jkraehemann@gmail.com)
 #
 Name     : gsequencer
-Version  : 7.3.29
-Release  : 138
-URL      : https://download.savannah.nongnu.org/releases/gsequencer/7.3.x/gsequencer-7.3.29.tar.gz
-Source0  : https://download.savannah.nongnu.org/releases/gsequencer/7.3.x/gsequencer-7.3.29.tar.gz
-Source1  : https://download.savannah.nongnu.org/releases/gsequencer/7.3.x/gsequencer-7.3.29.tar.gz.sig
+Version  : 7.4.0
+Release  : 139
+URL      : https://download.savannah.nongnu.org/releases/gsequencer/7.4.x/gsequencer-7.4.0.tar.gz
+Source0  : https://download.savannah.nongnu.org/releases/gsequencer/7.4.x/gsequencer-7.4.0.tar.gz
+Source1  : https://download.savannah.nongnu.org/releases/gsequencer/7.4.x/gsequencer-7.4.0.tar.gz.sig
 Source2  : E5844A3BCB591BA1.pkey
 Summary  : Advanced Gtk+ Sequencer audio processing engine
 Group    : Development/Tools
@@ -156,13 +156,13 @@ chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE2}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE1} %{SOURCE0} > gpg.status
 grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) E5844A3BCB591BA1' gpg.status
-%setup -q -n gsequencer-7.3.29
-cd %{_builddir}/gsequencer-7.3.29
+%setup -q -n gsequencer-7.4.0
+cd %{_builddir}/gsequencer-7.4.0
 pushd ..
-cp -a gsequencer-7.3.29 buildavx2
+cp -a gsequencer-7.4.0 buildavx2
 popd
 pushd ..
-cp -a gsequencer-7.3.29 buildavx512
+cp -a gsequencer-7.4.0 buildavx512
 popd
 
 %build
@@ -170,7 +170,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1732468949
+export SOURCE_DATE_EPOCH=1732727430
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -243,7 +243,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1732468949
+export SOURCE_DATE_EPOCH=1732727430
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gsequencer
 cp %{_builddir}/gsequencer-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gsequencer/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -296,10 +296,10 @@ GOAMD64=v2
 /usr/share/icons/hicolor/scalable/apps/gsequencer.svg
 /usr/share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 /usr/share/mime-packages/gsequencer.xml
-/usr/share/xml/gsequencer/schema/dtd/7.3.29/ags_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/7.3.29/ags_midi_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/7.3.29/ags_osc_file.dtd
-/usr/share/xml/gsequencer/schema/dtd/7.3.29/ags_simple_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.4.0/ags_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.4.0/ags_midi_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.4.0/ags_osc_file.dtd
+/usr/share/xml/gsequencer/schema/dtd/7.4.0/ags_simple_file.dtd
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 /usr/share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
 
@@ -381,6 +381,7 @@ GOAMD64=v2
 /usr/include/ags/audio/ags_sound_provider.h
 /usr/include/ags/audio/ags_sound_types.h
 /usr/include/ags/audio/ags_soundcard_util.h
+/usr/include/ags/audio/ags_star_synth_util.h
 /usr/include/ags/audio/ags_synth_enums.h
 /usr/include/ags/audio/ags_synth_generator.h
 /usr/include/ags/audio/ags_synth_util.h
@@ -526,6 +527,12 @@ GOAMD64=v2
 /usr/include/ags/audio/fx/ags_fx_sfz_synth_channel.h
 /usr/include/ags/audio/fx/ags_fx_sfz_synth_channel_processor.h
 /usr/include/ags/audio/fx/ags_fx_sfz_synth_recycling.h
+/usr/include/ags/audio/fx/ags_fx_star_synth_audio.h
+/usr/include/ags/audio/fx/ags_fx_star_synth_audio_processor.h
+/usr/include/ags/audio/fx/ags_fx_star_synth_audio_signal.h
+/usr/include/ags/audio/fx/ags_fx_star_synth_channel.h
+/usr/include/ags/audio/fx/ags_fx_star_synth_channel_processor.h
+/usr/include/ags/audio/fx/ags_fx_star_synth_recycling.h
 /usr/include/ags/audio/fx/ags_fx_synth_audio.h
 /usr/include/ags/audio/fx/ags_fx_synth_audio_processor.h
 /usr/include/ags/audio/fx/ags_fx_synth_audio_signal.h
@@ -768,6 +775,7 @@ GOAMD64=v2
 /usr/include/ags/server/security/ags_xml_business_group.h
 /usr/include/ags/server/security/ags_xml_certificate.h
 /usr/include/ags/server/security/ags_xml_password_store.h
+/usr/include/ags/thread/ags_atomic.h
 /usr/include/ags/thread/ags_concurrency_provider.h
 /usr/include/ags/thread/ags_destroy_worker.h
 /usr/include/ags/thread/ags_generic_main_loop.h
