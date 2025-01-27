@@ -3745,6 +3745,7 @@ libags_audio.so.7:ags_notation_unset_flags
 libags_audio.so.7:ags_note_duplicate
 libags_audio.so.7:ags_note_find_next
 libags_audio.so.7:ags_note_find_prev
+libags_audio.so.7:ags_note_flags_get_type
 libags_audio.so.7:ags_note_from_raw_midi
 libags_audio.so.7:ags_note_from_raw_midi_extended
 libags_audio.so.7:ags_note_from_seq_event
@@ -8952,6 +8953,7 @@ libgsequencer.so.0:ags_pattern_envelope_decay_x_callback
 libgsequencer.so.0:ags_pattern_envelope_decay_y_callback
 libgsequencer.so.0:ags_pattern_envelope_disconnect
 libgsequencer.so.0:ags_pattern_envelope_edit_callback
+libgsequencer.so.0:ags_pattern_envelope_enable_envelope_lfo_callback
 libgsequencer.so.0:ags_pattern_envelope_finalize
 libgsequencer.so.0:ags_pattern_envelope_get_active_preset
 libgsequencer.so.0:ags_pattern_envelope_get_type
